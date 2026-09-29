@@ -303,150 +303,153 @@
     </div>
   </main>
 
-  <script>
-    let baseDeQuestions = [];
-    let serieQuestions = [];
-    let indexActuel = 0;
-    let score = 0;
+<script>
+  let baseDeQuestions = [];
+  let serieQuestions = [];
+  let indexActuel = 0;
+  let score = 0;
 
-    window.addEventListener('DOMContentLoaded', () => {
-      // S'assurer que la page d'accueil est affichée par défaut
-      navigate('home');
+  window.addEventListener('DOMContentLoaded', () => {
+    // S'assurer que la page d'accueil est affichée par défaut
+    navigate('home');
 
-      // Réinitialisation des sélecteurs
-      document.getElementById('niveau').selectedIndex = 0;
-      document.getElementById('theme').selectedIndex = 0;
-      document.getElementById('taille-serie').selectedIndex = 1;
+    // Réinitialisation des sélecteurs
+    document.getElementById('niveau').selectedIndex = 0;
+    document.getElementById('theme').selectedIndex = 0;
+    document.getElementById('taille-serie').selectedIndex = 1;
 
-      fetch('questions.json')
-        .then(res => res.json())
-        .then(data => {
-          baseDeQuestions = data;
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('quiz-content').style.display = 'block';
-          demarrerSérie();
-        })
-        .catch(err => {
-          console.error(err);
-          document.getElementById('loading').innerText = "⚠️ Erreur : Impossible de charger questions.json";
-        });
+    // Masquer le bloc de quiz au chargement initial
+    document.getElementById('quiz-box').style.display = 'none';
+
+    fetch('questions.json')
+      .then(res => res.json())
+      .then(data => {
+        baseDeQuestions = data;
+        document.getElementById('loading').style.display = 'none';
+        // On charge les données silencieusement en arrière-plan sans lancer la série
+      })
+      .catch(err => {
+        console.error(err);
+        document.getElementById('quiz-box').style.display = 'block';
+        document.getElementById('loading').innerText = "⚠️ Erreur : Impossible de charger questions.json";
+      });
+  });
+
+  function demarrerSérie() {
+    const niv = document.getElementById('niveau').value;
+    const th = document.getElementById('theme').value;
+    const limite = parseInt(document.getElementById('taille-serie').value);
+
+    let filtrees = baseDeQuestions.filter(q => {
+      const matchNiveau = (q.niveau === niv);
+      const matchTheme = (th === "Tous" || q.theme === th);
+      return matchNiveau && matchTheme;
     });
 
-    function demarrerSérie() {
-      const niv = document.getElementById('niveau').value;
-      const th = document.getElementById('theme').value;
-      const limite = parseInt(document.getElementById('taille-serie').value);
+    if (filtrees.length === 0) {
+      alert("Aucune question trouvée pour ce critère.");
+      return;
+    }
 
-      let filtrees = baseDeQuestions.filter(q => {
-        const matchNiveau = (q.niveau === niv);
-        const matchTheme = (th === "Tous" || q.theme === th);
-        return matchNiveau && matchTheme;
-      });
+    serieQuestions = filtrees.sort(() => 0.5 - Math.random()).slice(0, limite);
+    indexActuel = 0;
+    score = 0;
 
-      if (filtrees.length === 0) {
-        alert("Aucune question trouvée pour ce critère.");
-        return;
-      }
+    // Afficher la boîte de quiz lors du clic sur le bouton
+    document.getElementById('quiz-box').style.display = 'block';
+    document.getElementById('results-box').style.display = 'none';
+    document.getElementById('quiz-content').style.display = 'block';
 
-      serieQuestions = filtrees.sort(() => 0.5 - Math.random()).slice(0, limite);
-      indexActuel = 0;
-      score = 0;
+    afficherQuestion();
+  }
 
-      document.getElementById('results-box').style.display = 'none';
-      document.getElementById('quiz-content').style.display = 'block';
+  function afficherQuestion() {
+    const q = serieQuestions[indexActuel];
+    
+    document.getElementById('progression').innerText = `Question ${indexActuel + 1} / ${serieQuestions.length}`;
+    document.getElementById('score-actuel').innerText = `Score : ${score} / ${indexActuel}`;
+    document.getElementById('q-title').innerText = q.question;
+    
+    const expBox = document.getElementById('q-explanation');
+    expBox.style.display = 'none';
+    document.getElementById('btn-next').style.display = 'none';
 
+    const optionsContainer = document.getElementById('q-options');
+    optionsContainer.innerHTML = "";
+
+    q.options.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn';
+      btn.innerText = opt;
+      btn.onclick = () => verifierReponse(idx, btn);
+      optionsContainer.appendChild(btn);
+    });
+  }
+
+  function verifierReponse(choixIndex, btnClique) {
+    const q = serieQuestions[indexActuel];
+    const tousLesBoutons = document.querySelectorAll('.option-btn');
+    
+    tousLesBoutons.forEach(b => b.disabled = true);
+
+    const expBox = document.getElementById('q-explanation');
+
+    if (choixIndex === q.reponse) {
+      score++;
+      btnClique.classList.add('correct');
+      expBox.style.backgroundColor = 'var(--success-bg)';
+      expBox.style.color = '#14532d';
+      expBox.innerHTML = "<strong>✅ Correct !</strong><br>" + q.explication;
+    } else {
+      btnClique.classList.add('incorrect');
+      tousLesBoutons[q.reponse].classList.add('correct');
+      expBox.style.backgroundColor = 'var(--error-bg)';
+      expBox.style.color = '#7f1d1d';
+      expBox.innerHTML = "<strong>❌ Incorrect.</strong><br>" + q.explication;
+    }
+
+    expBox.style.display = 'block';
+    document.getElementById('score-actuel').innerText = `Score : ${score} / ${indexActuel + 1}`;
+    document.getElementById('btn-next').style.display = 'block';
+  }
+
+  function questionSuivante() {
+    indexActuel++;
+    if (indexActuel < serieQuestions.length) {
       afficherQuestion();
+    } else {
+      afficherBilan();
     }
+  }
 
-    function afficherQuestion() {
-      const q = serieQuestions[indexActuel];
-      
-      document.getElementById('progression').innerText = `Question ${indexActuel + 1} / ${serieQuestions.length}`;
-      document.getElementById('score-actuel').innerText = `Score : ${score} / ${indexActuel}`;
-      document.getElementById('q-title').innerText = q.question;
-      
-      const expBox = document.getElementById('q-explanation');
-      expBox.style.display = 'none';
-      document.getElementById('btn-next').style.display = 'none';
+  function afficherBilan() {
+    document.getElementById('quiz-content').style.display = 'none';
+    document.getElementById('results-box').style.display = 'block';
+    
+    const note = `${score} / ${serieQuestions.length}`;
+    document.getElementById('final-score').innerText = note;
 
-      const optionsContainer = document.getElementById('q-options');
-      optionsContainer.innerHTML = "";
+    const ratio = score / serieQuestions.length;
+    let feedback = "";
+    if (ratio === 1) feedback = "🏆 Excellent ! Sans faute !";
+    else if (ratio >= 0.7) feedback = "👍 Très bien, la théorie est bien assimilée !";
+    else if (ratio >= 0.5) feedback = "⚠️ Encore un petit effort de révision.";
+    else feedback = "📖 Reprenez les fiches de cours et réessayez !";
 
-      q.options.forEach((opt, idx) => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerText = opt;
-        btn.onclick = () => verifierReponse(idx, btn);
-        optionsContainer.appendChild(btn);
-      });
-    }
+    document.getElementById('final-feedback').innerText = feedback;
+  }
 
-    function verifierReponse(choixIndex, btnClique) {
-      const q = serieQuestions[indexActuel];
-      const tousLesBoutons = document.querySelectorAll('.option-btn');
-      
-      tousLesBoutons.forEach(b => b.disabled = true);
+  function navigate(pageId, e) {
+    if(e) e.preventDefault();
+    
+    document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+    const targetPage = document.getElementById(`page-${pageId}`);
+    if(targetPage) targetPage.classList.add('active');
 
-      const expBox = document.getElementById('q-explanation');
-
-      if (choixIndex === q.reponse) {
-        score++;
-        btnClique.classList.add('correct');
-        expBox.style.backgroundColor = 'var(--success-bg)';
-        expBox.style.color = '#14532d';
-        expBox.innerHTML = "<strong>✅ Correct !</strong><br>" + q.explication;
-      } else {
-        btnClique.classList.add('incorrect');
-        tousLesBoutons[q.reponse].classList.add('correct');
-        expBox.style.backgroundColor = 'var(--error-bg)';
-        expBox.style.color = '#7f1d1d';
-        expBox.innerHTML = "<strong>❌ Incorrect.</strong><br>" + q.explication;
-      }
-
-      expBox.style.display = 'block';
-      document.getElementById('score-actuel').innerText = `Score : ${score} / ${indexActuel + 1}`;
-      document.getElementById('btn-next').style.display = 'block';
-    }
-
-    function questionSuivante() {
-      indexActuel++;
-      if (indexActuel < serieQuestions.length) {
-        afficherQuestion();
-      } else {
-        afficherBilan();
-      }
-    }
-
-    function afficherBilan() {
-      document.getElementById('quiz-content').style.display = 'none';
-      document.getElementById('results-box').style.display = 'block';
-      
-      const note = `${score} / ${serieQuestions.length}`;
-      document.getElementById('final-score').innerText = note;
-
-      const ratio = score / serieQuestions.length;
-      let feedback = "";
-      if (ratio === 1) feedback = "🏆 Excellent ! Sans faute !";
-      else if (ratio >= 0.7) feedback = "👍 Très bien, la théorie est bien assimilée !";
-      else if (ratio >= 0.5) feedback = "⚠️ Encore un petit effort de révision.";
-      else feedback = "📖 Reprenez les fiches de cours et réessayez !";
-
-      document.getElementById('final-feedback').innerText = feedback;
-    }
-
-    function navigate(pageId, e) {
-      if(e) e.preventDefault();
-      
-      // Masquer/Afficher les conteneurs de page
-      document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-      const targetPage = document.getElementById(`page-${pageId}`);
-      if(targetPage) targetPage.classList.add('active');
-
-      // Mise à jour de la classe active du menu nav
-      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-      const activeLink = document.getElementById(`link-${pageId}`);
-      if(activeLink) activeLink.classList.add('active');
-    }
-  </script>
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const activeLink = document.getElementById(`link-${pageId}`);
+    if(activeLink) activeLink.classList.add('active');
+  }
+</script>
 </body>
 </html>
