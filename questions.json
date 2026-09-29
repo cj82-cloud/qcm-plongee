@@ -1818,4 +1818,455 @@
     "reponse_index": 0,
     "explication": "Rendre le plongeur acteur de sa propre sécurité et dédramatiser la renonciation à l'immersion prévient la majorité des accidents."
   }
+  {
+    "id": 201,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Un plongeur consomme 25 L/min à la surface. Quelle sera sa consommation d'air totale lors d'une immersion de 20 minutes à 30 mètres de profondeur ?",
+    "options": ["500 litres", "1000 litres", "2000 litres", "2500 litres"],
+    "reponse_index": 2,
+    "explication": "À 30 m, Pabs = 4 bars. Consommation instantanée = 25 L/min x 4 = 100 L/min. Pour 20 min : 100 x 20 = 2000 litres."
+  },
+  {
+    "id": 202,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Un ballon fermé contient 4 litres d'air à 30 mètres de profondeur. Quel sera son volume théorique une fois remonté à la surface, si la température reste constante ?",
+    "options": ["1 litre", "8 litres", "12 litres", "16 litres"],
+    "reponse_index": 3,
+    "explication": "À 30 m (4 bars), P1 x V1 = P2 x V2. Donc 4 bars x 4 L = 1 bar x V2 => V2 = 16 litres."
+  },
+  {
+    "id": 203,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Quelle est la limite maximale usuelle de la pression partielle d'oxygène (PpO2) préconisée lors de la phase de palier pour éviter les risques d'hyperoxie ?",
+    "options": ["1,2 bar", "1,4 bar", "1,6 bar", "2,0 bars"],
+    "reponse_index": 2,
+    "explication": "La PpO2 maximale tolérée lors de la phase de palier au repos est fixée à 1,6 bar (contre 1,4 bar en zone d'évolution)."
+  },
+  {
+    "id": 204,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Calculez la Profondeur Équivalente Azote (END) lors d'une plongée à 40 mètres avec un Trimix (21% O2, 35% He, 44% N2).",
+    "options": ["17,8 mètres", "22,3 mètres", "27,5 mètres", "32,0 mètres"],
+    "reponse_index": 0,
+    "explication": "Pabs_Air = Pabs_Melange x (%N2_Melange / 0,79) = 5 x (0,44 / 0,79) = 2,784 bars abs. Pression d'eau = 1,784 bar => Profondeur équivalente = 17,8 mètres."
+  },
+  {
+    "id": 205,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Comment la loi de Gay-Lussac (P/T = Cte) explique-t-elle la baisse de pression indiquée au manomètre lorsque le bloc chaud après gonflage est immergé en eau froide ?",
+    "options": ["Le volume du bloc rétrécit", "La baisse de température du gaz provoque une diminution proportionnelle de sa pression à volume constant", "L'air s'échappe par la robinetterie", "L'humidité de l'eau dissout l'air"],
+    "reponse_index": 1,
+    "explication": "À volume constant, la pression d'un gaz parfait est directement proportionnelle à sa température absolue (en Kelvin)."
+  },
+  {
+    "id": 206,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Quelle est la masse volumique de l'air respiré par un plongeur à une profondeur de 40 mètres (considérant une masse volumique de 1,29 g/L en surface) ?",
+    "options": ["1,29 g/L", "2,58 g/L", "5,16 g/L", "6,45 g/L"],
+    "reponse_index": 3,
+    "explication": "À 40 m (5 bars), l'air est comprimé 5 fois. Sa masse volumique est donc 1,29 g/L x 5 = 6,45 g/L."
+  },
+  {
+    "id": 207,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Une réserve de sécurité sous l'eau nécessite 600 litres d'air. Combien de bars cela représente-t-il dans un bloc mono-bouteille de 15 litres ?",
+    "options": ["30 bars", "40 bars", "50 bars", "60 bars"],
+    "reponse_index": 1,
+    "explication": "Pression = Volume / Contenance du bloc = 600 L / 15 L = 40 bars."
+  },
+  {
+    "id": 208,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Si un plongeur utilise un Nitrox 32 à 30 mètres de profondeur, quelle est la pression partielle de dioxygène (PpO2) subie ?",
+    "options": ["0,96 bar", "1,28 bar", "1,40 bar", "1,60 bar"],
+    "reponse_index": 1,
+    "explication": "À 30 m, Pabs = 4 bars. PpO2 = Pabs x %O2 = 4 bars x 0,32 = 1,28 bar."
+  },
+  {
+    "id": 209,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Pourquoi la solubilité d'un gaz dans le sang augmente-t-elle lors de la descente (Loi de Henry) ?",
+    "options": ["Car la température du sang baisse", "Car la pression partielle du gaz inspiré augmente avec la profondeur", "Car la vitesse du flux sanguin s'accélère", "Car l'eau de mer exerce une force magnétique"],
+    "reponse_index": 1,
+    "explication": "Selon la loi de Henry, la quantité de gaz dissous dans un liquide est directement proportionnelle à la pression partielle subie par ce gaz."
+  },
+  {
+    "id": 210,
+    "niveau": "Ma décompression",
+    "theme": "Physique & Application Avancée aux Gaz",
+    "question": "Quel est l'impact de la variation de poussée d'Archimède sur un plongeur qui remonte sans purger sa combinaison étanche ?",
+    "options": ["Aucun impact sur la flottabilité", "L'air se dilate, augmentant le volume et la poussée d'Archimède, créant une remontée incontrôlée (effet ballon)", "L'air se comprime et fait couler le plongeur", "La combinaison se remplit d'eau"],
+    "reponse_index": 1,
+    "explication": "La baisse de pression augmente le volume de la combinaison, augmentant le volume d'eau déplacé et la flottabilité positive dans une boucle fermée."
+  },
+  {
+    "id": 211,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Quels sont les symptômes majeurs permettant de suspecter un œdème aigu du poumon (OAP) d'immersion ?",
+    "options": ["Douleur articulaire au coude et marbrures", "Gêne respiratoire marquée, toux quinteuse, expectorations rosées ou mousseuses et anxiété", "Vertiges rotatoires et perte d'audition", "Envie pressante d'uriner et céphalées"],
+    "reponse_index": 1,
+    "explication": "L'OAP d'immersion se manifeste par une détresse respiratoire aiguë avec de la toux et des crachats rosés/mousseux."
+  },
+  {
+    "id": 212,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Quel est le mécanisme sous-jacent à la survenue d'un barotraumatisme pulmonaire lors de la remontée ?",
+    "options": ["L'accumulation d'azote dans le liquide surfactant", "La surdistension et la rupture des alvéoles pulmonaires dues au blocage de la respiration lors de la baisse de pression ambiante", "Le blocage de la trompe d'Eustache", "L'excès de dioxyde de carbone dans le détendeur"],
+    "reponse_index": 1,
+    "explication": "Le blocage de la respiration à la remontée entraîne une surpression intrathoracique qui dépasse l'élasticité pulmonaire et déchire le tissu alvéolaire."
+  },
+  {
+    "id": 213,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Comment se caractérise l'accident de décompression (ADD) médullaire (moelle épinière) ?",
+    "options": ["Vertiges et nystagmus", "Lombalgie en ceinture, paraplégie ou parésie des membres inférieurs, et rétention urinaire", "Céphalées modérées et fatigue", "Douleur vive à la mâchoire"],
+    "reponse_index": 1,
+    "explication": "L'ADD médullaire bloque la micro-circulation de la moelle épinière par embolie gazeuse, provoquant des douleurs lombaires et des déficits moteurs/sensitifs."
+  },
+  {
+    "id": 214,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Quel mécanisme explique le barotraumatisme de l'oreille interne lors d'un effort de Valsalva appuyé ?",
+    "options": ["La déchirure du tympan vers l'extérieur", "Le coup de piston étrier/étrier entraînant la rupture de la fenêtre ovale ou ronde et une fuite de périlymphe", "L'accumulation d'azote dans le canal auditif externe", "La compression du nerf trijumeau"],
+    "reponse_index": 1,
+    "explication": "Un Valsalva forcé sur une trompe obstruée crée une hyperpression veineuse et cérébrale qui peut rompre la fenêtre ovale ou ronde."
+  },
+  {
+    "id": 215,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Pourquoi la survenue d'une hypothermie augmente-t-elle significativement le risque d'accident de décompression ?",
+    "options": ["Elle réduit la quantité d'oxygène dans le bloc", "La vasoconstriction périphérique ralentit l'élimination de l'azote dissous dans les tissus cutanés et musculaires", "Elle modifie la densité du néoprène", "Elle bloque le fonctionnement de l'ordinateur de plongée"],
+    "reponse_index": 1,
+    "explication": "Le froid entraîne une vasoconstriction des territoires périphériques, ce qui diminue le débit sanguin local et gène la désaturation de l'azote."
+  },
+  {
+    "id": 216,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Quels sont les effets de la crise hypercapnique sur l'apparition de la narcose à l'azote ?",
+    "options": ["Elle annule les effets de la narcose", "Le CO2 potentialise les effets de la narcose en favorisant la vasodilatation cérébrale et l'action dépressive sur le système nerveux", "Elle protège les neurones", "Elle bloque la diffusion des gaz"],
+    "reponse_index": 1,
+    "explication": "L'accumulation de CO2 (essoufflement) renforce très fortement la sensibilité du cerveau à la narcose azotée."
+  },
+  {
+    "id": 217,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Quel est le risque lié à une remontée rapide chez un plongeur porteur d'un Foramen Ovale Perméable (FOP) ?",
+    "options": ["Une surpression dentaire", "Le passage direct de microbulles du cœur droit vers le cœur gauche (shunt) sans filtration pulmonaire, risquant un ADD artériel", "Un blocage de l'inflateur", "Un pincement du masque"],
+    "reponse_index": 1,
+    "explication": "Le FOP permet aux bulles circulantes veineuses d'outrepasser le filtre pulmonaire et de passer directement dans la circulation systémique ou cérébrale."
+  },
+  {
+    "id": 218,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Comment se traduit l'effet Lorrain Smith lors d'expositions très prolongées à une PpO2 élevée ?",
+    "options": ["Crise convulsive brutale", "Toxicité pulmonaire se traduisant par une inflammation, des brûlures rétrosternales et une réduction de la capacité vitale", "Crampes aux mollets", "Perte de vision nocturne"],
+    "reponse_index": 1,
+    "explication": "L'effet Lorrain Smith concerne l'atteinte pulmonaire chronique consécutive à l'accumulation de doses toxiques d'oxygène sur une longue durée."
+  },
+  {
+    "id": 219,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Pourquoi la déshydratation est-elle un facteur aggravant majeur dans la genèse d'un accident de décompression ?",
+    "options": ["Elle fait perdre l'équilibre au plongeur", "Elle diminue le volume plasmatique (hémoconcentration), augmente la viscosité sanguine et altère la microcirculation", "Elle empêche d'équilibrer les oreilles", "Elle bloque le détendeur"],
+    "reponse_index": 1,
+    "explication": "Un sang plus visqueux circule mal dans le réseau capillaire, ce qui ralentit considérablement le dégazage des tissus."
+  },
+  {
+    "id": 220,
+    "niveau": "Ma décompression",
+    "theme": "Physiopathologie & Situations Critiques",
+    "question": "Quelle est la conduite à tenir immédiate lors de l'apparition de prodromes de crise hyperoxique (effet Paul Bert) sous l'eau ?",
+    "options": ["Descendre immédiatement plus bas", "Remonter doucement vers une zone moins profonde pour diminuer la PpO2 et prévenir la phase convulsive", "Passer sur l'octo du binôme sans changer de profondeur", "Enlever son masque"],
+    "reponse_index": 1,
+    "explication": "Réduire la profondeur réduit instantanément la PpO2 respirée et stoppe le processus de toxicité hyperoxique du système nerveux central."
+  },
+  {
+    "id": 221,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Dans les modèles de décompression haldaniens, qu'appelle-t-on la 'période' (ou T 1/2) d'un tissu ?",
+    "options": ["Le temps nécessaire pour consommer la moitié du bloc d'air", "Le temps nécessaire à un tissu pour se saturer ou se désaturer à 50% de la variation de pression partielle du gaz", "La durée maximale autorisée pour un palier", "Le temps de remontée de la profondeur max jusqu'au premier palier"],
+    "reponse_index": 1,
+    "explication": "La période est la constante de temps propre à chaque compartiment tissulaire pour fixer son taux d'absorption ou d'élimination de l'inertie gazeuse à 50%."
+  },
+  {
+    "id": 222,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Qu'est-ce que le coefficient de sursaturation critique (M-value ou Sc) selon le modèle de Haldane ?",
+    "options": ["Le rapport maximal tolérable entre la pression d'azote dans le tissu et la pression ambiante sans dégazage anarchique", "La quantité maximale d'oxygène tolérée dans le sang", "Le nombre de bulles détectables par doppler en surface", "Le pourcentage d'azote contenu dans un mélange Nitrox"],
+    "reponse_index": 0,
+    "explication": "La M-value définit le seuil maximal de sursaturation au-delà duquel les bulles d'azote se forment de façon critique dans un compartiment donné."
+  },
+  {
+    "id": 223,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Quelle est la différence fondamentale entre un compartiment dit 'directeur' et les autres compartiments lors d'une remontée ?",
+    "options": ["Le compartiment directeur est le seul à contenir de l'oxygène", "C'est le compartiment qui impose la profondeur et la durée du premier palier à effectuer car sa M-value est atteinte en premier", "C'est le compartiment qui se désature le plus vite en surface", "C'est le compartiment associé au système osseux uniquement"],
+    "reponse_index": 1,
+    "explication": "Le compartiment directeur est celui dont la tension de gaz dissous atteint en premier la limite critique, dictant ainsi la conduite de la décompression."
+  },
+  {
+    "id": 224,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "En modélisation algorithmique (ex: Bühlmann ZHL-16), à quoi servent les Facteurs de Gradient (GF Low / GF High) ?",
+    "options": ["À modifier la vitesse de rotation de l'hélice du bateau", "À réduire arbitrairement les M-values pour introduire une marge de sécurité et durcir la décompression", "À augmenter la limite de profondeur maximale du Nitrox", "À calculer la réserve respiratoire de sécurité en surface"],
+    "reponse_index": 1,
+    "explication": "Les GF permettent de personnaliser la tolérance à la sursaturation en réduisant les seuils maximaux autorisés par le modèle théorique."
+  },
+  {
+    "id": 225,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Combien de périodes faut-il théoriquement à un compartiment pour atteindre une saturation (ou désaturation) quasi complète (98,4%) ?",
+    "options": ["3 périodes", "4 périodes", "6 périodes", "10 périodes"],
+    "reponse_index": 2,
+    "explication": "À chaque période, la différence restante est divisée par 2. Au bout de 6 périodes (1/2^6 = 1,56% restant), la saturation atteint 98,44%."
+  },
+  {
+    "id": 226,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Quelle est la particularité des modèles thématiques à bulles (type VPM ou RGBM) par rapport aux modèles haldaniens traditionnels ?",
+    "options": ["Ils ne prennent pas en compte l'azote", "Ils modélisent la présence de micro-noyaux gazeux et prévoient des paliers plus profonds pour limiter la croissance des bulles", "Ils sont réservés à la plongée en apnée", "Ils ne nécessitent jamais de paliers de sécurité"],
+    "reponse_index": 1,
+    "explication": "Les modèles à bulles gèrent la phase gazeuse dès sa germination (micro-bulles) pour limiter leur expansion avant d'atteindre les paliers peu profonds."
+  },
+  {
+    "id": 227,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Quel est l'effet de l'utilisation de l'oxygène pur au palier de 6 m ou 3 m sur le temps de décompression ?",
+    "options": ["Il augmente le temps de palier de 50%", "Il accélère l'élimination de l'azote en augmentant la fenêtrage d'oxygène ('O2 window') et réduit la durée totale de décompression", "Il n'a aucun effet sur les compartiments lents", "Il réinjecte de l'azote dans les tissus courts"],
+    "reponse_index": 1,
+    "explication": "L'absence d'azote inspiré crée une différence de pression partielle maximale (fenêtre d'oxygène) favorisant le dégazage tissulaire."
+  },
+  {
+    "id": 228,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Pourquoi la vitesse de remontée recommandée entre le fond et le premier palier a-t-elle été réduite au fil des évolutions réglementaires ?",
+    "options": ["Pour économiser les batteries de l'ordinateur", "Pour éviter l'apparition de microbulles circulantes consécutives à une dépressurisation trop rapide des compartiments très courts", "Pour laisser aux poissons le temps de s'écarter", "Pour ralentir la consommation d'air"],
+    "reponse_index": 1,
+    "explication": "Une remontée trop rapide transforme le gaz dissous dans les compartiments très rapides directement en phase gazeuse (bulles silencieuses)."
+  },
+  {
+    "id": 229,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Pourquoi les plongées successives nécessitent-elles une majoration ou un calcul d'azote résiduel ?",
+    "options": ["Parce que le bloc s'est détérioré entre les deux plongées", "Parce que les compartiments lents n'ont pas achevé leur désaturation complète pendant l'intervalle de surface", "Parce que le sang est plus chaud lors de la deuxième plongée", "Parce que le détendeur conserve une pression interne"],
+    "reponse_index": 1,
+    "explication": "L'azote résiduel accumulé lors de la première immersion s'ajoute à l'azote réabsorbé pendant la seconde plongée."
+  },
+  {
+    "id": 230,
+    "niveau": "Ma décompression",
+    "theme": "Physiologie & Modélisation de la Décompression",
+    "question": "Quel compartiment tissulaire est théoriquement impliqué dans la survenue d'un accident de décompression ostéo-articulaire (bends) ?",
+    "options": ["Un compartiment ultra-court (1 à 5 minutes)", "Un compartiment long (80 à 240 minutes et plus)", "Le compartiment sanguin uniquement", "Aucun compartiment tissulaire"],
+    "reponse_index": 1,
+    "explication": "Les tendons, articulations et tissus osseux sont peu vascularisés (compartiments lents/longs) et mettent du temps à éliminer leur azote."
+  },
+  {
+    "id": 231,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Lors d'une assistance sur un plongeur inconscient à 30 m, quelle est la priorité absolue durant la phase de remontée ?",
+    "options": ["Vider complètement le gilet de la victime", "Maintenir les voies aériennes ouvertes en légère extension de tête tout en contrôlant la vitesse de remontée", "Gonfler le parachute de secours au fond", "Retirer les palmes du plongeur"],
+    "reponse_index": 1,
+    "explication": "La liberté des voies respiratoires empêche la surpression pulmonaire lors de la dilatation de l'air pulmonaire de la victime."
+  },
+  {
+    "id": 232,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Quelle est la méthode recommandée pour tracter un plongeur inconscient en surface sur une longue distance ?",
+    "options": ["Le tirer par les tuyaux de détendeur", "Maintien tête hors de l'eau (prise menton/nuque ou par le col du gilet), victime sur le dos, tractage en palmage dorsal", "Le pousser en immersion ventrale", "L'attacher au bout du bateau"],
+    "reponse_index": 1,
+    "explication": "La position dorsale sécurisée garantit le maintien des voies aériennes de la victime constamment au-dessus du clapot."
+  },
+  {
+    "id": 233,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Pourquoi la mise sous oxygénothérapie normobare à 100% (15 L/min au masque à haute concentration) est-elle l'action de secourisme prioritaire lors d'un ADD ?",
+    "options": ["Pour faire baisser la température corporelle", "Pour créer un gradient de pression d'azote maximal favorisant le dégazage des bulles et réoxygéner les tissus ischémies", "Pour assécher les voies aériennes", "Pour éviter l'utilisation du BAVU"],
+    "reponse_index": 1,
+    "explication": "Inhaler de l'O2 pur accélère l'élimination de l'azote dissous et améliore l'oxygénation des zones cérébrales ou médullaires lésées."
+  },
+  {
+    "id": 234,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "En cas de prise en charge d'un plongeur en arrêt cardio-respiratoire sur le pont du bateau, quelle est la séquence d'intervention avec DAE ?",
+    "options": ["Poser directement les électrodes sur le néoprène mouillé", "Sécher le thorax de la victime, placer les électrodes DAE, suivre les instructions vocales et alterner 30 compressions / 2 insufflations", "Choquer en continu sans pratiquer de massage", "Attendre l'arrivée du médecin sans masser"],
+    "reponse_index": 1,
+    "explication": "Le séchage du thorax évite les arcs électriques en surface et garantit la précision de la défibrillation associée à la RCP."
+  },
+  {
+    "id": 235,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Quel est le rôle du clapet anti-retour présent sur le masque à haute concentration du kit d'oxygénothérapie ?",
+    "options": ["Éviter l'entrée d'eau de mer", "Empêcher l'air expiré chargé de CO2 de se remélanger avec l'oxygène pur du sac réservoir", "Bloquer le débit d'oxygène si la bouteille est vide", "Régler la pression de l'O2"],
+    "reponse_index": 1,
+    "explication": "Le clapet garantit que la victime respire une fraction inspirée en oxygène (FiO2) proche de 100% sans réinspiration de gaz vicié."
+  },
+  {
+    "id": 236,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Lors d'un héliportage de secours pour un accidenté de plongée, quelle est la consigne de sécurité transmise au pilote concernant l'altitude de vol ?",
+    "options": ["Voler le plus haut possible pour aller plus vite", "Maintenir une altitude de vol basse (< 300 mètres ou cabine pressurisée à 1 atm) pour éviter l'effet de la baisse de pression sur les bulles", "Faire des paliers en vol", "Couper la climatisation de l'appareil"],
+    "reponse_index": 1,
+    "explication": "Une prise d'altitude augmente la dépression barométrique, ce qui dilaterait les bulles d'azote et aggraverait l'ADD."
+  },
+  {
+    "id": 237,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Pourquoi est-il fortement déconseillé de réimmerger sous l'eau un plongeur victime d'un accident de décompression ('méthode sauvage') ?",
+    "options": ["Car la combinaison est déjà trempée", "Car cela expose la victime à la syncope, la noyade, l'hypothermie et à un sur-accident de décompression imprévisible", "Car cela épuise les réserves d'air du club", "Parce que les poissons sont attirés par les blessés"],
+    "reponse_index": 1,
+    "explication": "La recompression en immersion est incontrôlable, dangereuse et formellement proscrite au profit de l'évacuation hyperbare médicalisée."
+  },
+  {
+    "id": 238,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Quelle information cruciale doit figurer sur la fiche d'évacuation transmise au centre de coordination des secours (DAN / 112) ?",
+    "options": ["Le prix d'achat de la combinaison de la victime", "L'historique exact de la plongée (profondeur, temps, paliers), les symptômes constatés et les heures d'apparition", "La marque de l'ordinateur de plongée utilisé", "Le niveau d'équitation du plongeur"],
+    "reponse_index": 1,
+    "explication": "Les médecins hyperbares ont besoin du profil précis d'immersion et de la chronologie clinique pour orienter le protocole de recompression."
+  },
+  {
+    "id": 239,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Comment adapter le sauvetage d'un plongeur en panique qui agrippe violemment l'encadrant en surface ?",
+    "options": ["Se laisser couler ou gonfler le gilet de la victime à distance tout en se désengageant pour reprendre le contrôle au calme", "Lui donner un coup de poing", "Enlever son propre détendeur", "L'immerger de force sans gilet"],
+    "reponse_index": 0,
+    "explication": "S'immerger légèrement permet de se libérer de la prise d'un plongeur paniqué en surface, la personne paniquée cherchant spontanément le haut."
+  },
+  {
+    "id": 240,
+    "niveau": "Ma décompression",
+    "theme": "Techniques de Sauvetage, Matériel & Organisation Secours",
+    "question": "Quel est l'intérêt de la position latérale de sécurité (PLS) pour une victime d'accident subaquatique inconsciente qui respire ?",
+    "options": ["Éviter qu'elle ne prenne un coup de soleil", "Maintenir la liberté des voies aériennes et éviter l'inhalation de vomissures en cas de reflux", "Améliorer le fonctionnement du détendeur", "Réchauffer plus vite le corps"],
+    "reponse_index": 1,
+    "explication": "La PLS prévient l'obstruction de la trachée par la langue ou par des liquides gastriques chez la victime inconsciente qui respire."
+  },
+  {
+    "id": 241,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "En cas d'interruption accidentelle du palier de sécurité (ex: remontée rapide au-dessus de 3m) sans symptôme, quel est le protocole standard à appliquer si le bloc le permet ?",
+    "options": ["Redescendre immédiatement à 20 mètres pendant 10 minutes", "Se immerger au niveau du palier interrompu dans un délai de 3 minutes et accomplir la totalité du palier majoré selon la procédure fédérale", "Rentrera la maison et prendre un aspirine", "Ne rien faire et attendre 1 heure"],
+    "reponse_index": 1,
+    "explication": "La réimmersion rapide (en moins de 3 minutes) permet de purger le gaz piégé avant l'apparition de bulles symptomatiques."
+  },
+  {
+    "id": 242,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "Pourquoi la prise d'un vol commercial est-elle strictement interdite immédiatement après une plongée avec paliers ?",
+    "options": ["À cause du bruit des réacteurs sur le tympan", "La baisse de la pression atmosphérique en cabine (équivalente à 1800-2400m) majore le coefficient de sursaturation critique et risque de déclencher un ADD", "Parce que l'air dans l'avion est trop sec", "Parce que l'ordinateur de plongée s'éteint en altitude"],
+    "reponse_index": 1,
+    "explication": "La dépression barométrique en altitude augmente brutalement le rapport P_tissu / P_ambiant, dépassant les M-values."
+  },
+  {
+    "id": 243,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "Quel est l'effet physiologique d'un effort physique intense immédiatement après la réalisation des paliers de décompression ?",
+    "options": ["Il accélère l'élimination bénéfique de l'azote", "Il augmente le débit cardiaque et la pression veineuse, favorisant l'ouverture du FOP et la nucléation de nouvelles bulles", "Il réduit la fatigue musculaire", "Il stabilise la température corporelle"],
+    "reponse_index": 1,
+    "explication": "L'effort post-plongée provoque des turbulences musculaires et vasculaires qui facilitent la transformation de l'azote dissous en phase gazeuse."
+  },
+  {
+    "id": 244,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "Comment varie la durée globale des paliers de décompression lors d'une plongée en altitude (lac de montagne) par rapport à la mer ?",
+    "options": ["Les paliers sont identiques quelle que soit l'altitude", "Les paliers sont majorés car la pression atmosphérique de surface est plus faible, ce qui augmente le rapport de sursaturation à la remontée", "Les paliers sont supprimés", "Les paliers sont effectués plus profondément sous l'eau uniquement"],
+    "reponse_index": 1,
+    "explication": "En altitude, la pression de surface P0 étant inférieure à 1 bar, les profondeurs équivalentes et la décompression doivent être adaptées (tables ou ordi mode altitude)."
+  },
+  {
+    "id": 245,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "Quel gaz est privilégié pour réaliser une décompression optimale lors d'une plongée aux mélanges Trimix ?",
+    "options": ["Le Hélium pur", "L'Oxygène pur ou un mélange sur-oxygéné (Nitrox de décompression) aux paliers peu profonds", "L'Air comprimé classique", "Le Monoxyde de carbone"],
+    "reponse_index": 1,
+    "explication": "L'O2 ou les Nitrox hyperoxiques permettent de créer une 'fenêtre oxygène' maximale pour chasser l'hélium et l'azote dissous."
+  },
+  {
+    "id": 246,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "Que signifie la notion de 'isobaric counter-diffusion' (contre-diffusion isobare) en décompression aux gaz mixtes ?",
+    "options": ["Un échange thermique entre la combinaison et l'eau", "Un phénomène où deux gaz inertes (ex: Hélium et Azote) diffusent en sens inverse à des vitesses différentes, risquant de créer des bulles sans changement de profondeur", "La consommation constante d'air au palier", "L'équilibre de pression dans les oreilles à profondeur fixe"],
+    "reponse_index": 1,
+    "explication": "Si on passe d'un gaz respiré à diffusion lente vers un gaz à diffusion rapide sans changer de profondeur, la charge tissulaire totale peut dépasser la saturation autorisée."
+  },
+  {
+    "id": 247,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "En cas de panne d'air du binôme lors de la phase de palier à 3 mètres, quelle est la procédure prioritaire ?",
+    "options": ["Faire remonter immédiatement le binôme seul en surface", "Partager son deuxième étage (ou son détendeur de secours) tout en maintenant la profondeur de palier", "Abandonner son matériel pour remonter plus vite", "S'immerger plus bas pour chercher de l'air"],
+    "reponse_index": 1,
+    "explication": "L'assistance au palier par partage de gaz préserve la sécurité de décompression des deux plongeurs."
+  },
+  {
+    "id": 248,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "Pourquoi préconise-t-on de maintenir le corps bien à plat (horizontal) pendant les paliers de décompression ?",
+    "options": ["Pour mieux voir la faune sous-marine", "Pour uniformiser la pression hydrostatique sur l'ensemble du corps et éviter les gradients de pression entre la tête et les pieds", "Pour avancer plus vite sous l'eau", "Pour éviter d'abîmer les palmes"],
+    "reponse_index": 1,
+    "explication": "La position horizontale garantit une pression ambiante homogène sur tout le réseau vasculaire et optimise le dégazage."
+  },
+  {
+    "id": 249,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "Quel est l'impact de l'âge et de la masse graisseuse d'un plongeur sur le protocole de décompression suggéré par les experts ?",
+    "options": ["Aucun impact sur la vitesse de dégazage", "L'azote étant lipophile, les tissus adipeux accumulent plus de gaz et le restituent lentement, justifiant une marge de sécurité accrue (GF durs)", "Les personnes âgées désaturent deux fois plus vite", "Il faut supprimer tous les paliers"],
+    "reponse_index": 1,
+    "explication": "Le tissu adipeux présente une faible vascularisation et une forte solubilité pour l'azote, constituant un réservoir à dégazage très lent."
+  },
+  {
+    "id": 250,
+    "niveau": "Ma décompression",
+    "theme": "Gestion des Paliers & Protocoles Spécifiques",
+    "question": "Pourquoi la consommation d'alcool avant ou après une plongée altère-t-elle la qualité de la décompression ?",
+    "options": ["L'alcool refroidit l'air du bloc", "L'alcool induit une déshydratation, une vasodilatation périphérique anormale et altère la perméabilité membranaire", "L'alcool annule la pression partielle de l'oxygène", "L'alcool rend les ordinateurs de plongée inopérants"],
+    "reponse_index": 1,
+    "explication": "La déshydratation provoquée par l'alcool favorise l'hémoconcentration et perturbe la micro-circulation indispensable au dégazage."
+  }
 ]
+
