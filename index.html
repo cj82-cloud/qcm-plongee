@@ -202,6 +202,26 @@
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
+    /* Style pour la carte d'avertissement */
+.intro-disclaimer {
+  border-left: 4px solid var(--primary);
+  background-color: #f1f5f9;
+}
+
+.intro-disclaimer h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: var(--nav-bg);
+}
+
+.intro-disclaimer p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+    
     @media (max-width: 600px) {
       .hero-banner {
         padding: 30px 15px;
@@ -234,6 +254,17 @@
   <main>
     <!-- PAGE HOME / QUIZ -->
     <div id="page-home" class="page-content active">
+        <!-- AVERTISSEMENT / DISCLAIMER -->
+<div class="card intro-disclaimer">
+  <h3>⚠️ Avertissement & Modalités</h3>
+  <p>
+    Ce site est un outil d'entraînement autonome conçu pour vous aider à réviser vos examens théoriques. 
+    Bien que l'ensemble des questions et réponses ait fait l'objet de vérifications attentives, des erreurs ou coquilles peuvent subsister. 
+    En cas de doute ou de divergence, <strong>seule la documentation officielle transmise par la LIFRAS et vos moniteurs fait foi</strong>.
+  </p>
+</div>
+
+      
       <div class="card filters">
         <div>
           <label for="niveau">Niveau de Brevet :</label>
@@ -243,6 +274,7 @@
             <option value="N3">Brevet 3* (Plongeur Encadrant)</option>
           </select>
         </div>
+
 
         <div>
           <label for="theme">Thème :</label>
