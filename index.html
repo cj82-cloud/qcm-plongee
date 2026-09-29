@@ -327,13 +327,258 @@
       </div>
     </div>
 
-    <!-- PAGE DOC -->
-    <div id="page-doc" class="page-content">
-      <div class="card">
-        <h2>Documentation & Fiches</h2>
-        <p>Les fiches de cours seront affichées ici.</p>
-      </div>
+    Voici le code HTML propre et prêt à l'emploi à intégrer dans la div `<div id="page-doc" class="page-content">` de votre fichier `index.html`.
+
+Il utilise une structure en cartes claires avec des listes à puces et des tableaux CSS réactifs, parfaitement accordés au style graphique de votre site.
+
+### Code à remplacer dans `index.html` :
+
+```html
+<!-- PAGE DOC -->
+<div id="page-doc" class="page-content">
+  <style>
+    .doc-section {
+      margin-bottom: 25px;
+    }
+    .doc-section h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    .doc-table th, .doc-table td {
+      border: 1px solid var(--border);
+      padding: 10px 12px;
+      text-align: left;
+    }
+    .doc-table th {
+      background-color: #f1f5f9;
+      color: var(--nav-bg);
+      font-weight: bold;
+    }
+    .doc-theme-group {
+      margin-bottom: 15px;
+    }
+    .doc-theme-title {
+      font-weight: bold;
+      color: var(--nav-bg);
+      margin-bottom: 5px;
+    }
+    .doc-list {
+      margin: 5px 0 15px 20px;
+      padding: 0;
+    }
+    .doc-list li {
+      margin-bottom: 4px;
+    }
+  </style>
+
+  <!-- Récapitulatif Général -->
+  <div class="card doc-section">
+    <h2>📋 Récapitulatif de la Banque de Questions (200 Questions)</h2>
+    <div style="overflow-x: auto;">
+      <table class="doc-table">
+        <thead>
+          <tr>
+            <th>Niveau</th>
+            <th>Tranche</th>
+            <th>Thématiques principales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>N1 (1★)</strong></td>
+            <td>Q1 à Q50</td>
+            <td>Notions de base, anatomie, matériel simple, sécurité & communication</td>
+          </tr>
+          <tr>
+            <td><strong>N2 (2★)</strong></td>
+            <td>Q51 à Q100</td>
+            <td>Pressions/Gaz, ADD & physiopathologie, tables/ordinateurs, Nitrox, secourisme</td>
+          </tr>
+          <tr>
+            <td><strong>N3 (3★)</strong></td>
+            <td>Q101 à Q150</td>
+            <td>Calculs avancés, pathologies complexes, autonomie à 40m, matériel spécifique, CPR/BAVU</td>
+          </tr>
+          <tr>
+            <td><strong>N4 (4★)</strong></td>
+            <td>Q151 à Q200</td>
+            <td>Réglementation/Responsabilités, pédagogie, direction de plongée, analyse de cas</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+
+  <!-- Brevet 1* -->
+  <div class="card doc-section">
+    <h2>🥽 Niveau N1 (Plongeur 1★) — Questions 1 à 50</h2>
+    
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Physique & Notions de Base (Q1 à Q10)</div>
+      <ul class="doc-list">
+        <li>Notions de pression (atmosphérique, hydrostatique, absolue), loi de Boyle-Mariotte, flottabilité/densité de l'eau, conductivité thermique, réfraction et absorption sélective des couleurs.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Anatomie & Barotraumatismes (Q11 à Q20)</div>
+      <ul class="doc-list">
+        <li>Prévention des barotraumatismes (oreilles, trompe d'Eustache, manœuvre de Valsalva, rhume), risque de surpression pulmonaire à la remontée et gestion du plaquage de masque.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Matériel & Équipement (Q21 à Q30)</div>
+      <ul class="doc-list">
+        <li>Rôle du détendeur (1er et 2nd étages), manomètre HP, pression de service des blocs, gilet stabilisateur, octopus jaune et vérifications d'avant-plongée.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Procédures de Sécurité & Communication (Q31 à Q40)</div>
+      <ul class="doc-list">
+        <li>Signes conventionnels sous l'eau (OK, panne d'air, remontée), procédure de perte de palanquée, vitesse de remontée, palier de sécurité à 5 m, vidage de masque et travail en binôme.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Environnement, Organisation & Santé (Q41 à Q50)</div>
+      <ul class="doc-list">
+        <li>Hygiène de vie, respect du milieu naturel (gestion de la "touille"), prérogatives du N1 (20 m encadré, EAR/EAO), hydratation, rôle du chef de palanquée et signaux de rappel.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Brevet 2* -->
+  <div class="card doc-section">
+    <h2>🥽 Niveau N2 (Plongeur 2★) — Questions 51 à 100</h2>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Physique & Calculs de Pression / Gaz (Q51 à Q60)</div>
+      <ul class="doc-list">
+        <li>Calculs de pressions absolues et partielles (P<sub>O2</sub>, P<sub>N2</sub>), autonomie/volumes d'air disponibles, consommation en profondeur, lois de Henry, Gay-Lussac et variations de volume du gilet.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Accidents de Plongée & Physiopathologie (Q61 à Q70)</div>
+      <ul class="doc-list">
+        <li>Accident De Décompression (ADD), facteurs favorisants, symptômes (puces/moutons, atteintes neurologiques), narcose à l'azote (P<sub>N2</sub>), hypercapnie/essoufflement et hypothermie.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Tables & Ordinateurs (MaDeco LIFRAS) (Q71 à Q80)</div>
+      <ul class="doc-list">
+        <li>Notions de NDL, TTS, gestion des profils (interdiction des profils inverses), procédures en cas de panne d'ordinateur, intervalles de surface, efforts après plongée et délais de vol en avion.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Matériel, Nitrox & Orientation (Q81 à Q90)</div>
+      <ul class="doc-list">
+        <li>Mélanges Nitrox (Nx32, Nx36), Profondeur Maximale d'Utilisation (MOD), compatibilité O2 des équipements, orientation au compas (retour 180°), parachute de palier avec dévidoir/spool et outils de coupe.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Prévention, Secourisme & Prérogatives N2 (Q91 à Q100)</div>
+      <ul class="doc-list">
+        <li>Autonomie à 20 m (30 m sous conditions), secourisme dédié (oxygénothérapie à 15 L/min, hydratation, BAVU), tractage de surface, appel des secours (112/DAN) et interdiction de l'aspirine.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Brevet 3* -->
+  <div class="card doc-section">
+    <h2>🥽 Niveau N3 (Plongeur 3★) — Questions 101 à 150</h2>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Physique & Calculs Avancés (Q101 à Q110)</div>
+      <ul class="doc-list">
+        <li>Planification de consommation multi-niveaux, calculs de P<sub>O2</sub>/P<sub>N2</sub> à 40 m, Profondeur Équivalente Azote (END), loi de Dalton, densité de l'air, variations de la poussée d'Archimède (écrasement du néoprène) et solubilité.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Physiopathologie & Pathologies Complexes (Q111 à Q120)</div>
+      <ul class="doc-list">
+        <li>Toxicité de l'oxygène (effet Paul Bert / crise convulsive vs Lorrain Smith), Foramen Ovale Perméable (FOP), Barotraumatisme de l'Oreille Interne vs ADD vestibulaire, Taravana, Œdème Aigu du Poumon (OAP) d'immersion et ostéonécrose.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Gestion de Palanquée & Organisation à 40 m (Q121 à Q130)</div>
+      <ul class="doc-list">
+        <li>Prérogatives à 40 m (autonomie), briefings complets, gestion des courants/plongées dérivantes, prévention des paniques, spécificités des plongées de nuit en carrière et fiches d'évacuation.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Matériel Spécifique & Techniques Avancées (Q131 à Q140)</div>
+      <ul class="doc-list">
+        <li>Détendeurs compensés, gestion du givrage (2 sorties indépendantes en eau froide), blocs de décompression au Nitrox 50, vêtements étanches (gestion des inflateurs et rétention d'air) et parachutes à soupape.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Secourisme Subaquatique, CPR & BAVU (Q141 à Q150)</div>
+      <ul class="doc-list">
+        <li>Remontée assistée d'un syncope depuis 30 m, libération des voies aériennes, utilisation du BAVU et du Défibrillateur (DAE) en milieu aquatique, héliportage, embolie cérébrale et rapport d'accident.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Brevet 4* -->
+  <div class="card doc-section">
+    <h2>🥽 Niveau N4 (Assistant Moniteur / 4★) — Questions 151 à 200</h2>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Réglementation, Textes Fédéraux & Responsabilités (Q151 à Q160)</div>
+      <ul class="doc-list">
+        <li>Prérogatives du 4★/Assistant Moniteur, responsabilités civile et pénale, obligation de moyens, cadre du Manuel de l'Instructeur LIFRAS (MIL), matériel de secours obligatoire sur site, gestion du refus de consignes et équivalences CMAS.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Pédagogie & Méthodologie d'Enseignement Pratique (Q161 à Q180)</div>
+      <ul class="doc-list">
+        <li>Déroulement d'un briefing pédagogique, démonstration subaquatique (gestes ralentis et décomposés), correction du sur-lestage/ventilation, apprentissage progressif du parachute, évaluation formative vs sommative et posture d'exemplarité du cadre.</li>
+        <li><strong>Gestion de l'anxiété & Stress :</strong> Détection des signes précurseurs d'angoisse en surface (hyperventilation, gestes désordonnés, regard fixe) et apaisement sous l'eau.</li>
+        <li><strong>Pédagogie de l'échec :</strong> Analyse des erreurs d'exécution (ex. placement des mains au vidage de masque), retours bienveillants et décomposition progressive.</li>
+        <li><strong>Sécurité des exercices à risque :</strong> Positionnement de l'encadrant lors des remontées syncope (contact visuel direct, intervention immédiate).</li>
+        <li><strong>Conduite de débriefing :</strong> Structure d'un retour constructif (expression de l'élève, points positifs, correction prioritaire).</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Organisation, Direction de Plongée & Sécurité de Site (Q181 à Q190)</div>
+      <ul class="doc-list">
+        <li><strong>Rôle du Directeur de Plongée (DP) :</strong> Analyse du site (météo, marée, courant), composition des palanquées selon compétences/prérogatives, fixation des paramètres maxi.</li>
+        <li><strong>Fiche de sécurité :</strong> Registre des immersions (heures, pressions initiale/finale, temps, paliers).</li>
+        <li><strong>Logistique de secours :</strong> Vérification de l'oxygène (pression mini, masques HC, BAVU) et moyens de communication (GSM/VHF).</li>
+        <li><strong>Incidents de surface :</strong> Prise en charge d'un plongeur en détresse, coordination des secours terrestres et héliportés.</li>
+      </ul>
+    </div>
+
+    <div class="doc-theme-group">
+      <div class="doc-theme-title">Physiologie Appliquée & Cas Cliniques Complexes (Q191 à Q200)</div>
+      <ul class="doc-list">
+        <li><strong>Analyse de profils d'accidents :</strong> Diagnostic différentiel entre Surpression Pulmonaire (immédiat en surface, crachats moussants, emphysème) et ADD (délai d'apparition, troubles neurologiques).</li>
+        <li><strong>Facteurs de risque cumulés :</strong> Froid, fatigue, effort physique subaquatique et déshydratation sur la saturation en azote.</li>
+        <li><strong>Prise en charge médicale avancée :</strong> Protocoles d'oxygénothérapie continue et hydratation orale/IV en attente du SMUR.</li>
+        <li><strong>Ethique & Exemplarité :</strong> Respect du milieu, respect des règles et posture d'accompagnement au club.</li>
+      </ul>
+    </div>
+  </div>
+</div>
   </main>
 
 <script>
