@@ -176,44 +176,40 @@
     .page-content { display: none; }
     .page-content.active { display: block; }
 
-/* Style du bandeau Accueil */
-.hero-banner {
-  /* Image d'arrière-plan de plongée libre de droits via Unsplash */
-  background: linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)), 
-              url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1600&q=80');
-  background-size: cover;
-  background-position: center;
-  color: white;
-  text-align: center;
-  padding: 60px 20px;
-  margin-bottom: 25px;
-  box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2);
-}
+    /* Style du bandeau Hero */
+    .hero-banner {
+      background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.65)), 
+                  url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+      margin-bottom: 25px;
+      box-shadow: inset 0 -5px 10px rgba(0,0,0,0.2);
+    }
 
-.hero-content h1 {
-  font-size: 2.2rem;
-  margin: 0 0 10px 0;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-}
+    .hero-content h1 {
+      font-size: 2.2rem;
+      margin: 0 0 10px 0;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    }
 
-.hero-content p {
-  font-size: 1.1rem;
-  margin: 0;
-  opacity: 0.9;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-}
+    .hero-content p {
+      font-size: 1.1rem;
+      margin: 0;
+      opacity: 0.9;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
 
-/* Ajustement pour mobile */
-@media (max-width: 600px) {
-  .hero-banner {
-    padding: 35px 15px;
-  }
-  .hero-content h1 {
-    font-size: 1.6rem;
-  }
-}
-
-    
+    @media (max-width: 600px) {
+      .hero-banner {
+        padding: 30px 15px;
+      }
+      .hero-content h1 {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -221,57 +217,58 @@
   <nav>
     <div class="nav-brand">🥽 Prépa LIFRAS</div>
     <ul class="nav-links">
-      <li><a href="#" class="active" onclick="navigate('home', event)">Home</a></li>
-      <li><a href="#" onclick="navigate('doc', event)">Documentation</a></li>
+      <li><a href="#" id="link-home" class="active" onclick="navigate('home', event)">Home</a></li>
+      <li><a href="#" id="link-doc" onclick="navigate('doc', event)">Documentation</a></li>
       <li><a href="https://www.lifras.be" target="_blank">LIFRAS ↗</a></li>
     </ul>
   </nav>
-  
-<!-- BANDEAU HERO (photos) -->
-<div class="hero-banner">
-  <div class="hero-content">
-    <h1>Préparation Théorique LIFRAS</h1>
-    <p>Entraînez-vous à l'examen théorique !</p>
+
+  <!-- BANDEAU HERO (photos) -->
+  <div class="hero-banner">
+    <div class="hero-content">
+      <h1>Préparation Théorique LIFRAS</h1>
+      <p>Entraînez-vous à l'examen théorique !</p>
+    </div>
   </div>
-</div>
-  
+
   <main>
     <!-- PAGE HOME / QUIZ -->
-<div class="card filters">
-  <div>
-    <label for="niveau">Niveau de Brevet :</label>
-    <select id="niveau">
-      <option value="N1">Brevet 1* (Plongeur Élémentaire)</option>
-      <option value="N2">Brevet 2* (Plongeur Autonome)</option>
-      <option value="N3">Brevet 3* (Plongeur Encadrant)</option>
-    </select>
-  </div>
+    <div id="page-home" class="page-content active">
+      <div class="card filters">
+        <div>
+          <label for="niveau">Niveau de Brevet :</label>
+          <select id="niveau">
+            <option value="N1">Brevet 1* (Plongeur Élémentaire)</option>
+            <option value="N2">Brevet 2* (Plongeur Autonome)</option>
+            <option value="N3">Brevet 3* (Plongeur Encadrant)</option>
+          </select>
+        </div>
 
-  <div>
-    <label for="theme">Thème :</label>
-    <select id="theme">
-      <option value="Tous">🎲 Tous les thèmes (Examen global)</option>
-      <option value="Physique appliquée">Physique appliquée</option>
-      <option value="Physiologie & Accidents">Physiologie & Accidents</option>
-      <option value="Matériel & Sécurité">Matériel & Sécurité</option>
-      <option value="Tables & Décompression">Tables & Décompression</option>
-    </select>
-  </div>
+        <div>
+          <label for="theme">Thème :</label>
+          <select id="theme">
+            <option value="Tous">🎲 Tous les thèmes (Examen global)</option>
+            <option value="Physique appliquée">Physique appliquée</option>
+            <option value="Physiologie & Accidents">Physiologie & Accidents</option>
+            <option value="Matériel & Sécurité">Matériel & Sécurité</option>
+            <option value="Tables & Décompression">Tables & Décompression</option>
+          </select>
+        </div>
 
-  <div>
-    <label for="taille-serie">Nombre de questions :</label>
-    <select id="taille-serie">
-      <option value="5">5 questions (Rapide)</option>
-      <option value="10" selected>10 questions (Standard)</option>
-      <option value="20">20 questions (Examen complet)</option>
-      <option value="999">Toutes les questions</option>
-    </select>
-  </div>
+        <div>
+          <label for="taille-serie">Nombre de questions :</label>
+          <select id="taille-serie">
+            <option value="5">5 questions (Rapide)</option>
+            <option value="10" selected>10 questions (Standard)</option>
+            <option value="20">20 questions (Examen complet)</option>
+            <option value="999">Toutes les questions</option>
+          </select>
+        </div>
 
-  <div>
-    <button class="cta" onclick="demarrerSérie()">Lancer le Quiz</button>
-  </div>
-</div>
+        <div>
+          <button class="cta" onclick="demarrerSérie()">Lancer le Quiz</button>
+        </div>
+      </div>
 
       <div class="card" id="quiz-box">
         <div id="loading">Chargement de la base de questions...</div>
@@ -312,61 +309,58 @@
     let indexActuel = 0;
     let score = 0;
 
-    // Chargement de questions.json
- window.addEventListener('DOMContentLoaded', () => {
-  // Réinitialisation des sélecteurs par défaut au rafraîchissement
-  document.getElementById('niveau').selectedIndex = 0;
-  document.getElementById('theme').selectedIndex = 0;
-  document.getElementById('taille-serie').selectedIndex = 1; // Option 10 questions par défaut
+    window.addEventListener('DOMContentLoaded', () => {
+      // S'assurer que la page d'accueil est affichée par défaut
+      navigate('home');
 
-  fetch('questions.json')
-    .then(res => res.json())
-    .then(data => {
-      baseDeQuestions = data;
-      document.getElementById('loading').style.display = 'none';
-      document.getElementById('quiz-content').style.display = 'block';
-      
-      // Réinitialiser la série dès le départ
-      demarrerSérie();
-    })
-    .catch(err => {
-      console.error(err);
-      document.getElementById('loading').innerText = "⚠️ Erreur : Impossible de charger questions.json";
+      // Réinitialisation des sélecteurs
+      document.getElementById('niveau').selectedIndex = 0;
+      document.getElementById('theme').selectedIndex = 0;
+      document.getElementById('taille-serie').selectedIndex = 1;
+
+      fetch('questions.json')
+        .then(res => res.json())
+        .then(data => {
+          baseDeQuestions = data;
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('quiz-content').style.display = 'block';
+          demarrerSérie();
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById('loading').innerText = "⚠️ Erreur : Impossible de charger questions.json";
+        });
     });
-});
 
- function demarrerSérie() {
-  const niv = document.getElementById('niveau').value;
-  const th = document.getElementById('theme').value;
-  const limite = parseInt(document.getElementById('taille-serie').value);
+    function demarrerSérie() {
+      const niv = document.getElementById('niveau').value;
+      const th = document.getElementById('theme').value;
+      const limite = parseInt(document.getElementById('taille-serie').value);
 
-  let filtrees = baseDeQuestions.filter(q => {
-    const matchNiveau = (q.niveau === niv);
-    const matchTheme = (th === "Tous" || q.theme === th);
-    return matchNiveau && matchTheme;
-  });
+      let filtrees = baseDeQuestions.filter(q => {
+        const matchNiveau = (q.niveau === niv);
+        const matchTheme = (th === "Tous" || q.theme === th);
+        return matchNiveau && matchTheme;
+      });
 
-  if (filtrees.length === 0) {
-    alert("Aucune question trouvée pour ce critère.");
-    return;
-  }
+      if (filtrees.length === 0) {
+        alert("Aucune question trouvée pour ce critère.");
+        return;
+      }
 
-  // --- Mélange aléatoire (tirage au sort)  ---
-  serieQuestions = filtrees.sort(() => 0.5 - Math.random()).slice(0, limite);
+      serieQuestions = filtrees.sort(() => 0.5 - Math.random()).slice(0, limite);
+      indexActuel = 0;
+      score = 0;
 
-  indexActuel = 0;
-  score = 0;
+      document.getElementById('results-box').style.display = 'none';
+      document.getElementById('quiz-content').style.display = 'block';
 
-  document.getElementById('results-box').style.display = 'none';
-  document.getElementById('quiz-content').style.display = 'block';
-
-  afficherQuestion();
-}
+      afficherQuestion();
+    }
 
     function afficherQuestion() {
       const q = serieQuestions[indexActuel];
       
-      // UI mise à jour
       document.getElementById('progression').innerText = `Question ${indexActuel + 1} / ${serieQuestions.length}`;
       document.getElementById('score-actuel').innerText = `Score : ${score} / ${indexActuel}`;
       document.getElementById('q-title').innerText = q.question;
@@ -375,7 +369,6 @@
       expBox.style.display = 'none';
       document.getElementById('btn-next').style.display = 'none';
 
-      // Affichage des options
       const optionsContainer = document.getElementById('q-options');
       optionsContainer.innerHTML = "";
 
@@ -392,7 +385,6 @@
       const q = serieQuestions[indexActuel];
       const tousLesBoutons = document.querySelectorAll('.option-btn');
       
-      // Désactiver tous les boutons pour empêcher de ré-répondre
       tousLesBoutons.forEach(b => b.disabled = true);
 
       const expBox = document.getElementById('q-explanation');
@@ -405,7 +397,6 @@
         expBox.innerHTML = "<strong>✅ Correct !</strong><br>" + q.explication;
       } else {
         btnClique.classList.add('incorrect');
-        // Marquer aussi la bonne réponse en vert
         tousLesBoutons[q.reponse].classList.add('correct');
         expBox.style.backgroundColor = 'var(--error-bg)';
         expBox.style.color = '#7f1d1d';
@@ -445,8 +436,16 @@
 
     function navigate(pageId, e) {
       if(e) e.preventDefault();
+      
+      // Masquer/Afficher les conteneurs de page
       document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-      document.getElementById(`page-${pageId}`).classList.add('active');
+      const targetPage = document.getElementById(`page-${pageId}`);
+      if(targetPage) targetPage.classList.add('active');
+
+      // Mise à jour de la classe active du menu nav
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      const activeLink = document.getElementById(`link-${pageId}`);
+      if(activeLink) activeLink.classList.add('active');
     }
   </script>
 </body>
