@@ -190,32 +190,41 @@
 
   <main>
     <!-- PAGE HOME / QUIZ -->
-    <div id="page-home" class="page-content active">
-      <div class="card filters">
-        <div>
-          <label for="niveau">Niveau de Brevet :</label>
-          <select id="niveau">
-            <option value="N1">Brevet 1*</option>
-            <option value="N2">Brevet 2*</option>
-            <option value="N3">Brevet 3*</option>
-          </select>
-        </div>
+<div class="card filters">
+  <div>
+    <label for="niveau">Niveau de Brevet :</label>
+    <select id="niveau">
+      <option value="N1">Brevet 1* (Plongeur Élémentaire)</option>
+      <option value="N2">Brevet 2* (Plongeur Autonome)</option>
+      <option value="N3">Brevet 3* (Plongeur Encadrant)</option>
+    </select>
+  </div>
 
-        <div>
-          <label for="theme">Thème :</label>
-          <select id="theme">
-            <option value="Tous">Tous les thèmes</option>
-            <option value="Physique appliquée">Physique appliquée</option>
-            <option value="Physiologie & Accidents">Physiologie & Accidents</option>
-            <option value="Matériel & Sécurité">Matériel & Sécurité</option>
-            <option value="Tables & Décompression">Tables & Décompression</option>
-          </select>
-        </div>
+  <div>
+    <label for="theme">Thème :</label>
+    <select id="theme">
+      <option value="Tous">🎲 Tous les thèmes (Examen global)</option>
+      <option value="Physique appliquée">Physique appliquée</option>
+      <option value="Physiologie & Accidents">Physiologie & Accidents</option>
+      <option value="Matériel & Sécurité">Matériel & Sécurité</option>
+      <option value="Tables & Décompression">Tables & Décompression</option>
+    </select>
+  </div>
 
-        <div>
-          <button class="cta" onclick="demarrerSérie()">Démarrer la série</button>
-        </div>
-      </div>
+  <div>
+    <label for="taille-serie">Nombre de questions :</label>
+    <select id="taille-serie">
+      <option value="5">5 questions (Rapide)</option>
+      <option value="10" selected>10 questions (Standard)</option>
+      <option value="20">20 questions (Examen complet)</option>
+      <option value="999">Toutes les questions</option>
+    </select>
+  </div>
+
+  <div>
+    <button class="cta" onclick="demarrerSérie()">Lancer le Quiz</button>
+  </div>
+</div>
 
       <div class="card" id="quiz-box">
         <div id="loading">Chargement de la base de questions...</div>
@@ -272,27 +281,35 @@
     });
 
     function demarrerSérie() {
-      const niv = document.getElementById('niveau').value;
-      const th = document.getElementById('theme').value;
+  const niv = document.getElementById('niveau').value;
+  const th = document.getElementById('theme').value;
+  const limite = parseInt(document.getElementById('taille-serie').value);
 
-      // Filtrer
-      let filtrees = baseDeQuestions.filter(q => q.niveau === niv && (th === "Tous" || q.theme === th));
+  // Filtrage :
+  // Si "Tous" est sélectionné, on prend TOUTES les questions du niveau choisi (tous thèmes confondus)
+  // Sinon, on filtre par niveau ET par thème spécifique
+  let filtrees = baseDeQuestions.filter(q => {
+    const matchNiveau = (q.niveau === niv);
+    const matchTheme = (th === "Tous" || q.theme === th);
+    return matchNiveau && matchTheme;
+  });
 
-      if (filtrees.length === 0) {
-        alert("Aucune question trouvée pour ce niveau/thème.");
-        return;
-      }
+  if (filtrees.length === 0) {
+    alert("Aucune question trouvée pour ce critère.");
+    return;
+  }
 
-      // Mélanger et prendre 10 questions max
-      serieQuestions = filtrees.sort(() => 0.5 - Math.random()).slice(0, 10);
-      indexActuel = 0;
-      score = 0;
+  // Mélange aléatoire (tirage au sort) et découpe selon la limite choisie
+  serieQuestions = filtrees.sort(() => 0.5 - Math.random()).slice(0, limite);
+  
+  indexActuel = 0;
+  score = 0;
 
-      document.getElementById('results-box').style.display = 'none';
-      document.getElementById('quiz-content').style.display = 'block';
-      
-      afficherQuestion();
-    }
+  document.getElementById('results-box').style.display = 'none';
+  document.getElementById('quiz-content').style.display = 'block';
+  
+  afficherQuestion();
+}
 
     function afficherQuestion() {
       const q = serieQuestions[indexActuel];
