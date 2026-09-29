@@ -1575,8 +1575,8 @@
   },
   {
     "id": 174,
-    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
     "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
     "question": "Que doit faire le DP en cas d'arrivée subite d'un orage violent ou d'un brouillard dense sur le site ?",
     "options": ["Déclencher le signal de rappel d'urgence sonore pour faire remonter toutes les palanquées et interrompre l'activité", "Laisser les plongées se terminer au fond", "Descendre rejoindre les groupes au fond", "Attendre que l'orage passe"],
     "reponse_index": 0,
