@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Préparation Brevets Plongée LIFRAS - Entraînement Gratuit</title>
+  <title>Prépa Brevets Plongée LIFRAS</title>
   <style>
     :root {
       --primary: #0284c7;
@@ -13,14 +13,14 @@
       --card-bg: #ffffff;
       --text: #1e293b;
       --border: #e2e8f0;
-      --success-bg: #f0fdf4;
+      --success-bg: #dcfce7;
       --success-border: #16a34a;
-      --error-bg: #fef2f2;
+      --error-bg: #fee2e2;
       --error-border: #dc2626;
     }
 
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background-color: var(--bg);
       color: var(--text);
       margin: 0;
@@ -28,7 +28,6 @@
       line-height: 1.6;
     }
 
-    /* BARRE DE NAVIGATION MODERNE */
     nav {
       background-color: var(--nav-bg);
       color: white;
@@ -39,16 +38,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     }
 
     .nav-brand {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: bold;
       color: #38bdf8;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
 
     .nav-links {
@@ -56,7 +51,6 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      gap: 10px;
     }
 
     .nav-links a {
@@ -65,139 +59,46 @@
       padding: 18px 15px;
       display: block;
       font-weight: 500;
-      font-size: 0.95rem;
-      transition: all 0.2s;
-      border-bottom: 3px solid transparent;
     }
 
-    .nav-links a:hover, .nav-links a.active {
+    .nav-links a.active {
       color: white;
-      border-bottom-color: #38bdf8;
-      background-color: rgba(255, 255, 255, 0.05);
+      border-bottom: 3px solid #38bdf8;
     }
 
-    /* Menu mobile (Burger) */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    /* CONTENEUR PRINCIPAL */
     main {
-      max-width: 800px;
-      margin: 30px auto;
-      padding: 0 20px;
+      max-width: 750px;
+      margin: 25px auto;
+      padding: 0 15px;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    h1 {
-      color: #0369a1;
-      margin-bottom: 5px;
-    }
-
-    /* GESTION DES PAGES DYNAMIQUES */
-    .page-content {
-      display: none;
-    }
-
-    .page-content.active {
-      display: block;
-      animation: fadeIn 0.3s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(5px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* COMPOSANTS CARTES ET FILTRES */
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 25px;
+      padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-
-/* Style des fiches de documentation */
-.fiche-card {
-  border-left: 5px solid var(--primary);
-  transition: all 0.2s ease;
-}
-
-.fiche-header {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.fiche-tag {
-  display: inline-block;
-  background: #e0f2fe;
-  color: #0369a1;
-  padding: 3px 8px;
-  border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.fiche-body {
-  display: none;
-  margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid var(--border);
-}
-
-.fiche-body.open {
-  display: block;
-}
-
-.btn-toggle-doc {
-  background: none;
-  border: none;
-  color: var(--primary);
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-  width: auto;
-  padding: 0;
-}
-
 
     .filters {
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 15px;
-      flex-wrap: wrap;
-      align-items: flex-end;
-    }
-
-    .filter-group {
-      flex: 1;
-      min-width: 200px;
+      align-items: end;
     }
 
     label {
       display: block;
       font-weight: 600;
-      margin-bottom: 6px;
       font-size: 0.9rem;
+      margin-bottom: 5px;
     }
 
     select, button {
       width: 100%;
-      padding: 12px;
-      border-radius: 8px;
+      padding: 10px;
+      border-radius: 6px;
       border: 1px solid var(--border);
       font-size: 1rem;
       box-sizing: border-box;
@@ -209,11 +110,20 @@
       border: none;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.2s;
     }
 
     button.cta:hover {
       background: var(--primary-hover);
+    }
+
+    .score-bar {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      color: #64748b;
+      margin-bottom: 10px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
     }
 
     .options-grid {
@@ -225,250 +135,249 @@
 
     .option-btn {
       background: #f1f5f9;
-      border: 1px solid #cbd5e1;
+      border: 2px solid #cbd5e1;
       text-align: left;
+      padding: 12px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.2s;
       font-size: 0.95rem;
+      transition: all 0.2s;
     }
 
-    .option-btn:hover {
+    .option-btn:hover:not(:disabled) {
       background: #e2e8f0;
-      border-color: #94a3b8;
+    }
+
+    .option-btn.correct {
+      background-color: var(--success-bg) !important;
+      border-color: var(--success-border) !important;
+      color: #14532d;
+      font-weight: bold;
+    }
+
+    .option-btn.incorrect {
+      background-color: var(--error-bg) !important;
+      border-color: var(--error-border) !important;
+      color: #7f1d1d;
     }
 
     .explanation {
       padding: 15px;
-      border-left: 5px solid;
-      border-radius: 6px;
-      margin-top: 20px;
+      border-radius: 8px;
+      margin-top: 15px;
       display: none;
     }
 
-    .explanation a {
-      color: #0284c7;
-      font-weight: 600;
-      text-decoration: underline;
+    #btn-next {
+      margin-top: 15px;
+      display: none;
     }
 
-    /* ARTICLES DOCUMENTATION */
-    .doc-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .doc-card {
-      border-left: 4px solid var(--primary);
-    }
-
-    #loading {
-      text-align: center;
-      font-style: italic;
-      color: #64748b;
-    }
-
-    /* ADAPTATION MOBILE */
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: block;
-      }
-      .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        background-color: var(--nav-bg);
-      }
-      .nav-links.open {
-        display: flex;
-      }
-      .nav-links a {
-        padding: 15px 20px;
-        border-bottom: 1px solid #334155;
-      }
-    }
+    .page-content { display: none; }
+    .page-content.active { display: block; }
   </style>
 </head>
 <body>
 
-  <!-- BARRE DE NAVIGATION -->
   <nav>
-    <div class="nav-brand">🥽 Préparation Théorie LIFRAS</div>
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#" class="nav-item active" onclick="navigate('home', event)">Home</a></li>
-      <li><a href="#" class="nav-item" onclick="navigate('doc', event)">Documentation</a></li>
-      <li><a href="https://www.lifras.be" target="_blank" rel="noopener">Site de la LIFRAS ↗</a></li>
+    <div class="nav-brand">🥽 Prépa LIFRAS</div>
+    <ul class="nav-links">
+      <li><a href="#" class="active" onclick="navigate('home', event)">Home</a></li>
+      <li><a href="#" onclick="navigate('doc', event)">Documentation</a></li>
+      <li><a href="https://www.lifras.be" target="_blank">LIFRAS ↗</a></li>
     </ul>
   </nav>
 
   <main>
-    <!-- PAGE 1 : HOME (QUIZ) -->
+    <!-- PAGE HOME / QUIZ -->
     <div id="page-home" class="page-content active">
-      <header>
-        <h1>Entraînement aux Brevets</h1>
-        <p>Révisez votre théorie gratuitement par niveau et par thème</p>
-      </header>
-
       <div class="card filters">
-        <div class="filter-group">
+        <div>
           <label for="niveau">Niveau de Brevet :</label>
           <select id="niveau">
-            <option value="N1">Brevet 1* (Plongeur Élémentaire)</option>
-            <option value="N2">Brevet 2* (Plongeur Autonome)</option>
-            <option value="N3">Brevet 3* (Plongeur Encadrant)</option>
+            <option value="N1">Brevet 1*</option>
+            <option value="N2">Brevet 2*</option>
+            <option value="N3">Brevet 3*</option>
           </select>
         </div>
 
-        <div class="filter-group">
+        <div>
           <label for="theme">Thème :</label>
           <select id="theme">
             <option value="Tous">Tous les thèmes</option>
             <option value="Physique appliquée">Physique appliquée</option>
-            <option value="Physiologie & Anatomie">Physiologie & Anatomie</option>
-            <option value="Accidents & Sécurité">Accidents & Sécurité</option>
+            <option value="Physiologie & Accidents">Physiologie & Accidents</option>
+            <option value="Matériel & Sécurité">Matériel & Sécurité</option>
             <option value="Tables & Décompression">Tables & Décompression</option>
-            <option value="Réglementation & Matériel">Réglementation & Matériel</option>
           </select>
         </div>
 
-        <div class="filter-group">
-          <button class="cta" onclick="chargerQuestion()">Générer une question</button>
+        <div>
+          <button class="cta" onclick="demarrerSérie()">Démarrer la série</button>
         </div>
       </div>
 
       <div class="card" id="quiz-box">
         <div id="loading">Chargement de la base de questions...</div>
-        <h3 id="q-title" style="display:none; margin-top:0;"></h3>
-        <div class="options-grid" id="q-options"></div>
-        <div class="explanation" id="q-explanation"></div>
+
+        <div id="quiz-content" style="display:none;">
+          <div class="score-bar">
+            <span id="progression">Question 1 / 10</span>
+            <span id="score-actuel">Score : 0/0</span>
+          </div>
+
+          <h3 id="q-title" style="margin-top: 15px;"></h3>
+          <div class="options-grid" id="q-options"></div>
+          <div class="explanation" id="q-explanation"></div>
+          <button id="btn-next" class="cta" onclick="questionSuivante()">Question suivante ➔</button>
+        </div>
+
+        <div id="results-box" style="display:none; text-align:center; padding: 20px 0;">
+          <h2>🎉 Série terminée !</h2>
+          <p style="font-size: 1.3rem;">Votre note finale : <strong id="final-score">0/10</strong></p>
+          <p id="final-feedback"></p>
+          <button class="cta" onclick="demarrerSérie()" style="max-width: 250px; margin-top: 15px;">Recommencer une série</button>
+        </div>
       </div>
     </div>
 
-    <!-- PAGE 2 : DOCUMENTATION -->
-<div id="page-doc" class="page-content">
-  <header>
-    <h1>Fiches de Révision Théorique</h1>
-    <p>Consultez les fiches de synthèse par thème pour préparer vos brevets</p>
-  </header>
-
-  <!-- FILTRE DE RECHERCHE DANS LA DOC -->
-  <div class="card" style="margin-bottom: 20px;">
-    <label for="filter-doc-theme">Filtrer les fiches par thème :</label>
-    <select id="filter-doc-theme" onchange="filtrerFiches()">
-      <option value="Tous">Tous les thèmes</option>
-      <option value="Physique appliquée">Physique appliquée</option>
-      <option value="Physiologie & Anatomie">Physiologie & Anatomie</option>
-      <option value="Accidents & Sécurité">Accidents & Sécurité</option>
-      <option value="Tables & Décompression">Tables & Décompression</option>
-    </select>
-  </div>
-
-  <!-- CONTENEUR DES FICHES -->
-  <div id="loading-doc">Chargement des fiches...</div>
-  <div class="doc-grid" id="fiches-container"></div>
-</div>  </main>
+    <!-- PAGE DOC -->
+    <div id="page-doc" class="page-content">
+      <div class="card">
+        <h2>Documentation & Fiches</h2>
+        <p>Les fiches de cours seront affichées ici.</p>
+      </div>
+    </div>
+  </main>
 
   <script>
     let baseDeQuestions = [];
+    let serieQuestions = [];
+    let indexActuel = 0;
+    let score = 0;
 
-    // GESTION DU NAVIGATION DYNAMIQUE
-    function navigate(pageId, event) {
-      if (event) event.preventDefault();
-
-      // Masquer toutes les pages
-      document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-
-      // Retirer l'état 'active' de tous les liens
-      document.querySelectorAll('.nav-item').forEach(link => link.classList.remove('active'));
-
-      // Afficher la page ciblée
-      const targetPage = document.getElementById(`page-${pageId}`);
-      if (targetPage) {
-        targetPage.classList.add('active');
-      }
-
-      // Mettre en surbrillance le lien sélectionné
-      if (event && event.target) {
-        event.target.classList.add('active');
-      }
-
-      // Fermer le menu burger sur mobile après un clic
-      document.getElementById('nav-links').classList.remove('open');
-    }
-
-    function toggleMenu() {
-      document.getElementById('nav-links').classList.toggle('open');
-    }
-
-    // CHARGEMENT AUTOMATIQUE DES QUESTIONS (JSON)
+    // Chargement de questions.json
     window.addEventListener('DOMContentLoaded', () => {
       fetch('questions.json')
-        .then(response => {
-          if (!response.ok) throw new Error("Erreur de chargement JSON");
-          return response.json();
-        })
+        .then(res => res.json())
         .then(data => {
           baseDeQuestions = data;
           document.getElementById('loading').style.display = 'none';
-          document.getElementById('q-title').style.display = 'block';
-          document.getElementById('q-title').innerText = "Sélectionnez votre niveau et cliquez sur 'Générer'.";
+          document.getElementById('quiz-content').style.display = 'block';
+          demarrerSérie();
         })
-        .catch(error => {
-          console.error(error);
-          document.getElementById('loading').innerText = "⚠️ Fichier questions.json introuvable sur GitHub.";
+        .catch(err => {
+          document.getElementById('loading').innerText = "⚠️ Erreur : Impossible de charger questions.json";
         });
     });
 
-    // MOTEUR DU QUIZ
-    function chargerQuestion() {
-      if (baseDeQuestions.length === 0) return;
-
+    function demarrerSérie() {
       const niv = document.getElementById('niveau').value;
       const th = document.getElementById('theme').value;
-      
-      const questionsFiltrees = baseDeQuestions.filter(q => 
-        q.niveau === niv && (th === "Tous" || q.theme === th)
-      );
 
-      const expBox = document.getElementById('q-explanation');
-      expBox.style.display = 'none';
+      // Filtrer
+      let filtrees = baseDeQuestions.filter(q => q.niveau === niv && (th === "Tous" || q.theme === th));
 
-      if (questionsFiltrees.length === 0) {
-        document.getElementById('q-title').innerText = "Aucune question pour ce filtre.";
-        document.getElementById('q-options').innerHTML = "";
+      if (filtrees.length === 0) {
+        alert("Aucune question trouvée pour ce niveau/thème.");
         return;
       }
 
-      const q = questionsFiltrees[Math.floor(Math.random() * questionsFiltrees.length)];
-      document.getElementById('q-title').innerText = q.question;
+      // Mélanger et prendre 10 questions max
+      serieQuestions = filtrees.sort(() => 0.5 - Math.random()).slice(0, 10);
+      indexActuel = 0;
+      score = 0;
+
+      document.getElementById('results-box').style.display = 'none';
+      document.getElementById('quiz-content').style.display = 'block';
       
-      let htmlOptions = "";
-      q.options.forEach((opt, idx) => {
-        const expEscaped = q.explication.replace(/'/g, "&#39;");
-        htmlOptions += `<button class="option-btn" onclick="verifier(${idx}, ${q.reponse}, '${expEscaped}')">${opt}</button>`;
-      });
-      
-      document.getElementById('q-options').innerHTML = htmlOptions;
+      afficherQuestion();
     }
 
-    function verifier(choix, correct, explication) {
+    function afficherQuestion() {
+      const q = serieQuestions[indexActuel];
+      
+      // UI mise à jour
+      document.getElementById('progression').innerText = `Question ${indexActuel + 1} / ${serieQuestions.length}`;
+      document.getElementById('score-actuel').innerText = `Score : ${score} / ${indexActuel}`;
+      document.getElementById('q-title').innerText = q.question;
+      
       const expBox = document.getElementById('q-explanation');
+      expBox.style.display = 'none';
+      document.getElementById('btn-next').style.display = 'none';
+
+      // Affichage des options
+      const optionsContainer = document.getElementById('q-options');
+      optionsContainer.innerHTML = "";
+
+      q.options.forEach((opt, idx) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerText = opt;
+        btn.onclick = () => verifierReponse(idx, btn);
+        optionsContainer.appendChild(btn);
+      });
+    }
+
+    function verifierReponse(choixIndex, btnClique) {
+      const q = serieQuestions[indexActuel];
+      const tousLesBoutons = document.querySelectorAll('.option-btn');
       
-      if (choix === correct) {
-        expBox.innerHTML = "<strong>✅ Correct !</strong><br>" + explication;
-        expBox.style.backgroundColor = "var(--success-bg)";
-        expBox.style.borderColor = "var(--success-border)";
+      // Désactiver tous les boutons pour empêcher de ré-répondre
+      tousLesBoutons.forEach(b => b.disabled = true);
+
+      const expBox = document.getElementById('q-explanation');
+
+      if (choixIndex === q.reponse) {
+        score++;
+        btnClique.classList.add('correct');
+        expBox.style.backgroundColor = 'var(--success-bg)';
+        expBox.style.color = '#14532d';
+        expBox.innerHTML = "<strong>✅ Correct !</strong><br>" + q.explication;
       } else {
-        expBox.innerHTML = "<strong>❌ Incorrect.</strong><br>" + explication;
-        expBox.style.backgroundColor = "var(--error-bg)";
-        expBox.style.borderColor = "var(--error-border)";
+        btnClique.classList.add('incorrect');
+        // Marquer aussi la bonne réponse en vert
+        tousLesBoutons[q.reponse].classList.add('correct');
+        expBox.style.backgroundColor = 'var(--error-bg)';
+        expBox.style.color = '#7f1d1d';
+        expBox.innerHTML = "<strong>❌ Incorrect.</strong><br>" + q.explication;
       }
-      
+
       expBox.style.display = 'block';
+      document.getElementById('score-actuel').innerText = `Score : ${score} / ${indexActuel + 1}`;
+      document.getElementById('btn-next').style.display = 'block';
+    }
+
+    function questionSuivante() {
+      indexActuel++;
+      if (indexActuel < serieQuestions.length) {
+        afficherQuestion();
+      } else {
+        afficherBilan();
+      }
+    }
+
+    function afficherBilan() {
+      document.getElementById('quiz-content').style.display = 'none';
+      document.getElementById('results-box').style.display = 'block';
+      
+      const note = `${score} / ${serieQuestions.length}`;
+      document.getElementById('final-score').innerText = note;
+
+      const ratio = score / serieQuestions.length;
+      let feedback = "";
+      if (ratio === 1) feedback = "🏆 Excellent ! Sans faute !";
+      else if (ratio >= 0.7) feedback = "👍 Très bien, la théorie est bien assimilée !";
+      else if (ratio >= 0.5) feedback = "⚠️ Encore un petit effort de révision.";
+      else feedback = "📖 Reprenez les fiches de cours et réessayez !";
+
+      document.getElementById('final-feedback').innerText = feedback;
+    }
+
+    function navigate(pageId, e) {
+      if(e) e.preventDefault();
+      document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+      document.getElementById(`page-${pageId}`).classList.add('active');
     }
   </script>
 </body>
