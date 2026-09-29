@@ -1,142 +1,1822 @@
+```json
 [
   {
     "id": 1,
     "niveau": "N1",
-    "theme": "Physique appliquée",
-    "question": "En descendant à 20 mètres de profondeur, quelle est la pression absolue subie par le plongeur ?",
-    "options": [
-      "2 bars (2 bars d'eau)",
-      "3 bars (1 bar d'air + 2 bars d'eau)",
-      "4 bars (1 bar d'air + 3 bars d'eau)",
-      "1 bar (uniquement la pression atmosphérique)"
-    ],
-    "reponse": 1,
-    "explication": "Tous les 10 mètres d'eau douce/de mer représentent environ 1 bar de pression hydrostatique. À 20 mètres, il y a 2 bars d'eau auxquels s'ajoute 1 bar de pression atmosphérique à la surface, soit 3 bars absolus."
+    "theme": "Physique & Notions de Base",
+    "question": "Quelle est la valeur de la pression atmosphérique au niveau de la mer en bar ?",
+    "options": ["0,5 bar", "1 bar", "2 bars", "10 bars"],
+    "reponse_index": 1,
+    "explication": "La pression atmosphérique standard au niveau de la mer est de 1 bar (environ 1013 hPa)."
   },
   {
     "id": 2,
     "niveau": "N1",
-    "theme": "Physiologie & Accidents",
-    "question": "Pour prévenir un barotraumatisme de l'oreille moyenne (tympan) lors de la descente, quelle manœuvre faut-il effectuer ?",
-    "options": [
-      "Souffler fort par le nez en le pinçant (Valsalva) une fois arrivé au fond",
-      "Équilibrer les oreilles dès le début de la descente et fréquemment sans attendre la douleur",
-      "Inspirer bloqué en appuyant sur le masque",
-      "Faire la manœuvre de Valsalva durant toute la remontée"
-    ],
-    "reponse": 1,
-    "explication": "L'équilibrage de l'oreille moyenne doit se faire dès les premiers mètres et régulièrement. La manœuvre de Valsalva ne doit être pratiquée qu'à la descente, doucement, et JAMAIS à la remontée ou en présence de douleur intense."
+    "theme": "Physique & Notions de Base",
+    "question": "Comment calcule-t-on la pression totale (absolue) subie par un plongeur sous l'eau ?",
+    "options": ["Pression hydrostatique uniquement", "Pression atmosphérique + Pression hydrostatique", "Pression atmosphérique x Profondeur", "Pression hydrostatique / 2"],
+    "reponse_index": 1,
+    "explication": "La pression absolue est la somme de la pression atmosphérique (1 bar) et de la pression hydrostatique générée par le poids de l'eau."
   },
   {
     "id": 3,
     "niveau": "N1",
-    "theme": "Accidents & Sécurité",
-    "question": "Quelle est la règle d'or absolue pour éviter une surpression pulmonaire à la remontée ?",
-    "options": [
-      "Bloquer sa respiration pour garder de l'air dans les poumons",
-      "Palmer le plus vite possible vers la surface",
-      "Expirer de manière continue et ne jamais bloquer sa respiration",
-      "Remonter en gonflant son gilet stabilisateur au maximum"
-    ],
-    "reponse": 2,
-    "explication": "Selon la loi de Boyle-Mariotte, l'air contenu dans les poumons se dilate lors de la remontée. Si le plongeur bloque sa respiration, l'air en expansion peut déchirer les alvéoles pulmonaires. Il faut donc expirer en continu."
+    "theme": "Physique & Notions de Base",
+    "question": "Quelle est la pression absolue à une profondeur de 10 mètres en mer ?",
+    "options": ["1 bar", "2 bars", "3 bars", "10 bars"],
+    "reponse_index": 1,
+    "explication": "À 10 mètres, il y a 1 bar de pression d'eau auquel s'ajoute 1 bar de pression atmosphérique, soit 2 bars absolus."
   },
   {
     "id": 4,
-    "niveau": "N2",
-    "theme": "Physique appliquée",
-    "question": "Un ballon souple contient un volume de 6 litres d'air à la surface. Quel sera son volume si on le descend à 30 mètres de profondeur ?",
-    "options": [
-      "1.5 litre",
-      "2 litres",
-      "3 litres",
-      "0.5 litre"
-    ],
-    "reponse": 0,
-    "explication": "À 30 m, la pression absolue est de 4 bars (1 bar surface + 3 bars d'eau). Selon la loi de Boyle-Mariotte (P1 x V1 = P2 x V2), le volume est divisé par 4 : 6 L / 4 = 1.5 litre."
+    "niveau": "N1",
+    "theme": "Physique & Notions de Base",
+    "question": "Pourquoi un ballon rempli d'air à la surface diminue-t-il de volume lors de la descente ?",
+    "options": ["L'eau refroidit l'air et le détruit", "La pression augmente, ce qui comprime le gaz", "L'air s'échappe à travers le caoutchouc", "La gravité attire l'air vers le bas"],
+    "reponse_index": 1,
+    "explication": "En vertu de la loi de Boyle-Mariotte, le volume d'un gaz est inversement proportionnel à la pression appliquée."
   },
   {
     "id": 5,
-    "niveau": "N2",
-    "theme": "Physiologie & Accidents",
-    "question": "Quelle est la cause principale de la narcose à l'azote (ou ivresse des profondeurs) ?",
-    "options": [
-      "L'augmentation de la pression partielle d'azote dans le sang avec la profondeur",
-      "La baisse de la température de l'eau en profondeur",
-      "Une accumulation de dioxyde de carbone (CO2) liée à un essoufflement",
-      "Un manque d'oxygène dans la bouteille de plongée"
-    ],
-    "reponse": 0,
-    "explication": "La narcose est due à l'effet toxique de l'azote sur le système nerveux central lorsque sa pression partielle devient élevée sous l'effet de la profondeur (généralement perceptible à partir de 30 mètres)."
+    "niveau": "N1",
+    "theme": "Physique & Notions de Base",
+    "question": "Quelle est la loi physique qui régit la variation de volume d'un gaz en fonction de la pression ?",
+    "options": ["Loi de Henry", "Loi de Dalton", "Loi de Boyle-Mariotte", "Principe d'Archimède"],
+    "reponse_index": 2,
+    "explication": "La loi de Boyle-Mariotte énonce que P x V = Constante à température constante."
   },
   {
     "id": 6,
-    "niveau": "N2",
-    "theme": "Matériel & Sécurité",
-    "question": "Dans quel cas la réserve/signal d'urgence d'un manomètre de bouteille de plongée est-elle généralement fixée à 50 bars ?",
-    "options": [
-      "Pour indiquer qu'il reste exactement 10 minutes de plongée",
-      "Comme marge de sécurité minimale pour effectuer sa remontée et ses paliers en toute sécurité",
-      "Pour signaler que la bouteille doit être envoyée en révision",
-      "Parce qu'il est impossible de respirer sous 50 bars dans le détendeur"
-    ],
-    "reponse": 1,
-    "explication": "Les 50 bars constituent la zone de sécurité (réserve). Cela garantit une quantité d'air suffisante pour remonter à une vitesse contrôlée, effectuer les paliers de décompression et assister un coéquipier en cas de besoin."
+    "niveau": "N1",
+    "theme": "Physique & Notions de Base",
+    "question": "Si le volume d'un poumon à la surface est de 6 litres, quel sera son volume théorique à 10 m si le plongeur bloque sa respiration en descendant ?",
+    "options": ["12 litres", "6 litres", "3 litres", "1,5 litre"],
+    "reponse_index": 2,
+    "explication": "À 10 m, la pression double (2 bars), le volume de l'air est donc divisé par 2 (6 L / 2 = 3 L)."
   },
   {
     "id": 7,
-    "niveau": "N3",
-    "theme": "Physique appliquée",
-    "question": "En plongée à l'air (21% O2, 79% N2) à 40 mètres de profondeur, quelle est la pression partielle de l'oxygène (PpO2) ?",
-    "options": [
-      "0.84 bar",
-      "1.05 bar",
-      "1.40 bar",
-      "1.60 bar"
-    ],
-    "reponse": 1,
-    "explication": "À 40 m, la pression absolue est de 5 bars. Selon la loi de Dalton, PpO2 = P_totale x %O2, soit 5 bars x 0.21 = 1.05 bar."
+    "niveau": "N1",
+    "theme": "Physique & Notions de Base",
+    "question": "Quelle est la différence de poids approximative entre 1 litre d'eau douce et 1 litre d'eau de mer ?",
+    "options": ["L'eau de mer est plus légère (0,9 kg)", "L'eau de mer est plus lourde (environ 1,025 kg contre 1,000 kg)", "Elles font exactement le même poids", "L'eau douce pèse 1,5 kg"],
+    "reponse_index": 1,
+    "explication": "La présence de sel dissous rend l'eau de mer plus dense et donc plus lourde (environ 1,025 kg/L)."
   },
   {
     "id": 8,
-    "niveau": "N3",
-    "theme": "Physiologie & Accidents",
-    "question": "Quelle est la pression partielle maximale d'oxygène (PpO2) généralement recommandée en plongée au Nitrox/Air pour éviter la toxicité aiguë de l'oxygène (effet Lorrain Smith / crise convulsive) ?",
-    "options": [
-      "1.2 bar",
-      "1.4 bar (1.6 bar au maximum absolu pour les paliers)",
-      "2.0 bars",
-      "0.8 bar"
-    ],
-    "reponse": 1,
-    "explication": "La limite généralement admise pour éviter la crise d'hyperoxie (effet Paul Bert / convulsion sous l'eau) en palier ou en immersion est fixée à 1.4 bar pour le suivi du profil de plongée (1.6 bar étant la limite maximale stricte)."
+    "niveau": "N1",
+    "theme": "Physique & Notions de Base",
+    "question": "Pourquoi le froid se fait-il ressentir plus rapidement dans l'eau que dans l'air ?",
+    "options": ["L'eau conduit la chaleur environ 25 fois plus vite que l'air", "L'eau est toujours à 0°C en profondeur", "La combinaison absorbe le froid", "Le corps produit moins de chaleur sous l'eau"],
+    "reponse_index": 0,
+    "explication": "La conductivité thermique de l'eau est environ 25 fois supérieure à celle de l'air, ce qui accélère le refroidissement corporel."
   },
   {
     "id": 9,
-    "niveau": "N3",
-    "theme": "Accidents & Sécurité",
-    "question": "En cas de suspicion d'Accident de Décompression (ADD) dès le retour au bateau, quelle est la prise en charge immédiate obligatoire ?",
-    "options": [
-      "Faire réimmerger immédiatement le plongeur à 3 mètres pour décompresser",
-      "Mise sous oxygène pur (O2) à haut débit, hydratation (si conscient), alerte des secours (DAN / Secours en mer) et fiche d'évacuation",
-      "Faire faire des exercices physiques au plongeur pour réactiver la circulation",
-      "Donner un verre d'alcool pour dilater les vaisseaux sanguins"
-    ],
-    "reponse": 1,
-    "explication": "La réimmersion est proscrite. La conduite à tenir immédiate est l'administration d'O2 pur à 15L/min (masque à haute concentration), l'hydratation de la victime si elle est consciente et l'appel immédiat des secours médicalisés."
+    "niveau": "N1",
+    "theme": "Physique & Notions de Base",
+    "question": "Quel est le phénomène physique responsable de la déformation des distances et des tailles sous l'eau ?",
+    "options": ["La réflexion de la lumière", "La réfraction de la lumière à travers le masque", "La pression de l'eau sur l'œil", "La diffraction de l'azote"],
+    "reponse_index": 1,
+    "explication": "Le changement de milieu (eau / verre du masque / air) dévie les rayons lumineux par réfraction, rendant les objets 33% plus gros et 25% plus proches."
   },
   {
     "id": 10,
+    "niveau": "N1",
+    "theme": "Physique & Notions de Base",
+    "question": "Pourquoi les couleurs disparaissent-elles au fur et à mesure que l'on descend en profondeur ?",
+    "options": ["L'eau absorbe progressivement les longueurs d'onde de la lumière (absorption sélective)", "Les yeux s'habituent à l'obscurité", "Le masque filtre les couleurs chaudes", "La pression altère la rétine"],
+    "reponse_index": 0,
+    "explication": "L'eau absorbe d'abord les couleurs à grande longueur d'onde (le rouge disparaît en premier, dès 5 mètres)."
+  },
+
+  {
+    "id": 11,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Quel est l'organe le plus fréquemment touché par un barotraumatisme à la descente ?",
+    "options": ["Les poumons", "L'oreille moyenne", "L'estomac", "Les dents"],
+    "reponse_index": 1,
+    "explication": "Le tympan est soumis directement à la pression hydrostatique et nécessite une équilibration de la trompe d'Eustache."
+  },
+  {
+    "id": 12,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Comment appelle-t-on la technique la plus courante pour équilibrer les oreilles à la descente ?",
+    "options": ["La manœuvre de Valsalva", "La manœuvre de Frenzel", "La manœuvre de Toynbee", "La déglutition simple"],
+    "reponse_index": 0,
+    "explication": "Valsalva consiste à pincer le nez et souffler doucement par le nez pour injecter de l'air dans la trompe d'Eustache."
+  },
+  {
+    "id": 13,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "À quel moment de la plongée doit-on commencer à équilibrer les oreilles ?",
+    "options": ["Quand on ressent une vive douleur", "Dès le début de la descente et très régulièrement", "Une fois arrivé au fond", "Uniquement à la remontée"],
+    "reponse_index": 1,
+    "explication": "Il faut équilibrer dès la surface et les premiers mètres avant que la différence de pression ne bloque le canal."
+  },
+  {
+    "id": 14,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Pourquoi ne faut-il jamais forcer une manœuvre de Valsalva ?",
+    "options": ["Cela risque de déchirer le gilet", "Cela peut provoquer un barotraumatisme de l'oreille interne ou rompre le tympan", "Cela fait consommer trop d'air", "Cela provoque des crampes"],
+    "reponse_index": 1,
+    "explication": "Forcer crée une surpression veineuse et cérébrale risquant d'endommager la fenêtre ovale ou le tympan."
+  },
+  {
+    "id": 15,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Que se passe-t-il si un plongeur descend avec un rhume ou une congestion nasale ?",
+    "options": ["Il va consommer moins d'air", "Les trompes d'Eustache sont bouchées, empêchant l'équilibrage et causant un barotraumatisme", "Il sera plus stable sous l'eau", "L'eau de mer va le guérir instantanément"],
+    "reponse_index": 1,
+    "explication": "La muqueuse gonflée obstrue la trompe d'Eustache et empêche le passage de l'air vers l'oreille moyenne."
+  },
+  {
+    "id": 16,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Quel est le risque majeur associé au blocage de la respiration lors de la remontée ?",
+    "options": ["La narcose à l'azote", "La surpression pulmonaire", "La crise d'hypercapnie", "Le plaquage de masque"],
+    "reponse_index": 1,
+    "explication": "En remontant, l'air emprisonné dans les poumons augmente de volume et peut surétendre puis déchirer le tissu pulmonaire."
+  },
+  {
+    "id": 17,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Qu'est-ce que la surpression pulmonaire ?",
+    "options": ["Une rupture du tympan à la descente", "Une déchirure des alvéoles pulmonaires causée par la dilatation de l'air non expiré lors de la remontée", "Un excès d'oxygène dans le sang", "Une accumulation de CO2 dans la combinaison"],
+    "reponse_index": 1,
+    "explication": "C'est l'accident le plus grave de la zone des 0-10 m lié à la non-expiration à la remontée."
+  },
+  {
+    "id": 18,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Quelle est la règle d'or absolue en plongée sous-marine pour éviter la surpression pulmonaire ?",
+    "options": ["Remonter le plus vite possible", "Ne jamais bloquer sa respiration et expirer continuellement en remontant", "Faire un Valsalva à la remontée", "Gonfler le gilet à bloc à 10m"],
+    "reponse_index": 1,
+    "explication": "Continuous breathing / continuous exhalation is mandatory during ascent."
+  },
+  {
+    "id": 19,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Pourquoi faut-il équilibrer le masque à la descente et comment le fait-on ?",
+    "options": ["Pour enlever la buée en inspirant par le nez", "Pour éviter l'effet ventouse (plaquage de masque) en soufflant doucement par le nez dans le masque", "Pour rincer les yeux avec de l'eau claire", "Pour assécher le visage"],
+    "reponse_index": 1,
+    "explication": "La dépression créée dans le masque à la descente doit être compensée par une petite quantité d'air expirée par le nez."
+  },
+  {
+    "id": 20,
+    "niveau": "N1",
+    "theme": "Anatomie & Barotraumatismes",
+    "question": "Quels sont les symptômes d'un plaquage de masque ?",
+    "options": ["Douleurs aux dents et saignements d'oreilles", "Sensation de ventouse, douleur aux yeux et petites suffusions sanguines (yeux injectés de sang)", "Troubles de la parole", "Crampes aux mollets"],
+    "reponse_index": 1,
+    "explication": "La baisse de pression dans le volume facial provoque une succion nocive pour les vaisseaux conjonctivaux."
+  },
+
+  {
+    "id": 21,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "Quelle est la fonction principale du détendeur de plongée ?",
+    "options": ["Réchauffer l'air de la bouteille", "Détendre la haute pression de la bouteille à une pression respirable à la profondeur du plongeur", "Filtrer le sel de l'eau", "Mesurer la profondeur de la plongée"],
+    "reponse_index": 1,
+    "explication": "Le détendeur abaisse la pression de l'air (ex. 200 bars) à la pression ambiante exacte de l'immersion."
+  },
+  {
+    "id": 22,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "Quelle est la différence entre le premier étage et le second étage d'un détendeur ?",
+    "options": ["Le 1er étage est dans la bouche, le 2ème est sur la bouteille", "Le 1er étage se fixe sur la bouteille (HP vers MP), le 2nd étage est en bouche (MP vers pression ambiante)", "Le 1er étage sert pour l'air, le 2nd pour l'oxygène", "Il n'y a aucune différence"],
+    "reponse_index": 1,
+    "explication": "Le 1er étage délivre une Pression Moyenne (PM), que le 2nd étage ramène à la pression ambiante."
+  },
+  {
+    "id": 23,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "À quoi sert le manomètre immergeable ?",
+    "options": ["À indiquer la profondeur actuelle", "À indiquer la réserve en eau du bloc", "À mesurer la pression d'air restante dans la bouteille", "À mesurer la température de l'eau"],
+    "reponse_index": 2,
+    "explication": "Le manomètre est relié à la Haute Pression (HP) pour indiquer la pression en bars restant dans le bloc."
+  },
+  {
+    "id": 24,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "Quelle est la pression de service standard d'une bouteille de plongée gonflée à bloc ?",
+    "options": ["50 bars", "100 bars", "200 à 230 bars", "500 bars"],
+    "reponse_index": 2,
+    "explication": "Les blocs standards de plongée loisir sont gonflés à 200 ou 230 bars de pression."
+  },
+  {
+    "id": 25,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "Pourquoi la bouteille de plongée doit-elle faire l'objet d'inspections régulières (réépreuve / contrôle visuel) ?",
+    "options": ["Pour vérifier la couleur de la peinture", "Pour prévenir la corrosion interne/externe et éviter tout risque d'explosion ou de fuite", "Pour changer le volume de la bouteille", "Pour nettoyer le détendeur"],
+    "reponse_index": 1,
+    "explication": "L'air sous haute pression exige des contrôles légaux stricts de la structure métallique pour la sécurité des usagers."
+  },
+  {
+    "id": 26,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "Quel est le rôle principal du gilet stabilisateur (Stab) sous l'eau et en surface ?",
+    "options": ["Remplacer la combinaison isothermique", "Contrôler la flottabilité (être équilibré entre deux eaux ou flotter en surface)", "Fixer les palmes pendant le transport", "Purger l'eau du masque"],
+    "reponse_index": 1,
+    "explication": "Le gilet permet d'ajuster son volume d'air pour compenser l'écrasement de la combinaison et obtenir une flottabilité nulle."
+  },
+  {
+    "id": 27,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "Quelle est la couleur normalisée du tuyau et de la deuxième source d'air de secours (octopus) ?",
+    "options": ["Noir", "Jaune", "Rouge", "Bleu"],
+    "reponse_index": 1,
+    "explication": "Le jaune permet un repérage visuel ultra-rapide par le coéquipier en cas de manque d'air."
+  },
+  {
+    "id": 28,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "Pourquoi utilise-t-on des palmes adaptées plutôt que de simples mouvements de natation ?",
+    "options": ["Pour aller plus vite que les poissons", "Pour augmenter la surface d'appui sur l'eau et se déplacer efficacement en économisant son énergie", "Parce que les bras sont verrouillés sous l'eau", "Pour éviter de couler à pic"],
+    "reponse_index": 1,
+    "explication": "Le palme offre une propulsivité optimale en minimisant l'effort musculaire et la consommation d'air."
+  },
+  {
+    "id": 29,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "À quoi sert le direct system relié au gilet stabilisateur ?",
+    "options": ["À gonfler le gilet avec l'air de la bouteille via un bouton poussoir", "À purger l'eau du masque automatique", "À communiquer par radio avec la surface", "À vider la bouteille à la fin de la plongée"],
+    "reponse_index": 0,
+    "explication": "C'est le flexible MP reliant le 1er étage du détendeur à l'inflateur du gilet pour y injecter de l'air."
+  },
+  {
+    "id": 30,
+    "niveau": "N1",
+    "theme": "Matériel & Équipement",
+    "question": "Comment vérifier le bon fonctionnement de son détendeur avant d'entrer dans l'eau ?",
+    "options": ["En ouvrant la bouteille et en prenant plusieurs inspirations complètes tout en observant l'aiguille du manomètre", "En le plongeant dans l'eau chaude", "En soufflant très fort dans la purge sans ouvrir la bouteille", "En écoutant s'il fait du bruit"],
+    "reponse_index": 0,
+    "explication": "L'aiguille du manomètre ne doit pas chuter lors de l'inspiration, ce qui validerait une ouverture complète du robinet."
+  },
+
+  {
+    "id": 31,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Quel est le signe conventionnel sous l'eau pour indiquer 'Tout va bien' ou 'OK' ?",
+    "options": ["Le pouce levé vers le haut", "L'index et le pouce formant un cercle, les autres doigts levés", "Secteur de main de gauche à droite", "Poing fermé sur la poitrine"],
+    "reponse_index": 1,
+    "explication": "Le pouce levé signifie 'remontée/on monte'. Le signe 'OK' officiel est le cercle formé par l'index et le pouce."
+  },
+  {
+    "id": 32,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Quel est le signe pour indiquer 'Je n'ai plus d'air' ?",
+    "options": ["Main à plat balayée devant la gorge (tranchant de la main)", "Pointer la bouteille du doigt", "Faire un cercle avec les deux bras", "Tapez sur son détendeur"],
+    "reponse_index": 0,
+    "explication": "Le geste de la main coupant le cou indique clairement et universellement une panne d'air imminente."
+  },
+  {
+    "id": 33,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Que signifie le pouce orienté vers le haut sous l'eau ?",
+    "options": ["Super plongée !", "On monte / Fin de plongée", "Attention au bateau", "Je suis trop lourd"],
+    "reponse_index": 1,
+    "explication": "Contrairement à la vie courante, le pouce vers le haut est une instruction de direction : remonter."
+  },
+  {
+    "id": 34,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Quelle est la conduite à tenir en cas de perte de sa palanquée sous l'eau ?",
+    "options": ["Chercher au fond pendant toute la plongée", "Effectuer un tour sur soi-même pendant 1 minute en regardant autour et au-dessus, puis remonter en sécurité si personne n'est vu", "Remonter immédiatement en ballon", "Rester immobile au fond et attendre"],
+    "reponse_index": 1,
+    "explication": "La procédure standard exige 1 minute de recherche visuelle max avant d'effectuer une remontée contrôlée vers la surface."
+  },
+  {
+    "id": 35,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Pourquoi ne faut-il jamais remonter plus vite que les petites bulles d'air ?",
+    "options": ["Pour ne pas perdre ses palmes", "Pour respecter la vitesse de remontée maximale autorisée et éviter un accident de décompression", "Pour ne pas faire peur aux poissons", "Parce que l'eau est plus froide au-dessus"],
+    "reponse_index": 1,
+    "explication": "La vitesse des bulles est un indicateur visuel naturel pour ne pas dépasser ~10-15 m/min."
+  },
+  {
+    "id": 36,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Quelle est la vitesse de remontée maximale recommandée dans la zone Lifras ?",
+    "options": ["20 mètres par minute", "10 à 15 mètres par minute max", "1 mètre par minute", "30 mètres par minute"],
+    "reponse_index": 1,
+    "explication": "Les recommandations fédérales préconisent une vitesse contrôlée maximale de 10 m/min dans la zone proche de la surface."
+  },
+  {
+    "id": 37,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "À quoi sert le palier de sécurité à 5 mètres pendant 3 minutes ?",
+    "options": ["À attendre que le bateau arrive", "À permettre d'éliminer une partie de l'azote dissous et à parfaire le contrôle de sa flottabilité", "À vider la bouteille complètement", "À se réchauffer les mains"],
+    "reponse_index": 1,
+    "explication": "C'est une marge de sécurité conseillée pour désaturer l'azote avant le retour définitif en surface."
+  },
+  {
+    "id": 38,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Comment fait-on pour purger l'eau entrée dans son masque sous l'eau (vidage de masque) ?",
+    "options": ["En enlevant le masque et en soufflant par la bouche", "En appuyant sur le haut du masque, en levant la tête et en expirant par le nez", "En aspirant l'eau par le nez", "En appuyant sur le bas du masque et en inspirant par le nez"],
+    "reponse_index": 1,
+    "explication": "L'air expiré par le nez monte vers le haut du masque et chasse l'eau par le bas."
+  },
+  {
+    "id": 39,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Pourquoi est-il obligatoire de plonger au minimum à deux (en binôme) ?",
+    "options": ["Pour bavarder pendant la plongée", "Pour assurer une assistance immédiate réciproque en cas de problème de matériel ou de santé", "Pour partager le poids du matériel", "Parce que le club n'a pas assez de guides"],
+    "reponse_index": 1,
+    "explication": "Le système de binôme est le pilier fondamental de la sécurité en plongée loisir."
+  },
+  {
+    "id": 40,
+    "niveau": "N1",
+    "theme": "Procédures de Sécurité & Communication",
+    "question": "Que doit faire un plongeur N1 s'il sent une fatigue importante ou un essoufflement sous l'eau ?",
+    "options": ["Faire le signe 'Ça ne va pas', stopper tout effort et prévenir immédiatement son chef de palanquée", "Palmer plus fort pour finir la plongée vite", "S'asseoir au fond et fermer les yeux", "Enlever son détendeur pour mieux respirer"],
+    "reponse_index": 0,
+    "explication": "Prévenir l'encadrant permet de stopper l'immersion et d'amorcer une remontée calme avant l'aggravation."
+  },
+
+  {
+    "id": 41,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Pourquoi ne faut-il pas consommer d'alcool ou de drogues avant de plonger ?",
+    "options": ["Cela altère le jugement, augmente le risque de noyade et favorise la déshydratation/ADD", "Cela rend la combinaison trop étroite", "Cela fait baisser la pression de la bouteille", "Cela n'a aucun impact sous l'eau"],
+    "reponse_index": 0,
+    "explication": "Les substances psychoactives diminuent les réflexes de sécurité et modifient les réactions vasculaires."
+  },
+  {
+    "id": 42,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Quel est le comportement à adopter face à la faune et la flore marines ou de carrière ?",
+    "options": ["Tout toucher pour découvrir les textures", "Regarder avec les yeux, ne rien toucher et ne rien prélever pour préserver le milieu", "Nourrir les poissons avec du pain", "Rapporter des souvenirs vivants"],
+    "reponse_index": 1,
+    "explication": "L'éco-responsabilité impose une observation neutre sans dégradation du milieu naturel."
+  },
+  {
+    "id": 43,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Pourquoi faut-il éviter de toucher le fond avec les palmes en carrière ou en zone vaseuse ?",
+    "options": ["Cela abîme les palmes", "Cela remet les sédiments en suspension, réduisant la visibilité à zéro pour toute la palanquée", "Cela attache le plongeur au fond", "Cela fait du bruit qui fait fuir les bateaux"],
+    "reponse_index": 1,
+    "explication": "La touille (suspension) détruit instantanément la visibilité et peut désorienter la palanquée."
+  },
+  {
+    "id": 44,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Qu'est-ce qu'un 'Espace Aquatique Restreint' (EAR) selon les standards Lifras ?",
+    "options": ["Une zone de mer profonde", "Une piscine ou une zone d'eau calme peu profonde sans courant ni vague", "Une carrière de nuit", "Une rivière en crue"],
+    "reponse_index": 1,
+    "explication": "L'EAR désigne un bassin d'apprentissage protégé où l'on a facilement pied ou accès au bord."
+  },
+  {
+    "id": 45,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Quelle est la profondeur maximale autorisée pour un plongeur 1★ Lifras encadré en milieu naturel ?",
+    "options": ["10 mètres", "20 mètres", "30 mètres", "40 mètres"],
+    "reponse_index": 1,
+    "explication": "Le brevet Plongeur 1★ Lifras permet de plonger jusqu'à 20 mètres maximum sous encadrement."
+  },
+  {
+    "id": 46,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Pourquoi faut-il s'hydrater correctement avant et après une plongée ?",
+    "options": ["Pour ne pas avoir la bouche sèche", "Pour maintenir un bon volume sanguin et réduire le risque d'accident de décompression", "Pour mieux flotter", "Pour éviter les coups de soleil"],
+    "reponse_index": 1,
+    "explication": "La déshydratation diminue le volume plasmatique, ce qui gène l'évacuation de l'azote dissous."
+  },
+  {
+    "id": 47,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Que faire si l'on est pris d'une crampe au mollet pendant la plongée ?",
+    "options": ["Enlever sa palme et la jeter", "Avertir le binôme, étirer le muscle en tirant la pointe de la palme vers soi, puis masser", "Remonter immédiatement en urgence", "Palmer deux fois plus vite"],
+    "reponse_index": 1,
+    "explication": "L'étirement passif antagoniste soulage rapidement la contraction involontaire."
+  },
+  {
+    "id": 48,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Quel est le rôle du chef de palanquée lors d'une sortie N1 ?",
+    "options": ["Porter le matériel des élèves", "Guider la plongée, gérer la sécurité, la profondeur, le temps et la décompression du groupe", "Prendre des photos des élèves", "Rester sur le bateau"],
+    "reponse_index": 1,
+    "explication": "L'encadrant assume la responsabilité de la conduite globale de la plongée pour les Niveau 1."
+  },
+  {
+    "id": 49,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Pourquoi doit-on remplir son carnet de plongée après chaque immersion ?",
+    "options": ["Pour avoir une preuve administrative de son expérience et suivre sa progression", "Parce que c'est une loi pénale", "Pour faire plaisir au club", "Pour calculer le prix de la plongée"],
+    "reponse_index": 0,
+    "explication": "Le carnet atteste des paramètres effectués (profondeur, temps, milieu) nécessaires au passage des brevets supérieurs."
+  },
+  {
+    "id": 50,
+    "niveau": "N1",
+    "theme": "Environnement, Organisation & Santé",
+    "question": "Que signifie un signal sonore répétitif sous l'eau émis depuis la surface (ex. pétard d'évacuation ou coup sur une échelle) ?",
+    "options": ["C'est l'heure du repas", "Signal d'urgence ordonnant la fin immédiate de la plongée et la remontée en sécurité", "C'est le signal pour prendre une photo", "Aucune signification particulière"],
+    "reponse_index": 1,
+    "explication": "Le rappel sonore de surface ordonne le regroupement et la remontée de toutes les palanquées."
+  },
+
+  {
+    "id": 51,
     "niveau": "N2",
-    "theme": "Tables & Décompression",
-    "question": "Lors d'une remontée normale, quelle est la vitesse de remontée préconisée par les tables ou ordinateurs de plongée classiques avant les paliers ?",
-    "options": [
-      "1 à 2 mètres par minute",
-      "10 à 15 mètres par minute",
-      "25 à 30 mètres par minute",
-      "Aussi vite que les petites bulles de l'expirateur"
-    ],
-    "reponse": 1,
-    "explication": "Les modèles de décompression modernes et les tables préconisent une vitesse de remontée comprise généralement entre 10 et 15 m/min (souvent 10 m/min au plus près de la surface) pour limiter le dégazage anarchique du microbullage de l'azote."
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Quelle est la pression absolue subie par un plongeur à une profondeur de 30 mètres ?",
+    "options": ["3 bars", "4 bars", "5 bars", "30 bars"],
+    "reponse_index": 1,
+    "explication": "Pabs = P_atm (1 bar) + P_eau (30m / 10 = 3 bars) = 4 bars."
+  },
+  {
+    "id": 52,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Si une bouteille contient 12 litres d'air gonflés à 200 bars, quel est le volume d'air disponible à la surface ?",
+    "options": ["1200 litres", "2400 litres", "2000 litres", "4800 litres"],
+    "reponse_index": 1,
+    "explication": "Volume libre = Volume d'eau x Pression = 12 L x 200 bars = 2400 litres d'air."
+  },
+  {
+    "id": 53,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Un plongeur consomme 20 L/min à la surface. Quelle sera sa consommation par minute à 20 mètres de profondeur ?",
+    "options": ["20 L/min", "40 L/min", "60 L/min", "80 L/min"],
+    "reponse_index": 2,
+    "explication": "À 20m, Pabs = 3 bars. Consommation = Consommation surface x Pabs = 20 x 3 = 60 L/min."
+  },
+  {
+    "id": 54,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Calculez la pression partielle d'oxygène (PpO2) dans de l'air comprimé (21% O2) à une profondeur de 30 m.",
+    "options": ["0,21 bar", "0,63 bar", "0,84 bar", "1,05 bar"],
+    "reponse_index": 2,
+    "explication": "À 30 m, Pabs = 4 bars. PpO2 = 4 bars x 0,21 = 0,84 bar."
+  },
+  {
+    "id": 55,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Quelle est la limite réglementaire usuelle de la PpO2 en plongée loisir pour éviter l'hyperoxie ?",
+    "options": ["0,5 bar", "1,0 bar", "1,4 bar (1,6 bar au maximum en palier)", "2,0 bars"],
+    "reponse_index": 2,
+    "explication": "La limite de sécurité standard recommandée par la majorité des organismes est de 1,4 bar pour le corps de plongée."
+  },
+  {
+    "id": 56,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Expliquez la loi de Henry et son application directe à la plongée.",
+    "options": ["À température constante, la quantité de gaz dissous dans un liquide est proportionnelle à la pression partielle de ce gaz au-dessus du liquide", "Le volume d'un gaz varie à l'inverse de la pression", "Les corps plongés dans l'eau subissent une poussée verticale", "La pression totale est égale à la somme des pressions partielles"],
+    "reponse_index": 0,
+    "explication": "La loi de Henry explique la saturation en azote dans les tissus du plongeur lors de la descente et sous pression."
+  },
+  {
+    "id": 57,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Que se passe-t-il pour le volume de l'air contenu dans le gilet stabilisateur lors d'une remontée non contrôlée ?",
+    "options": ["Il diminue à cause du froid", "Il augmente fortement, ce qui accélère encore plus la remontée", "Il reste strictement constant", "Il se transforme en eau"],
+    "reponse_index": 1,
+    "explication": "La baisse de pression fait dilater l'air du gilet, augmentant la flottabilité positive dans un cercle vicieux."
+  },
+  {
+    "id": 58,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Calculez la pression partielle d'azote (PpN2) contenue dans de l'air (79% N2) à 25 m de profondeur.",
+    "options": ["1,97 bar", "2,765 bars", "3,5 bars", "0,79 bar"],
+    "reponse_index": 1,
+    "explication": "À 25 m, Pabs = 3,5 bars. PpN2 = 3,5 x 0,79 = 2,765 bars."
+  },
+  {
+    "id": 59,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Pourquoi la consommation d'air en masse/volume équivalent surface augmente-t-elle avec la profondeur ?",
+    "options": ["Parce qu'on a plus chaud", "Parce qu'à chaque inspiration, le détendeur délivre de l'air à la pression ambiante (plus dense)", "Parce que les poumons s'élargissent", "Parce que la bouteille retrécit"],
+    "reponse_index": 1,
+    "explication": "À pression ambiante plus élevée, le même volume de poumons contient un nombre de molécules d'air plus important."
+  },
+  {
+    "id": 60,
+    "niveau": "N2",
+    "theme": "Physique & Calculs de Pression / Gaz",
+    "question": "Quel est l'effet de la température sur la pression d'une bouteille de plongée (Loi de Charles / Gay-Lussac) ?",
+    "options": ["Si la température baisse dans l'eau froide, la pression lue au manomètre diminue", "La température n'a aucun impact sur la pression", "Plus l'eau est froide, plus la pression augmente", "La bouteille perd du volume"],
+    "reponse_index": 0,
+    "explication": "À volume constant, la pression d'un gaz varie proportionnellement à sa température absolue."
+  },
+
+  {
+    "id": 61,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Qu'est-ce qu'un accident de décompression (ADD) et quelle en est la cause physiologique majeure ?",
+    "options": ["Un blocage de l'air dans les poumons", "Le dégazage anarchique sous forme de bulles d'azote dans les tissus ou le sang lors d'une remontée trop rapide ou sans palier", "Un choc thermique à l'eau froide", "Une crise d'angoisse"],
+    "reponse_index": 1,
+    "explication": "Si la vitesse de remontée dépasse la capacité de dégazage des poumons, l'azote dissous passe sous forme gazeuse."
+  },
+  {
+    "id": 62,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Parmi les éléments suivants, lesquels sont des facteurs favorisants l'apparition d'un ADD ?",
+    "options": ["Fatigue, âge, surpoids, froid, effort physique, déshydratation", "Boire beaucoup d'eau plate", "Faire un palier de sécurité long", "Respirer du Nitrox"],
+    "reponse_index": 0,
+    "explication": "Tous ces facteurs altèrent la circulation sanguine locale ou augmentent la charge de saturation en gaz."
+  },
+  {
+    "id": 63,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Quels sont les signes cliniques d'un accident de décompression bénin cutané ?",
+    "options": ["Crise convulsive", "Démangeaisons (puces) et marbrures sur la peau (moutons)", "Perte de conscience", "Douleur vive aux dents"],
+    "reponse_index": 1,
+    "explication": "Les bulles coincées dans les capillaires sous-cutanés provoquent démangeaisons ('puces') et taches cutanées ('moutons')."
+  },
+  {
+    "id": 64,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Quels sont les symptômes d'un accident de décompression neurologique grave ?",
+    "options": ["Paresthésies, paralysie (paraplégie), vertiges, troubles de la vision ou difficultés respiratoires", "Légère buée dans le masque", "Fièvre élevée au bout de 3 jours", "Douleur articulaire au petit doigt"],
+    "reponse_index": 0,
+    "explication": "L'atteinte de la moelle épinière ou du cerveau par des bulles gazeuses cause des déficits moteurs et sensitifs graves."
+  },
+  {
+    "id": 65,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "A partir de quelle profondeur apparaît généralement la narcose à l'azote ?",
+    "options": ["Dès 5 mètres", "Aux alentours de 30 mètres de profondeur", "Uniquement au-delà de 60 mètres", "En surface"],
+    "reponse_index": 1,
+    "explication": "À partir de 30m (PpN2 > 3,16 bars), les effets perturbateurs de l'azote sur la transmission nerveuse deviennent perceptibles."
+  },
+  {
+    "id": 66,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Quels sont les premiers signes révélateurs d'une narcose sous l'eau ?",
+    "options": ["Sensation d'euphorie, retard de réaction, champ visuel rétréci, fixation sur le manomètre", "Douleur aiguë dans la poitrine", "Incapacité de purger son gilet", "Saignement de nez"],
+    "reponse_index": 0,
+    "explication": "La narcose altère d'abord l'attention, le jugement raisonné et l'agilité mentale du plongeur."
+  },
+  {
+    "id": 67,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Quelle est l'action immédiate à mener en palanquée dès l'apparition de signes de narcose chez un coéquipier ?",
+    "options": ["L'amener plus profond pour tester sa résistance", "Faire remonter la palanquée de quelques mètres jusqu'à la disparition des symptômes", "Lui faire faire un vidage de masque", "L'abandonner"],
+    "reponse_index": 1,
+    "explication": "Remonter de quelques mètres diminue immédiatement la pression partielle d'azote et stoppe l'effet toxique."
+  },
+  {
+    "id": 68,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Qu'est-ce que l'hypercapnie et quelle en est la cause principale sous l'eau ?",
+    "options": ["L'excès de CO2 dans l'organisme lié à un essoufflement ou à un effort excessif", "Le manque d'azote", "Un coup de chaleur", "L'excès d'oxygène"],
+    "reponse_index": 0,
+    "explication": "Une ventilation inadaptée lors d'un effort entraîne une accumulation toxique de dioxyde de carbone."
+  },
+  {
+    "id": 69,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Comment réagir face à un essoufflement sous l'eau ?",
+    "options": ["Prendre des inspirations très rapides", "Prévenir ses coéquipiers, stopper tout effort, se maintenir à un point fixe et forcer sur l'EXPIRATION", "Remonter en vitesse rapide", "Retirer le détendeur"],
+    "reponse_index": 1,
+    "explication": "Seule une expiration forcée et contrôlée permet de vider l'air vicié chargé en CO2 et de casser le cercle de l'essoufflement."
+  },
+  {
+    "id": 70,
+    "niveau": "N2",
+    "theme": "Accidents de Plongée & Décompression",
+    "question": "Quelle est la différence clinique entre hypothermie légère et hypothermie sévère ?",
+    "options": ["Légère : frissons/claquements de dents ; Sévère : arrêt des frissons, confusion, somnolence, ralentissement cardiaque", "Légère : vertiges ; Sévère : pertes de dents", "Légère : peau rouge ; Sévère : transpiration abondante", "Aucune différence"],
+    "reponse_index": 0,
+    "explication": "Quand l'hypothermie devient sévère, les mécanismes de lutte (frissons) s'épuisent et la conscience s'altère."
+  },
+
+  {
+    "id": 71,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Qu'est-ce que la Durée Maximale Sans Palier (NDL / No Decompression Limit) ?",
+    "options": ["Le temps total de fonctionnement de la batterie d'ordinateur", "Le temps maximal que l'on peut passer à une profondeur donnée sans avoir à effectuer de palier obligatoire à la remontée", "Le temps de trajet jusqu'au site de plongée", "Le temps limite avant de tomber en panne d'air"],
+    "reponse_index": 1,
+    "explication": "Le NDL définit la limite de saturation évitant la formation de paliers de décompression obligatoires."
+  },
+  {
+    "id": 72,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Que signifie le terme 'TTS' (Time To Surface) affiché sur un ordinateur de plongée ?",
+    "options": ["Le temps passé sous l'eau depuis le début", "Le temps total estimé pour rejoindre la surface (durée des remontées + paliers)", "L'heure actuelle de la journée", "Le temps de vol avant de prendre l'avion"],
+    "reponse_index": 1,
+    "explication": "Le TTS cumule la durée de la remontée à vitesse réglementaire et la somme de tous les paliers obligatoires."
+  },
+  {
+    "id": 73,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Selon les règles d'utilisation de l'ordinateur, que faire si le NDL descend en dessous de 5 minutes ?",
+    "options": ["Ignorer l'écran", "Amorcer tranquillement la remontée vers une zone moins profonde pour éviter d'accumuler des paliers lourds", "Redescendre de 10 mètres", "Se mettre en panne d'air"],
+    "reponse_index": 1,
+    "explication": "Conserver une marge sur le NDL garantit une gestion sereine de la consommation et de la décompression."
+  },
+  {
+    "id": 74,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Comment gérer une situation où l'un des ordinateurs de la palanquée indique un palier obligatoire et pas les autres ?",
+    "options": ["Suivre l'ordinateur le plus conservateur (qui donne les paliers les plus stricts) pour toute la palanquée", "Suivre l'ordinateur le plus permissif", "Faire la moyenne des ordinateurs", "Demander au bateau"],
+    "reponse_index": 0,
+    "explication": "En palanquée, la sécurité impose de respecter les exigences de l'ordinateur le plus contraignant."
+  },
+  {
+    "id": 75,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Que faire si un ordinateur individuel tombe en panne en cours de plongée ?",
+    "options": ["Continuer la plongée normalement", "Interrompre la plongée, avertir la palanquée, effectuer une remontée contrôlée en respectant les consignes du binôme ou des tables de secours", "Emprunter l'ordinateur du voisin sous l'eau", "Plonger deux fois plus longtemps"],
+    "reponse_index": 1,
+    "explication": "La perte de l'outil d'évaluation de la décompression impose l'arrêt immédiat et sécurisé de la plongée."
+  },
+  {
+    "id": 76,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Pourquoi interdit-on d'effectuer un profil de plongée dit 'inverse' (2ème plongée plus profonde que la 1ère) ?",
+    "options": ["Parce que le bateau n'a plus assez d'essence", "Parce que cela perturbe la modélisation mathématique du dégazage et augmente fortement le risque d'ADD", "Parce que l'eau est trop chaude au fond", "Parce que les blocs sont plus légers"],
+    "reponse_index": 1,
+    "explication": "Les modèles de décompression tolèrent très mal la resaturation brutale dans des tissus déjà dégazants."
+  },
+  {
+    "id": 77,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Quelle est la durée minimale d'intervalle de surface recommandée entre deux plongées successives selon la Lifras ?",
+    "options": ["15 minutes", "Au moins 1 à 2 heures (idéalement plus selon la table/modèle)", "12 heures obligatoire", "5 minutes"],
+    "reponse_index": 1,
+    "explication": "Un intervalle de surface suffisant est indispensable pour désaturer une fraction significative de l'azote résiduel."
+  },
+  {
+    "id": 78,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Pourquoi l'effort physique intense juste après la plongée augmente-t-il le risque d'ADD ?",
+    "options": ["Il augmente le rythme cardiaque et favorise le dégazage anarchique / la migration des bulles vers la circulation artérielle", "Il fait baisser la tension", "Il refroidit les poumons", "Il annule l'effet du palier"],
+    "reponse_index": 0,
+    "explication": "L'effort accélère le flux sanguin et augmente le gradient de pression, risquant de dégazer brutalement les microbulles."
+  },
+  {
+    "id": 79,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Quel est le délai d'attente minimal recommandé avant de prendre l'avion après une plongée avec paliers ?",
+    "options": ["2 heures", "6 heures", "12 à 24 heures selon la répétition et le profil", "48 heures obligatoire dans tous les cas"],
+    "reponse_index": 2,
+    "explication": "La baisse de pression en cabine d'avion peut déclencher un ADD si de l'azote résiduel est encore présent dans l'organisme."
+  },
+  {
+    "id": 80,
+    "niveau": "N2",
+    "theme": "Tables & Ordinateurs de Décompression (MaDeco Lifras)",
+    "question": "Que signifie une procédure de décompression dite 'Border Line' ?",
+    "options": ["Une plongée effectuée à la frontière d'un pays", "Une plongée où le temps et la profondeur approchent ou dépassent les limites de sécurité strictes prescrites", "Une plongée au bord du bateau", "Une plongée sans palier"],
+    "reponse_index": 1,
+    "explication": "Un profil 'Border Line' flirte avec les limites de saturation et requiert une prudence extrême lors de la remontée."
+  },
+
+  {
+    "id": 81,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "Quelle est la composition standard du mélange Nitrox 32 ?",
+    "options": ["32% Azote / 68% Oxygène", "32% Oxygène / 68% Azote", "32% Hélium / 68% Oxygène", "50% Oxygène / 50% Azote"],
+    "reponse_index": 1,
+    "explication": "La désignation d'un Nitrox indique la proportion d'oxygène : le Nitrox 32 contient 32% d'O2 et 68% de N2."
+  },
+  {
+    "id": 82,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "Quel est le principal avantage de l'utilisation du Nitrox par rapport à l'air à profondeur équivalente ?",
+    "options": ["Il permet de descendre à 60 mètres sans danger", "Il diminue la saturation en azote, augmentant le temps sans palier ou réduisant la fatigue", "Il rend la bouteille deux fois plus légère", "Il empêche le froid"],
+    "reponse_index": 1,
+    "explication": "Moins d'azote dans le mélange respiré signifie une accumulation plus lente d'azote dans les tissus."
+  },
+  {
+    "id": 83,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "Quelle est la MOD (Profondeur Maximale d'Utilisation) du Nitrox 36 avec une PpO2 max de 1,4 bar ?",
+    "options": ["22,2 mètres", "28,8 mètres", "36,0 mètres", "40,0 mètres"],
+    "reponse_index": 1,
+    "explication": "Pabs max = 1,4 / 0,36 = 3,88 bars, soit environ 28,8 mètres."
+  },
+  {
+    "id": 84,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "Pourquoi le matériel utilisé avec de l'oxygène pur ou des Nitrox très riches exige-t-il un nettoyage de dégraissage spécifique ?",
+    "options": ["Pour éviter que le tuyau ne colle", "Parce que l'oxygène sous haute pression réagit violemment avec les graisses ordinaires (risque d'explosion / coup de feu)", "Pour enlever les mauvaises odeurs", "Pour éviter la rouille"],
+    "reponse_index": 1,
+    "explication": "Les graisses hydrocarbonées s'enflamment spontanément au contact d'O2 pur sous pression."
+  },
+  {
+    "id": 85,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "Comment effectue-t-on un retour à 180° à l'aide d'un compas subaquatique ?",
+    "options": ["En tournant le compas de 90° dans la main", "En alignant la ligne de foi sur l'index opposé (ajouter ou retrancher 180° à la valeur de la couronne)", "En inversant le sens des palmes", "En regardant la flèche du Nord uniquement"],
+    "reponse_index": 1,
+    "explication": "Pour faire demi-tour exact, le cap de retour est égal au cap aller + ou - 180°."
+  },
+  {
+    "id": 86,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "À quel moment et comment le parachute de palier doit-il être déployé ?",
+    "options": ["En surface après être sorti de l'eau", "Depuis la zone des paliers ou du fond, gonflé avec l'octopus ou la purge pour se signaler aux bateaux", "Uniquement si on a perdu son masque", "En sautant du bateau"],
+    "reponse_index": 1,
+    "explication": "Le parachute signale la présence sous l'eau de la palanquée aux embarcations de surface pendant les paliers."
+  },
+  {
+    "id": 87,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "À quoi sert un dévidoir (spool) associé au parachute de palier ?",
+    "options": ["À attacher la bouteille au fond", "À dérouler le fil de manière fluide lors de la montée du parachute sans se faire emporter", "À mesurer le diamètre du parachute", "À remonter des objets lourds"],
+    "reponse_index": 1,
+    "explication": "Le spool permet de lancer le parachute depuis la profondeur tout en gardant la ligne sous tension contrôlée."
+  },
+  {
+    "id": 88,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "Pourquoi est-il nécessaire d'avoir un outil de coupe (couteau/sécateur) accessible en permanence ?",
+    "options": ["Pour se défendre contre les requins", "Pour pouvoir se dégager rapidement en cas d'enchevêtrement dans un filet ou un fil de pêche", "Pour ouvrir les bouteilles", "Pour gratter la rouille du bloc"],
+    "reponse_index": 1,
+    "explication": "Les fils de pêche invisibles sous l'eau représentent un risque d'immobilisation mortel sans outil de coupe."
+  },
+  {
+    "id": 89,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "Quelles sont les vérifications spécifiques obligatoires à faire sur une bouteille Nitrox avant la plongée ?",
+    "options": ["Vérifier uniquement le poids de la bouteille", "Analyser soi-même la concentration en O2 avec un analysateur, relever la MOD et étiqueter le bloc", "Goutter le gaz", "Changer le joint du détendeur"],
+    "reponse_index": 1,
+    "explication": "Le plongeur doit personnellement contrôler et signer l'analyse du pourcentage d'oxygène contenu dans son bloc."
+  },
+  {
+    "id": 90,
+    "niveau": "N2",
+    "theme": "Matériel, Nitrox & Orientation",
+    "question": "Quelle est l'utilité du contrôle visuel de l'intérieur d'une bouteille d'air ?",
+    "options": ["Mesurer le volume d'air restant", "Détecter les traces de corrosion, d'humidité ou de poussière d'huile toxique", "Changer la couleur du gaz", "Nettoyer le filetage du robinet"],
+    "reponse_index": 1,
+    "explication": "L'inspection interne prévient la détérioration de la paroi métallique et la contamination du gaz respiré."
+  },
+
+  {
+    "id": 91,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Quelles sont les prérogatives maximales de profondeur d'un plongeur 2★ Lifras en autonomie avec un autre 2★ (selon conditions) ?",
+    "options": ["10 mètres", "20 mètres (30 mètres sous conditions spécifiques / avec encadrement)", "40 mètres", "60 mètres"],
+    "reponse_index": 1,
+    "explication": "Le brevet 2★ autorise l'autonomie dans la zone des 20m (et jusqu'à 30m sous conditions définies au Manuel de l'Instructeur)."
+  },
+  {
+    "id": 92,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Quels sont les premiers gestes d'urgence face à un plongeur suspecté d'ADD à la sortie de l'eau ?",
+    "options": ["Faire faire des pompes au plongeur", "Déséquiper, allonger à plat, administrer de l'O2 pur à 15 L/min, faire boire de l'eau douce si conscient et alerter le 112/DAN", "Le remettre dans l'eau à 3 mètres", "Donner une tasse de café chaud"],
+    "reponse_index": 1,
+    "explication": "C'est le protocole d'urgence standard de prise en charge d'un accident de décompression subaquatique."
+  },
+  {
+    "id": 93,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Pourquoi l'administration d'oxygène pur à 100% est-elle le traitement d'urgence de première intention ?",
+    "options": ["Parce que l'O2 remplace la combinaison", "Elle crée un gradient de pression favorisant l'élimination de l'azote dissous et réoxygène les tissus lésés", "Elle fait baisser la température du corps", "Elle évite d'appeler les secours"],
+    "reponse_index": 1,
+    "explication": "Respirer de l'O2 pur élimine l'azote des poumons et accélère la résorption des bulles vasculaires."
+  },
+  {
+    "id": 94,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Quel est le débit d'oxygène recommandé sur le BAVU ou le masque à haute concentration pour un accidenté ?",
+    "options": ["2 à 4 L/min", "15 L/min (débit maximal)", "50 L/min", "1 L/min"],
+    "reponse_index": 1,
+    "explication": "Le débit de 15 L/min garantit une réserve d'oxygène suffisante dans le ballon réservoir pour fournir du 100% O2."
+  },
+  {
+    "id": 95,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Pourquoi fait-on boire de l'eau douce (non gazeuse) à un suspect d'ADD conscient ?",
+    "options": ["Pour rincer le sel de la bouche", "Pour lutter contre la déshydratation et réhydrater le sang (améliorer la micro-circulation)", "Pour diluer l'azote dans l'estomac", "Pour faire baisser la tension"],
+    "reponse_index": 1,
+    "explication": "L'eau restaure la volémie sanguine et facilite le fluide circulatoire au niveau des micro-vaisseaux."
+  },
+  {
+    "id": 96,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Comment réalise-t-on le tractage d'un plongeur syncopé en surface ?",
+    "options": ["En le tirant par les palmes", "Maintien des voies aériennes hors de l'eau (prise menton/nuque), plongeur sur le dos, tractage efficace en palmant", "En le poussant devant soi la tête dans l'eau", "En lui enlevant son masque immédiatement"],
+    "reponse_index": 1,
+    "explication": "Le sauvetage exige que le nez et la bouche de la victime restent constamment hors de l'eau."
+  },
+  {
+    "id": 97,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Quels sont les éléments clés à communiquer aux secours d'urgence lors de l'appel (112 / DAN) ?",
+    "options": ["Nom du club uniquement", "Profil de la plongée (profondeur, temps, paliers), symptômes constatés, heure de sortie et gestes effectués (O2)", "La couleur du bateau", "Le prix du matériel"],
+    "reponse_index": 1,
+    "explication": "Les médecins de caisson ont besoin de la profondeur max, du temps d'immersion et de l'historique médical immédiat."
+  },
+  {
+    "id": 98,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Comment réagir en cas d'épuisement d'air de son coéquipier à 20 mètres ?",
+    "options": ["Lui donner son octopus de secours, stabiliser la palanquée, puis remonter ensemble en sécurité", "Lui donner son masque", "Remonter seul en le laissant au fond", "Lui dire de retenir son souffle"],
+    "reponse_index": 0,
+    "explication": "Le partage d'air sur la deuxième source de secours (octopus) est la procédure immédiate de sauvetage."
+  },
+  {
+    "id": 99,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Pourquoi ne faut-il pas donner d'aspirine à une victime d'ADD sans prescription médicale ?",
+    "options": ["Cela fait dormir la victime", "L'aspirine est un antiagrégant plaquettaire qui peut aggraver certains hématomes ou accidents hémorragiques", "Cela annule l'effet de l'oxygène", "Cela fait vomir dans l'eau"],
+    "reponse_index": 1,
+    "explication": "L'aspirine modifie la coagulation et peut aggraver un accident neurologique avec composante hémorragique."
+  },
+  {
+    "id": 100,
+    "niveau": "N2",
+    "theme": "Prévention, Secourisme & Prérogatives N2",
+    "question": "Que doit contenir la fiche de sécurité (plan d'urgence) sur un site de plongée ?",
+    "options": ["La carte des restaurants du coin", "Les numéros des secours (112, DAN, caisson), la localisation exacte du site et les procédures d'évacuation", "La liste des poissons de la carrière", "Les tarifs des cotisations"],
+    "reponse_index": 1,
+    "explication": "La fiche d'urgence permet de déclencher les secours sans perte de temps critique."
+  },
+
+  {
+    "id": 101,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Calculez la consommation d'air totale pour 15 min à 35 m suivie de 5 min à 20 m avec un RMV de 20 L/min.",
+    "options": ["1350 litres", "1650 litres", "1950 litres", "2200 litres"],
+    "reponse_index": 1,
+    "explication": "A 35m (4,5b): 15 min x 20 L/m x 4,5b = 1350 L. A 20m (3b): 5 min x 20 L/m x 3b = 300 L. Total = 1350 + 300 = 1650 Litres."
+  },
+  {
+    "id": 102,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Quelle est la PpO2 exacte lors d'une plongée à l'air à la profondeur maximale de 40 mètres ?",
+    "options": ["0,84 bar", "1,05 bar", "1,26 bar", "1,40 bar"],
+    "reponse_index": 1,
+    "explication": "À 40 mètres, Pabs = 5 bars. PpO2 = 5 bars x 0,21 = 1,05 bar."
+  },
+  {
+    "id": 103,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Quelle est la Profondeur Équivalente Azote (END) à 30 mètres lors de l'utilisation d'un Nitrox 36 ?",
+    "options": ["20,5 mètres", "22,3 mètres", "25,0 mètres", "30,0 mètres"],
+    "reponse_index": 1,
+    "explication": "Pabs_Air = Pabs_Melange x (%N2_Melange / 0,79) = 4 x (0,64 / 0,79) = 3,24 bars absolute -> 22,4 mètres."
+  },
+  {
+    "id": 104,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Que stipule la loi de Dalton ?",
+    "options": ["La pression d'un mélange gazeux est égale à la somme des pressions partielles de chacun de ses gaz composants", "Le volume est proportionnel à la température", "Les gaz se dissolvent dans le sang proportionnellement au temps", "La poussée d'Archimède dépend de la salinité"],
+    "reponse_index": 0,
+    "explication": "P_totale = Pp1 + Pp2 + Pp3..."
+  },
+  {
+    "id": 105,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Quelle est la masse approximative de 1 m³ d'air comprimé à la surface à 15°C ?",
+    "options": ["100 grammes", "1,29 kg", "10 kg", "100 kg"],
+    "reponse_index": 1,
+    "explication": "La masse volumique de l'air dans les conditions normales de température et de pression est d'environ 1,29 kg/m³."
+  },
+  {
+    "id": 106,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Pourquoi la flottabilité d'une combinaison en néoprène diminue-t-elle avec la profondeur ?",
+    "options": ["Le néoprène se gorge d'eau", "Les microbulles d'air emprisonnées dans le néoprène sont comprimées par la pression (Boyle-Mariotte)", "L'eau froide alourdit la combinaison", "La pesanteur augmente avec la profondeur"],
+    "reponse_index": 1,
+    "explication": "La réduction de volume des bulles du néoprène diminue le volume d'eau déplacé et donc la poussée d'Archimède."
+  },
+  {
+    "id": 107,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Calculez la MOD pour un Nitrox 40 avec une PpO2 max fixée à 1,4 bar.",
+    "options": ["20 mètres", "25 mètres", "30 mètres", "35 mètres"],
+    "reponse_index": 1,
+    "explication": "Pabs = 1,4 / 0,40 = 3,5 bars -> 3,5 - 1 = 2,5 bars d'eau, soit 25 mètres."
+  },
+  {
+    "id": 108,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Quel est l'impact de la densité accrue des gaz sur le travail respiratoire à 40 mètres ?",
+    "options": ["Aucun impact", "L'air plus dense augmente les frottements dans les voies respiratoires et accroit le travail musculaire respiratoire", "L'air circule plus facilement", "La respiration devient automatique sans effort"],
+    "reponse_index": 1,
+    "explication": "La masse volumique du gaz augmente avec la pression, générant un écoulement turbulent et un effort ventilatoire accru."
+  },
+  {
+    "id": 109,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Pourquoi le lestage optimal doit-il être calculé en tenant compte de la fin de plongée (bouteille presque vide) ?",
+    "options": ["Parce que l'air consommé a un poids (un bloc de 15L à 200b perd environ 3,8 kg d'air)", "Parce qu'on pèse moins lourd quand on a faim", "Parce que la combinaison s'élargit en surface", "Parce que le détendeur devient plus lourd"],
+    "reponse_index": 0,
+    "explication": "En consommant l'air de la bouteille, le bloc devient plus léger ; il faut pouvoir tenir le palier à 3m sans remonter."
+  },
+  {
+    "id": 110,
+    "niveau": "N3",
+    "theme": "Physique & Calculs Avancés",
+    "question": "Comment la solubilité d'un gaz dans un liquide varie-t-elle avec la température ?",
+    "options": ["La solubilité augmente quand la température baisse", "La solubilité diminue quand la température baisse", "La température n'a aucun effet sur la solubilité", "Le gaz se transforme en solide"],
+    "reponse_index": 0,
+    "explication": "Un liquide froid fixe et dissout davantage de gaz qu'un liquide chaud."
+  },
+
+  {
+    "id": 111,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Expliquez le mécanisme de l'effet Paul Bert (hyperoxie aiguë).",
+    "options": ["Effet toxique de l'oxygène sur le système nerveux central lors du dépassement du seuil de PpO2 (1,4 à 1,6 bar)", "Brûlure du tissu pulmonaire par l'azote", "Crampe musculaire liée au froid", "Toxicité du CO2 dans le sang"],
+    "reponse_index": 0,
+    "explication": "Une PpO2 trop élevée attaque le système nerveux et déclenche une crise convulsive subite sous l'eau."
+  },
+  {
+    "id": 112,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Quels sont les signes annonciateurs d'une crise d'hyperoxie (seuil critique) ?",
+    "options": ["Contractions musculaires de la face, nausées, vertiges, bourdonnements d'oreilles, vision en tunnel", "Forte envie de dormir", "Douleur vive dans le genou", "Saignement de nez"],
+    "reponse_index": 0,
+    "explication": "Les prodromes de l'hyperoxie (VENT/CONVUL) précèdent la crise convulsive géneralisée."
+  },
+  {
+    "id": 113,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Quelle est la différence entre l'effet Paul Bert et l'effet Lorrain Smith ?",
+    "options": ["Paul Bert = toxicité SNC (crise convulsive) / Lorrain Smith = toxicité pulmonaire chronique (exposition prolongée)", "Paul Bert concerne l'azote, Lorrain Smith l'hélium", "Paul Bert survient à la descente, Lorrain Smith à la surface", "Aucune différence"],
+    "reponse_index": 0,
+    "explication": "Lorrain Smith traite de la toxicité pulmonaire liée à la dose cumulée d'O2 dans le temps (SBT/OTU)."
+  },
+  {
+    "id": 114,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Qu'est-ce que le Foramen Ovale Perméable (FOP) et quel est son risque en plongée ?",
+    "options": ["Une malformation cardiaque permettant le passage direct de bulles veineuses dans la circulation artérielle (shunt)", "Une maladie des poumons", "Une inflammation du tympan", "Un canal bouché dans le foie"],
+    "reponse_index": 0,
+    "explication": "Le FOP permet le passage droite-gauche du sang sans filtration pulmonaire, augmentant le risque d'ADD cérébral."
+  },
+  {
+    "id": 115,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Comment différencier un barotraumatisme de l'oreille interne (BOI) d'un ADD vestibulaire ?",
+    "options": ["Le BOI survient brutalement lors d'un Valsalva forcé à la descente ; l'ADD vestibulaire survient après la remontée", "Le BOI ne fait jamais mal", "L'ADD vestibulaire ne donne jamais de vertiges", "Impossible de les différencier"],
+    "reponse_index": 0,
+    "explication": "L'historique de la plongée (coup de piston à la descente vs décompression à la remontée) oriente le diagnostic."
+  },
+  {
+    "id": 116,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Quels sont les effets de la déshydratation sur la décompression ?",
+    "options": ["Elle réduit le volume plasmatique, augmente la viscosité sanguine et ralentit la désaturation de l'azote", "Elle améliore la circulation sanguine", "Elle n'a aucun effet sous l'eau", "Elle empêche la narcose"],
+    "reponse_index": 0,
+    "explication": "Un sang plus épais circule moins bien dans les capillaires, ce qui entrave l'évacuation gazeuse."
+  },
+  {
+    "id": 117,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Qu'est-ce que le syndrome de Taravana ?",
+    "options": ["Des accidents de décompression survenant chez des apnéistes effectuant des immersions profondes et répétées", "Une piqûre de poisson tropical", "Une allergie au néoprène", "Une hypothermie foudroyante"],
+    "reponse_index": 0,
+    "explication": "La répétition rapprochée d'apnées profondes accumule de l'azote dissous jusqu'au seuil critique de dégazage."
+  },
+  {
+    "id": 118,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Comment se déclenche un Œdème Aigu du Poumon (OAP) d'immersion ?",
+    "options": ["Par l'immersion en eau froide combinée à l'effort, entraînant une vasoconstriction périphérique et une hypertension capillaire pulmonaire", "Par le passage de l'eau du masque dans la gorge", "Par la rupture d'un tuyau MP", "Par le manque de lestage"],
+    "reponse_index": 0,
+    "explication": "Le transfert de masse sanguine vers le thorax sous l'effet du froid et de la pression engorge les capillaires pulmonaires."
+  },
+  {
+    "id": 119,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Quel est le danger d'une crise d'aérophagie / reflux gastro-œsophagien en cours de plongée ?",
+    "options": ["L'air déglutit dans l'estomac va se dilater à la remontée, provoquant douleurs intenses et risque de syncope", "La bouteille va se vider plus vite", "Le masque va se remplir d'air", "Aucun danger"],
+    "reponse_index": 0,
+    "explication": "La dilatation des gaz piégés dans le tube digestif à la remontée provoque un barotraumatisme digestif."
+  },
+  {
+    "id": 120,
+    "niveau": "N3",
+    "theme": "Physiopathologie & Pathologies Complexes",
+    "question": "Qu'est-ce que l'ostéonécrose aseptique du plongeur ?",
+    "options": ["Une nécrose du tissu osseux causée par des micro-infarctus osseux répétés dus aux microbulles d'azote", "Une décalcification des dents", "Une usure des articulations liée au port du bloc", "Une infection bactérienne des os"],
+    "reponse_index": 0,
+    "explication": "Les microbulles chroniques obstruent la vascularisation terminale des os longs (fémur, humérus)."
+  },
+
+  {
+    "id": 121,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Quelles sont les prérogatives légales maximales du brevet Plongeur 3★ Lifras ?",
+    "options": ["Autonomie jusqu'à 40 mètres en zone Lifras (et jusqu'à 60m sous conditions spécifiques et avis médical)", "Encadrement des N1 à 30m", "Gestion du club de plongée", "Directeur de plongée en piscine uniquement"],
+    "reponse_index": 0,
+    "explication": "Le 3★ est un plongeur confirmé pleinement autonome dans la zone des 40m."
+  },
+  {
+    "id": 122,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Quels sont les points indispensables du briefing de sécurité pour une plongée profonde à 40 m ?",
+    "options": ["Profondeur max, temps max, gestion de l'air (demi-pression), cap d'orientation, procédures de perte de palanquée et décompression", "Le menu du repas du midi", "La marque des détendeurs", "L'histoire de la carrière"],
+    "reponse_index": 0,
+    "explication": "Le briefing cadre l'évolution et les limites de sécurité de la palanquée."
+  },
+  {
+    "id": 123,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Quel est le critère d'annulation prioritaire d'une plongée en milieu naturel pour un chef de palanquée ?",
+    "options": ["Conditions météo dégradées (forte houle, courant violent, visibilité nulle) mettant en péril la sécurité de la palanquée", "L'absence de soleil", "Une eau à 15°C au lieu de 18°C", "L'oubli de la caméra"],
+    "reponse_index": 0,
+    "explication": "La sécurité collective prévaut sur toute considération de loisir."
+  },
+  {
+    "id": 124,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Comment gérer une immersion dérivante sous fort courant ?",
+    "options": ["Utiliser un parachute dérivant, rester groupés autour du fil du parachute et organiser la récupération en surface par l'embarcation", "Séparer la palanquée pour couvrir plus de zone", "Nager contre le courant jusqu'à épuisement", "S'accrocher tous aux rochers au fond"],
+    "reponse_index": 0,
+    "explication": "Le parachute dérivant signale la position exacte de la palanquée dérivante au bateau d'appui."
+  },
+  {
+    "id": 125,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Quelle est la procédure de recherche sous l'eau d'un plongeur égaré par la palanquée ?",
+    "options": ["Quadrillage méthodique du secteur pendant 1 minute maximum avant de remonter en surface pour organiser les secours", "Chercher pendant 30 minutes au fond", "Redescendre à 40m au hasard", "Rentrer au port"],
+    "reponse_index": 0,
+    "explication": "La recherche sous l'eau doit être très courte pour alerter la surface et éviter d'épuiser les réserves d'air."
+  },
+  {
+    "id": 126,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Comment éviter de se retrouver en situation de décompression 'Border Line' collective à 40m ?",
+    "options": ["Planifier un profil d'immersion strict, surveiller en continu le NDL et entamer la remontée progressive bien avant la limite", "Consommer l'air jusqu'à la réserve avant de décoller", "Rester le plus longtemps possible au fond", "Éteindre les ordinateurs"],
+    "reponse_index": 0,
+    "explication": "Anticiper la remontée permet de conserver une marge de décompression confortable."
+  },
+  {
+    "id": 127,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Quelle est la responsabilité du chef de palanquée lors de la planification d'une plongée à paliers ?",
+    "options": ["S'assurer que tous les membres disposent du volume de gaz suffisant pour effectuer les paliers et la remontée de secours", "Payer l'essence du bateau", "Choisir la couleur des bouées", "Gonfler les blocs des autres"],
+    "reponse_index": 0,
+    "explication": "La gestion de la réserve respiratoire globale de la palanquée est vitale lors des plongées saturantes."
+  },
+  {
+    "id": 128,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Comment gérer le début de panique d'un equipier à 35 mètres ?",
+    "options": ["Établir un contact visuel et physique ferme, calmer la respiration, stabiliser le gilet et réavancer doucement vers la surface", "Secouer l'équipier violemment", "Remonter l'équipier comme une fusée", "L'abandonner et remonter seul"],
+    "reponse_index": 0,
+    "explication": "La prise en charge physique et le regard rassurant stoppent la spirale de la panique."
+  },
+  {
+    "id": 129,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Quelles sont les spécificités d'une plongée de nuit en carrière ?",
+    "options": ["Double éclairage obligatoire par plongeur, signes lumineux adaptés, repérage du point de sortie par feux de berge", "Plonger sans masque pour mieux voir", "Utiliser un seul phare pour toute la carrière", "Descendre à 40m sans briefing"],
+    "reponse_index": 0,
+    "explication": "La redondance d'éclairage et le balisage de la surface sont des impératifs absolus de nuit."
+  },
+  {
+    "id": 130,
+    "niveau": "N3",
+    "theme": "Gestion de Palanquée & Organisation à 40 m",
+    "question": "Quels sont les éléments clés d'une fiche d'évacuation de site ?",
+    "options": ["Coordonnées GPS du site, numéros 112/DAN/Caisson hyperbare, moyens de communication disponibles et accès secours", "Le tarif du parking", "L'horaire des marées uniquement", "La marque de la vedette"],
+    "reponse_index": 0,
+    "explication": "La fiche d'évacuation garantit le guidage efficace des secours médicalisés."
+  },
+
+  {
+    "id": 131,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Quel est l'avantage d'un détendeur compensé à 40 mètres de profondeur ?",
+    "options": ["Il délivre un confort respiratoire constant quelle que soit la profondeur et la pression restante dans la bouteille", "Il coûte moins cher", "Il ne givre jamais", "Il transforme le CO2 en O2"],
+    "reponse_index": 0,
+    "explication": "La compensation annule l'effet des variations de pression HP et ambiante sur l'effort d'inspiration."
+  },
+  {
+    "id": 132,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Pourquoi exige-t-on deux détendeurs complets sur deux sorties indépendantes pour la plongée en eau froide ?",
+    "options": ["Pour pouvoir prêter un détendeur à un poisson", "Pour isoler immédiatement un étage qui givre en fermant sa robinetterie sans perdre sa source d'air principale", "Pour gonfler deux gilets à la fois", "Parce que les blocs ont deux trous"],
+    "reponse_index": 1,
+    "explication": "La fermeture du robinet concerné stoppe le givrage tout en conservant un détendeur opérationnel."
+  },
+  {
+    "id": 133,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Qu'est-ce qui provoque le givrage d'un détendeur ?",
+    "options": ["La baisse brutale de température liée à la détente de l'air (Loi de Joule-Thomson) amplifiée par de l'humidité dans l'air et l'eau froide", "Le manque de graisse dans le piston", "L'utilisation de palmes rigides", "Le sel de la mer"],
+    "reponse_index": 0,
+    "explication": "La chute de pression lors d'un fort débit refroidit l'air sous 0°C et gèle le mécanisme du détendeur."
+  },
+  {
+    "id": 134,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Quelle est la précaution essentielle avec un ordinateur à gestion d'air intégrée (émetteur HP) ?",
+    "options": ["Toujours conserver un manomètre mécanique analogique de secours en cas de panne de batterie ou de perte de signal radio", "Ne pas mettre de pile", "Regarder l'écran toutes les secondes", "L'utiliser uniquement en piscine"],
+    "reponse_index": 0,
+    "explication": "La redondance du manomètre mécanique prévient les pannes électroniques ou d'émission sans fil."
+  },
+  {
+    "id": 135,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Quel est le bénéfice de l'utilisation d'un bloc de décompression au Nitrox 50 aux paliers ?",
+    "options": ["Accélérer la désaturation en azote et réduire la durée ou augmenter la sécurité des paliers", "Descendre à 60 mètres", "Économiser l'air du bloc principal à la descente", "Réchauffer le plongeur"],
+    "reponse_index": 0,
+    "explication": "L'augmentation du gradient d'oxygène accélère le dégazage de l'azote aux paliers."
+  },
+  {
+    "id": 136,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Comment doit être gréé un bloc de secours suspendu sous le bateau à 5 mètres ?",
+    "options": ["Bouteille ouverte, détendeur vérifié, lestée et bien visible sous la coque", "Bouteille fermée et attachée par le tuyau", "Pose au fond sans bout", "Sachet étanche sans détendeur"],
+    "reponse_index": 0,
+    "explication": "Le bloc de palier doit être directement opérationnel pour une palanquée arrivant en réserve d'air."
+  },
+  {
+    "id": 137,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Quel est le rôle de l'inflateur sur une combinaison étanche ?",
+    "options": ["Injecter de l'air dans la combinaison pour compenser le plaquage lié à la pression et maintenir l'isolation thermique", "Vider l'eau de la combinaison", "Gonfler le gilet stabilisateur à distance", "Sécher le sous-vêtement"],
+    "reponse_index": 0,
+    "explication": "L'injection d'air préserve la couche d'air isolante comprimée lors de la descente."
+  },
+  {
+    "id": 138,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Comment réagir en cas de blocage de l'inflateur d'une combinaison étanche en position de gonflage continu ?",
+    "options": ["Déconnecter immédiatement le flexible MP de l'inflateur et purger l'excès d'air par la purge d'épaule", "Bloquer sa respiration", "Se laisser remonter à la surface sans rien faire", "Enlever la combinaison"],
+    "reponse_index": 0,
+    "explication": "Déconnecter le flexible stoppe l'arrivée d'air et évite une remontée incontrôlée en ballon."
+  },
+  {
+    "id": 139,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Quel est l'avantage d'un parachute de palier à soupape (fermé) par rapport à un parachute ouvert ?",
+    "options": ["Il ne se vide pas d'air une fois arrivé en surface s'il couche sur l'eau", "Il gonfle tout seul au fond", "Il pèse moins lourd", "Il n'a pas besoin de fil"],
+    "reponse_index": 0,
+    "explication": "La soupape ou le bec de canard emprisonne l'air, maintenant le parachute gonflé même en l'absence de tension du fil."
+  },
+  {
+    "id": 140,
+    "niveau": "N3",
+    "theme": "Matériel Spécifique & Techniques Avancées",
+    "question": "Comment entretenir les purges et l'inflateur du gilet stabilisateur après la saison ?",
+    "options": ["Rinçage abondant à l'eau douce interne/externe, séchage gonflé à l'ombre et stockage légèrement gonflé", "Lavage en machine à 90°C", "Séchage en plein soleil sur du métal brûlant", "Baignade dans l'huile"],
+    "reponse_index": 0,
+    "explication": "Le rinçage interne élimine les cristaux de sel et le sable qui bloquent les clapets et valves."
+  },
+
+  {
+    "id": 141,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Quelle est la priorité absolue lors d'une remontée assistée d'un plongeur syncopé depuis 30 m ?",
+    "options": ["Maintenir la tête en extension pour libérer les voies aériennes et assurer une remontée continue sans interruption", "Faire un vidage de masque à 15m", "Récupérer les palmes tombées", "Décrocher le bloc au fond"],
+    "reponse_index": 0,
+    "explication": "La liberté des voies aériennes évite la surpression pulmonaire chez la victime inconsciente."
+  },
+  {
+    "id": 142,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Quelle doit être la vitesse de remontée lors d'une assistance ou d'un sauvetage sous l'eau ?",
+    "options": ["Une vitesse régulière et contrôlée d'environ 10 à 12 m/min sans dépasser les bulles", "40 m/min pour sortir au plus vite", "1 m/min pour décompresser", "Laisser monter la victime seule"],
+    "reponse_index": 0,
+    "explication": "La remontée doit être maîtrisée pour préserver la santé du sauveteur et ne pas aggraver l'état de la victime."
+  },
+  {
+    "id": 143,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Comment maintenir la tête d'un plongeur inconscient pendant le tractage en surface ?",
+    "options": ["Tête en bas dans l'eau", "Maintenir le menton vers le haut (voies aériennes hors de l'eau) en position dorsale", "Sur le ventre en tenant le gilet", "Par les cheveux"],
+    "reponse_index": 1,
+    "explication": "Éviter l'inhalation d'eau est primordial pour prévenir la noyade secondaire."
+  },
+  {
+    "id": 144,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Comment utilise-t-on le BAVU sur une victime en arrêt respiratoire ?",
+    "options": ["Application hermétique du masque sur le visage (prise en C-E), insufflation progressive en observant le soulèvement de la poitrine", "Appui sur le ventre avec le ballon", "Gonflage par le nez sans masque", "Envoi d'air en continu sans relâcher"],
+    "reponse_index": 0,
+    "explication": "La technique à deux mains ou prise C-E assure une étanchéité optimale du masque BAVU."
+  },
+  {
+    "id": 145,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Quelle est la précaution indispensable lors de l'utilisation d'un DAE (Défibrillateur) près de l'eau ?",
+    "options": ["Sécher le thorax de la victime et s'assurer qu'elle ne baigne pas dans une flaque d'eau avant de choquer", "Mettre le DAE sous l'eau", "Choquer pendant le massage cardiaque sans s'arrêter", "Ne jamais utiliser de DAE pour la plongée"],
+    "reponse_index": 0,
+    "explication": "L'eau étant conductrice, le thorax doit être sec pour éviter la dérivation du courant électrique."
+  },
+  {
+    "id": 146,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Quel est le critère de décision pour demander un héliportage médicalisé d'un accidenté de décompression ?",
+    "options": ["Atteinte neurologique grave ou détresse vitale sur un site éloigné des structures hospitalières", "Si le plongeur a perdu son masque", "Pour rentrer plus vite chez soi", "En cas de simple douleur à un doigt"],
+    "reponse_index": 0,
+    "explication": "L'urgence vitale ou le déficit neurologique impose un transfert hyperbare le plus rapide possible."
+  },
+  {
+    "id": 147,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "À qui doit être transmis le rapport écrit d'accident de plongée rédigé par l'encadrant ?",
+    "options": ["Au médecin fédéral, à la commission médicale et aux autorités compétentes (si demandé)", "Aux journaux locaux", "Aux autres élèves du club", "À l'assurance de la voiture"],
+    "reponse_index": 0,
+    "explication": "Le rapport circonstancié est destiné au suivi médical spécialisé et à la commission de sécurité fédérale."
+  },
+  {
+    "id": 148,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Quelle est la conduite à tenir face à une suspicion d'embolie gazeuse cérébrale au retour en surface ?",
+    "options": ["Oxygénothérapie à 100%, position allongée stricte, alerte immédiate SAMU/DAN", "Faire boire du jus d'orange et asseoir le plongeur", "Redescendre le plongeur à 10m", "Faire marcher la victime"],
+    "reponse_index": 0,
+    "explication": "L'embolie cérébrale est une urgence absolue nécessitant une réoxygénation et une recompression en caisson hyperbare."
+  },
+  {
+    "id": 149,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Pourquoi faut-il impérativement maintenir allongée une victime d'accident de décompression ?",
+    "options": ["Pour éviter le désamorçage cardiaque et l'émigration des bulles gazeuses vers le cerveau sous l'effet de la gravité", "Pour qu'elle dorme mieux", "Pour lui enlever ses palmes plus facilement", "Parce que le sol est froid"],
+    "reponse_index": 0,
+    "explication": "La position debout favorise le passage des bulles de gaz vers la circulation cérébrale par flottabilité."
+  },
+  {
+    "id": 150,
+    "niveau": "N3",
+    "theme": "Secourisme Subaquatique, CPR & BAVU",
+    "question": "Comment prendre en charge une luxation d'épaule survenue pendant l'équipement sur le pont du bateau ?",
+    "options": ["Immobiliser le membre dans la position la moins douloureuse, ne pas tenter de réduction et évacuer vers les urgences", "Tirer fort sur le bras pour le remettre en place", "Faire plonger le blessé dans l'eau froide", "Appliquer de la graisse sur l'épaule"],
+    "reponse_index": 0,
+    "explication": "La réduction d'une luxation exige un examen radiologique préalable pour éviter toute lésion nerveuse ou vasculaire."
+  },
+
+  {
+    "id": 151,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Quelles sont les prérogatives majeures du brevet 4★ / Assistant Moniteur au sein de la Lifras ?",
+    "options": ["Guide de palanquée à toutes profondeurs, assistant à l'enseignement sous la responsabilité d'un moniteur et responsable de sécurité", "Président de la fédération", "Délivrance autonome des brevets 3★", "Fabrication de blocs de plongée"],
+    "reponse_index": 0,
+    "explication": "Le Plongeur 4★ est le cadre de terrain de la palanquée et l'assistant direct des moniteurs pour la pédagogie."
+  },
+  {
+    "id": 152,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Quelle est la différence entre responsabilité civile et responsabilité pénale pour un encadrant ?",
+    "options": ["Civile : réparer le dommage causé à la victime (assurances) / Pénale : sanctionner l'infraction à une loi ou mise en danger d'autrui", "Civile : amende payée au club / Pénale : interdiction de plonger 1 semaine", "Aucune, c'est la même chose", "Civile pour les professionnels, Pénale pour les bénévoles"],
+    "reponse_index": 0,
+    "explication": "La responsabilité civile indemnise la victime tandis que la responsabilité pénale punit la faute ou la négligence commise."
+  },
+  {
+    "id": 153,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Qu'est-ce que l'obligation de moyens imposée à un encadrant de plongée ?",
+    "options": ["L'encadrant doit mettre en œuvre tous les moyens nécessaires et raisonnables pour assurer la sécurité des élèves", "L'encadrant doit garantir à 100% qu'aucun accident ne se produira jamais", "L'encadrant doit fournir le matériel gratuitement", "L'encadrant doit payer les cotisations des élèves"],
+    "reponse_index": 0,
+    "explication": "En sport, l'encadrant est soumis à une obligation de moyens renforcée (prudence, compétence, organisation)."
+  },
+  {
+    "id": 154,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Comment le Manuel de l'Instructeur Lifras (MIL) distingue-t-il l'Espace Aquatique Restreint (EAR) de l'Espace Aquatique Ouvert (EAO) ?",
+    "options": ["EAR : zone protégée/piscine (< 5m sans courant) / EAO : milieu naturel ouvert (carrière, lac, mer)", "EAR : mer rouge / EAO : mer du nord", "EAR : plongée de nuit / EAO : plongée de jour", "Aucune différence dans le MIL"],
+    "reponse_index": 0,
+    "explication": "Le MIL définit précisément ces espaces pour adapter le taux d'encadrement et les exercices autorisés."
+  },
+  {
+    "id": 155,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Quels documents administratifs doivent obligatoirement être consultables sur le site de plongée lors d'une activité club ?",
+    "options": ["La feuille de sécurité (registre des immersions), les brevets/licences des participants et le plan de secours", "Les factures d'achat du bateau", "Le diplôme de natation du chauffeur", "Les carnets de santé d'enfance"],
+    "reponse_index": 0,
+    "explication": "Ces documents attestent de la conformité des prérogatives et de l'organisation des secours."
+  },
+  {
+    "id": 156,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Quelle est la composition minimale du matériel de secours obligatoire sur un site d'encadrement Lifras ?",
+    "options": ["Ensemble d'oxygénothérapie complète (O2 pur, BAVU, masque HC), eau douce, couverture chauffante, trousse de secours et moyen de communication", "Un simple pansement et une bouteille d'eau", "Un extincteur et une bouée", "Un téléphone sans réseau"],
+    "reponse_index": 0,
+    "explication": "C'est l'armement sanitaire réglementaire requis pour faire face aux urgences subaquatiques."
+  },
+  {
+    "id": 157,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Quelles sont les limitations de l'effectif d'une palanquée encadrée par un 4★ selon le MIL ?",
+    "options": ["Adaptées au niveau le plus faible des élèves et aux conditions du milieu (ex. 2 élèves max en formation initiale en EAO)", "Toujours 10 élèves par encadrant", "Illimité si la visibilité est bonne", "Uniquement 1 élève quel que soit le niveau"],
+    "reponse_index": 0,
+    "explication": "Le MIL fixe des ratios stricts encadrant/élèves pour préserver une surveillance visuelle directe constante."
+  },
+  {
+    "id": 158,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Comment réagir si un membre du club refuse de se soumettre aux consignes de sécurité énoncées par le Directeur de Plongée ?",
+    "options": ["Lui interdire immédiatement l'accès à l'eau pour la session et consigner le refus", "Le laisser plonger à ses risques et périls", "Lui infliger une amende financière directe", "L'obliger à plonger seul"],
+    "reponse_index": 0,
+    "explication": "Le Directeur de Plongée a le pouvoir et le devoir d'exclure tout membre mettant en danger la sécurité."
+  },
+  {
+    "id": 159,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Quelle est la durée de validité du certificat médical de non-contre-indication à la pratique de la plongée sous-marine ?",
+    "options": ["1 an (avec examens complémentaires selon l'âge et les recommandations fédérales)", "5 ans", "A vie", "6 mois"],
+    "reponse_index": 0,
+    "explication": "Le certificat médical doit être renouvelé chaque année par un médecin compétent."
+  },
+  {
+    "id": 160,
+    "niveau": "N4",
+    "theme": "Réglementation, Textes Fédéraux & Responsabilités",
+    "question": "Qu'est-ce que la carte CMAS délivrée avec le brevet Lifras ?",
+    "options": ["Une carte de reconnaissance internationale des niveaux de plongée à travers le monde", "Une carte de réduction pour le matériel", "Une carte de crédit sportive", "Un permis de conduire les bateaux"],
+    "reponse_index": 0,
+    "explication": "La Confédération Mondiale des Activités Subaquatiques (CMAS) assure la standardisation internationale des brevets."
+  },
+
+  {
+    "id": 161,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Quels sont les éléments constitutifs d'un briefing pédagogique réussi avant une séance pratique ?",
+    "options": ["Présentation de l'exercice, objectif visé, démonstration à sec/explications, signes de communication, critères de réussite et sécurité", "Annonce de la note finale", "Explication de la théorie de la décompression", "Lecture du règlement intérieur"],
+    "reponse_index": 0,
+    "explication": "Un briefing clair prépare mentalement l'élève au geste technique qu'il va devoir exécuter sous l'eau."
+  },
+  {
+    "id": 162,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Quelle est la technique de démonstration subaquatique d'un exercice par l'encadrant ?",
+    "options": ["Geste lent, décomposé, exagéré dans ses étapes, exécuté après avoir verrouillé l'attention visuelle de l'élève", "Geste exécuté à vitesse maximale pour impressionner l'élève", "Démonstration faite dans le dos de l'élève", "Geste expliqué uniquement par signe des mains"],
+    "reponse_index": 0,
+    "explication": "La vitesse lente et la décomposition permettent la mémorisation motrice par observation."
+  },
+  {
+    "id": 163,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Comment corriger un élève qui a tendance à être sur-lesté et à rayer le fond ?",
+    "options": ["Vérifier son lestage à vide de gilet en surface, lui apprendre à utiliser son gilet par petites injections et ajuster sa ventilation", "Lui ajouter 2 kg de plomb supplémentaires", "Lui interdire de toucher au gilet", "Lui faire tenir une bouée"],
+    "reponse_index": 0,
+    "explication": "La pesée de surface et l'apprentissage du poumons-ballast sont les clés de la stabilisation."
+  },
+  {
+    "id": 164,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Quelle est la chronologie pédagogique pour enseigner le lâcher de parachute à un élève 2★ ?",
+    "options": ["Explication à sec -> Déroulement du spool -> Stabilisation sous l'eau -> Gonflage partiel -> Libération contrôlée sous tension", "Donner le parachute et lui dire d'essayer à 20 mètres", "Gonfler le parachute entièrement depuis la surface", "Tirer sur la ficelle depuis le bateau"],
+    "reponse_index": 0,
+    "explication": "L'apprentissage fractionné maîtrise le risque d'emportement par le parachute."
+  },
+  {
+    "id": 165,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Comment gérer un élève pris de stress avant l'immersion ?",
+    "options": ["Écouter ses craintes, rassurer, faire des exercices de respiration lente, réduire les objectifs de la séance et ne jamais forcer", "Moquer ses craintes devant le groupe", "Le pousser dans l'eau rapidement pour dépasser la peur", "L'abandonner au bord du bassin"],
+    "reponse_index": 0,
+    "explication": "La bienveillance et la désescalade de la pression psychologique évitent la panique sous l'eau."
+  },
+  {
+    "id": 166,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Quelle est la différence entre évaluation formative et évaluation sommative ?",
+    "options": ["Formative : accompagne l'apprentissage et identifie les axes de progrès / Sommative : valide le niveau final pour la certification", "Formative : faite par écrit / Sommative : faite oralement", "Formative : en mer / Sommative : en piscine", "Aucune différence"],
+    "reponse_index": 0,
+    "explication": "L'évaluation formative aide à apprendre ; la sommative contrôle l'acquisition du brevet."
+  },
+  {
+    "id": 167,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Comment réagir face à un élève présentant des difficultés de coordination motrice sous l'eau ?",
+    "options": ["Isoler le geste en sous-éléments simples, répéter dans peu d'eau et utiliser des repères visuels ou tactiles", "Lui crier dessus sous l'eau", "Lui faire faire l'exercice 50 fois d'affilée sans pause", "Remplir une fiche d'échec immédiate"],
+    "reponse_index": 0,
+    "explication": "La simplification des tâches motrices favorise la réussite des élèves en difficulté psychomotrice."
+  },
+  {
+    "id": 168,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Quelles sont les consignes de sécurité lors des exercices d'assistance-remontée à l'enseignement ?",
+    "options": ["Surveillance visuelle stricte du moniteur, maîtrise de la vitesse, interruption immédiate en cas de blocage respiratoire et limitation du nombre d'essais", "Effort maximal jusqu'à épuisement", "Réaliser l'exercice de 40m sans détendeur", "Remonter sans regarder la surface"],
+    "reponse_index": 0,
+    "explication": "Les exercices de remontée sollicitent l'appareil pulmonaire et exigent un contrôle d'encadrement très rigoureux."
+  },
+  {
+    "id": 169,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Quel est l'objectif d'une séance d'aisance aquatique sans bloc (palmes, masque, tuba) ?",
+    "options": ["Développer le rendement du palmage, la capacité cardio-respiratoire, le relâchement et la confiance en immersion", "Économiser l'air des bouteilles du club", "Sélectionner uniquement les futurs champions", "Remplacer la théorie"],
+    "reponse_index": 0,
+    "explication": "La maîtrise de son corps dans l'eau sans équipement lourd constitue le socle de l'aisance du plongeur."
+  },
+  {
+    "id": 170,
+    "niveau": "N4",
+    "theme": "Pédagogie & Méthodologie d'Enseignement Pratique",
+    "question": "Quelle doit être la posture de l'Assistant Moniteur vis-à-vis des règles de sécurité ?",
+    "options": ["Exemplarité absolue en tout temps (équipement irréprochable, respect strict des consignes et du milieu)", "Faire ce qu'il veut car il est cadre", "Ignorer les règles en dehors des cours", "Laisser les élèves faire les vérifications à sa place"],
+    "reponse_index": 0,
+    "explication": "L'exemplarité du cadre pédagogique conditionne l'intégration des réflexes de sécurité par les élèves."
+  },
+
+  {
+    "id": 171,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Quels sont les rôles principaux du Directeur de Plongée (DP) sur un site naturel ?",
+    "options": ["Organiser l'activité, évaluer le site, composer les palanquées, fixer les paramètres et assurer la sécurité globale", "Conduire le bus du club", "Faire la cuisine pour le groupe", "Remplacer le médecin du caisson"],
+    "reponse_index": 0,
+    "explication": "Le DP est le responsable opérationnel et juridique ultime du déroulement de la session de plongée."
+  },
+  {
+    "id": 172,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Quels éléments composent l'analyse des risques environnementaux menée par le DP avant d'ouvrir la plongée ?",
+    "options": ["Force du vent, hauteur de la houle, courant, visibilité, température de l'eau et état de forme des pratiquants", "Le prix des entrées sur le site", "La couleur des combinaisons", "L'âge des bateaux voisins"],
+    "reponse_index": 0,
+    "explication": "L'analyse globale des conditions externes et humaines conditionne la faisabilité de l'activité."
+  },
+  {
+    "id": 173,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Informations obligatoires à consigner sur le registre de sécurité (feuille de palanquée) :",
+    "options": ["Noms/prénoms, niveaux, heure d'immersion, heure de sortie, profondeur maximale atteinte, temps de plongée et pression des blocs", "Numéro de téléphone portable des parents", "Marque des palmes de chaque membre", "Menu du petit déjeuner"],
+    "reponse_index": 0,
+    "explication": "La feuille de palanquée constitue le document officiel de traçabilité des immersions."
+  },
+  {
+    "id": 174,
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "niveau": "N4",
+    "question": "Que doit faire le DP en cas d'arrivée subite d'un orage violent ou d'un brouillard dense sur le site ?",
+    "options": ["Déclencher le signal de rappel d'urgence sonore pour faire remonter toutes les palanquées et interrompre l'activité", "Laisser les plongées se terminer au fond", "Descendre rejoindre les groupes au fond", "Attendre que l'orage passe"],
+    "reponse_index": 0,
+    "explication": "La perte de visibilité en surface ou la foudre impose l'arrêt immédiat des activités nautiques."
+  },
+  {
+    "id": 175,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Comment anticiper la gestion des secours sur une zone côtière non couverte par le réseau GSM ?",
+    "options": ["Disposer d'une radio VHF marine (Canal 16), d me balise de détresse ou d'un téléphone satellite fonctionnel", "Espérer qu'aucun accident ne se produise", "Envoyer un nageur chercher du réseau au port", "Ecrire une lettre"],
+    "reponse_index": 0,
+    "explication": "La continuité de la chaîne d'alerte radio/satellite est une exigence absolue du Directeur de Plongée."
+  },
+  {
+    "id": 176,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Que signifie le pavillon 'Alpha' (bleu et blanc) arboré sur un navire de plongée ?",
+    "options": ["'J'ai des plongeurs en eau ; observez une veille attentive et naviguez à vitesse réduite'", " Bateau en panne d'essence", " 'Interdiction de baignade'", " Navire de pêche en chalutage"],
+    "reponse_index": 0,
+    "explication": "Le pavillon Alpha du Code International des Signaux protège la zone d'immersion contre les autres navires."
+  },
+  {
+    "id": 177,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Comment calculer la réserve minimale de carburant nécessaire pour un bateau de soutien de plongée ?",
+    "options": ["Appliquer la règle des 3 tiers : 1/3 pour l'aller, 1/3 pour le retour, 1/3 de réserve de sécurité", "Partir avec le réservoir à moitié vide", "Prendre 5 litres dans un bidon", "Ne pas calculer"],
+    "reponse_index": 0,
+    "explication": "Cette marge de sécurité prévient le risque de panne sèche en cas de dérive ou de recherche de plongeur."
+  },
+  {
+    "id": 178,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Quelles sont les démarches d'information obligatoire en cas d'accident grave nécessitant une évacuation ?",
+    "options": ["Prévenir les secours (112/MRCC), la chaîne fédérale (Commission Médicale/Président) et rédiger le rapport circonstancié", "Supprimer les feuilles de palanquée", "Appeler la presse locale", "Continuer les plongées comme si de rien n'était"],
+    "reponse_index": 0,
+    "explication": "L'encadrant doit concourir à l'urgence médicale tout en informant les instances de tutelle."
+  },
+  {
+    "id": 179,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Comment organiser la récupération de palanquées dérivantes en mer sous du courant ?",
+    "options": ["Récupérer prioritairement les groupes les plus en aval (dans le sens du courant) et maintenir la veille visuelle haute", "Chercher les palanquées au hasard", "Commencer par la palanquée la plus proche du bateau même si elle ne dérive pas", "Attendre le coucher du soleil"],
+    "reponse_index": 0,
+    "explication": "Récupérer d'abord les dérives les plus éloignées évite de les perdre de vue au large."
+  },
+  {
+    "id": 180,
+    "niveau": "N4",
+    "theme": "Direction de Plongée, Sécurité des Sites & Logistique",
+    "question": "Quelle est la procédure de contrôle périodique du bloc d'oxygène médical du club ?",
+    "options": ["Vérification régulière du niveau de pression, contrôle de la date de péremption de la bouteille/masque et test de débit", "Ouvrir la bouteille jusqu'à ce qu'elle soit vide", "Garder la bouteille fermée sans jamais y toucher", "Laisser le kit au soleil"],
+    "reponse_index": 0,
+    "explication": "Le matériel d'oxygénothérapie doit être opérationnel à 100% à chaque instant de l'activité."
+  },
+
+  {
+    "id": 181,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Pourquoi la baisse de la PpO2 lors de la remontée d'une apnée profonde peut-elle provoquer une syncope (rendez-vous des 7 mètres) ?",
+    "options": ["La chute de la pression hydrostatique fait chuter brutalement la PpO2 alvéolaire en dessous du seuil critique de conscience", "L'eau devient plus claire", "L'azote s'échappe de l'estomac", "Le cœur s'arrête en raison de la lumière"],
+    "reponse_index": 0,
+    "explication": "L'extension du volume pulmonaire baisse la PpO2 sous 0,10 bar, provoquant l'anoxie cérébrale foudroyante à l'approche de la surface."
+  },
+  {
+    "id": 182,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Qu'est-ce que le gradient de concentration gazeuse lors du dégazage d'un tissu saturated ?",
+    "options": ["La différence entre la tension du gaz dissous dans le tissu et la pression partielle du même gaz dans le sang capillaire", "La vitesse de déplacement des palmes", "La différence de température entre la peau et l'eau", "Le débit du détendeur"],
+    "reponse_index": 0,
+    "explication": "C'est ce gradient de pression (Tension Tissu - PpGaz Sang) qui motive la diffusion du gaz vers le réseau veineux."
+  },
+  {
+    "id": 183,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Quel est l'effet de l'immersion et du froid sur le retour veineux et la précharge cardiaque ?",
+    "options": ["Vasoconstriction périphérique entraînant un transfert sanguin central (blood shift) et une augmentation du travail cardiaque", "Baisse de la pression artérielle globale", "Arrêt complet de la circulation dans les bras", "Augmentation du stockage d'eau dans les jambes"],
+    "reponse_index": 0,
+    "explication": "Le froid chasse le sang des membres vers le thorax, surchargeant le volume sanguin central."
+  },
+  {
+    "id": 184,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Dans le modèle Bühlmann ZHL-16C, que représentent les Gradient Factors (GF) ?",
+    "options": ["Des pourcentages de sursaturation maximale tolérée utilisés pour ajuster le conservatisme de l'algorithme", "Des facteurs de correction de la vitesse de palmage", "Des mesures de la température de l'eau", "Des coefficients d'usure de la batterie"],
+    "reponse_index": 0,
+    "explication": "Les GF permettent de durcir le modèle en réduisant la tension maximale tolérée dans les tissus M-Values."
+  },
+  {
+    "id": 185,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Différence entre conduction, convection et rayonnement dans le refroidissement du plongeur :",
+    "options": ["Conduction : transfert direct par contact avec l'eau / Convection : renouvellement de l'eau froide au contact de la combinaison", "Conduction : soleil / Convection : courant électrique", "Conduction : panique / Convection : essoufflement", "Ce sont des synonymes exacts"],
+    "reponse_index": 0,
+    "explication": "La convection accentue la déperdition thermique par le mouvement fluide autour du corps."
+  },
+  {
+    "id": 186,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Quelle est la définition exacte de la Pression Effective ?",
+    "options": ["Pression hydrostatique seule (Pression due uniquement à la colonne d'eau)", "Pression atmosphérique uniquement", "Pression totale reçue par le manomètre", "Pression du gaz dans les poumons"],
+    "reponse_index": 0,
+    "explication": "La pression effective représente la surpression d'eau par rapport à la pression atmosphérique initiale."
+  },
+  {
+    "id": 187,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Expliquez l'origine de la 'diurèse d'immersion'.",
+    "options": ["La centralisation du volume sanguin stimule les auricules cardiaques (sécrétion de l'ANP) qui ordonnent aux reins d'éliminer de l'eau", "L'absorption d'eau de mer par la peau", "La peur sous-marine", "Le froid sur la vessie"],
+    "reponse_index": 0,
+    "explication": "Le reflexe de l'hypervolémie centrale leurre l'organisme qui cherche à réduire son volume liquide par l'urine."
+  },
+  {
+    "id": 188,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Comment le centre de gravité et le centre de poussée Archimédienne influencent-ils le 'trim' (assiette) du plongeur ?",
+    "options": ["S'ils ne sont pas alignés sur la même verticale, ils créent un couple de rotation qui fait basculer le plongeur", "Ils obligent le plongeur à nager debout", "Ils n'ont aucun effet sur la position sous l'eau", "Ils déterminent la consommation d'air"],
+    "reponse_index": 0,
+    "explication": "L'écart entre le point d'application du poids et celui de la poussée génère un moment de bascule sous l'eau."
+  },
+  {
+    "id": 189,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Pourquoi la densité du mélange gaz de fond modifie-t-elle l'élimination du CO2 pulmonaire ?",
+    "options": ["Un gaz dense augmente l'espace mort fonctionnel et ralentit la diffusion alvéolaire du CO2", "Un gaz dense absorbe tout le CO2", "La densité détruit les alvéoles", "Un gaz dense refroidit le sang"],
+    "reponse_index": 0,
+    "explication": "L'augmentation du travail ventilatoire et de la turbulance crée une rétention alvéolaire du dioxyde de carbone."
+  },
+  {
+    "id": 190,
+    "niveau": "N4",
+    "theme": "Physiologie & Physique Approfondies pour Encadrants",
+    "question": "Qu'est-ce qu'un barotraumatisme alternobare de l'oreille ?",
+    "options": ["Vertiges causés par une différence de pression d'évacuation de l'air entre la trompe d'Eustache gauche et droite à la remontée", "Une rupture du tympan à la descente", "Une douleur aux sinus au fond", "Une baisse d'audition irréversible"],
+    "reponse_index": 0,
+    "explication": "L'asymétrie de décompression de l'oreille moyenne stimule anormalement les vestibules et cause de faux vertiges."
+  },
+
+  {
+    "id": 191,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "En tant que cadre, quelle est la priorité managériale immédiate en cas d'accident grave au sein du club ?",
+    "options": ["Coordonner les secours d'urgence, isoler la victime, rassurer et regrouper les autres membres pour éviter le sur-accident", "Chercher immédiatement les coupables", "Annuler la licence des participants", "Prendre des vidéos pour les assurances"],
+    "reponse_index": 0,
+    "explication": "Le cadre doit maintenir l'organisation de sécurité globale et protéger le groupe sous le choc psychologique."
+  },
+  {
+    "id": 192,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Prise en charge d'un choc anaphylactique suite à une piqûre de poisson-pierre ou vive sur un bateau :",
+    "options": ["Alerte d'urgence, neutralisation du venin thermolabile par chaleur modérée (eau chaude), désinfection et O2 si besoin", "Appliquer de la glace pilée directement sur la plaie", "Incision au couteau et succion buccale", "Faire courir la victime"],
+    "reponse_index": 0,
+    "explication": "Les venins de la plupart des poissons marins dangereux sont détruits par une exposition à la chaleur contrôlée."
+  },
+  {
+    "id": 193,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Comment réagir face à un élève qui fait une crise de spasticité/hyperventilation en surface ?",
+    "options": ["Le maintenir hors de l'eau, lui faire retirer le détendeur/masque, rassurer, imposer un rythme respiratoire lent", "Le replonger immédiatement sous l'eau", "Lui injecter de l'eau dans le visage", "Le laisser seul dans l'eau"],
+    "reponse_index": 0,
+    "explication": "Mettre fin à l'hyperventilation prévient la syncope hypocapnique de surface."
+  },
+  {
+    "id": 194,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Procédure d'urgence sous l'eau lors d'une fuite massive par rupture de flexible MP sur le bloc d'un élève :",
+    "options": ["Passage immédiat de l'élève sur l'octopus du guide, fermeture de la robinetterie défectueuse et remontée contrôlée", "Laissez l'élève remonter seul en ballon", "Essayer de boucher le trou avec les doigts", "Sauter sur l'élève"],
+    "reponse_index": 0,
+    "explication": "La sécurisation de l'alimentation en air par le guide précède la coupure de la fuite."
+  },
+  {
+    "id": 195,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Comment ordonner un rappel général de toutes les palanquées à l'eau depuis la berge ?",
+    "options": ["Pétard d'évacuation immergé ou signal sonore sous-marin conventionnel (3 coups répétés sur l'échelle)", "Agiter un chiffon blanc depuis la plage", "Attendre que les blocs soient vides", "Siffler avec la bouche"],
+    "reponse_index": 0,
+    "explication": "Le signal impératif sous-marin doit être audible clairement par tous les plongeurs en immersion."
+  },
+  {
+    "id": 196,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Gestion d'un arrêt cardio-respiratoire sur un semi-rigide en mer :",
+    "options": ["Alerte radio CROSS/112 immédiate, massage cardiaque (RCP 30:2) combiné au BAVU avec O2 à 15L/min et DAE si disponible", "Mettre la victime sur le côté et attendre le port", "Faire des compressions uniquement sur les jambes", "Abandonner la réanimation au bout de 2 minutes"],
+    "reponse_index": 0,
+    "explication": "La réanimation cardio-pulmonaire précoce sous O2 maximise les chances de survie."
+  },
+  {
+    "id": 197,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Attitude du responsable face aux médias en cas d'accident grave de plongée :",
+    "options": ["Faire preuve de réserve, ne faire aucune déclaration spéculative et orienter les journalistes vers la police/port-parole officiel", "Raconter des hypothèses personnelles à la télévision", "Donner le nom complet des victimes immédiatement", "Accuser la marque du détendeur"],
+    "reponse_index": 0,
+    "explication": "Le devoir de réserve protège l'enquête judiciaire et le respect du secret médical et des familles."
+  },
+  {
+    "id": 198,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Pourquoi le matériel d'un plongeur victime d'un accident mortel doit-il être placé sous scellés ?",
+    "options": ["Pour les besoins de l'enquête judiciaire visant à déterminer les causes techniques ou humaines du drame", "Pour le revendre au profit du club", "Pour le nettoyer", "Pour le donner aux secours"],
+    "reponse_index": 0,
+    "explication": "Les forces de police ou gendarmerie saisissent le matériel intracté pour expertise technique obligatoire."
+  },
+  {
+    "id": 199,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Quel est l'intérêt d'un débriefing d'incident (presque-accident / Near-Miss) avec l'équipe pédagogique ?",
+    "options": ["Analyser objectivement les défaillances de la chaîne de sécurité pour corriger les procédures et éviter la récidive", "Humilier l'encadrant responsable", "Remplir des papiers supplémentaires pour la fédération", "Annuler toutes les plongées de l'année"],
+    "reponse_index": 0,
+    "explication": "L'analyse du retour d'expérience (REX) est la base de l'amélioration continue de la sécurité."
+  },
+  {
+    "id": 200,
+    "niveau": "N4",
+    "theme": "Secourisme Avancé, Gestion de Crise & Cas Pratiques",
+    "question": "Comment sensibiliser les pratiquants à l'auto-évaluation de leur forme physique avant la plongée ?",
+    "options": ["Promouvoir la méthode 'I'M SAFE' (Illness, Medication, Stress, Alcohol, Fatigue, Eating) et encourager le refus de plonger en cas de doute", "Obliger tout le monde à plonger sous peine d'amende", "Ignorer l'état de fatigue des élèves", "Remplacer l'auto-évaluation par un test de course à pied"],
+    "reponse_index": 0,
+    "explication": "Rendre le plongeur acteur de sa propre sécurité et dédramatiser la renonciation à l'immersion prévient la majorité des accidents."
   }
 ]
