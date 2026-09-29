@@ -266,28 +266,33 @@
     let score = 0;
 
     // Chargement de questions.json
-    window.addEventListener('DOMContentLoaded', () => {
-      fetch('questions.json')
-        .then(res => res.json())
-        .then(data => {
-          baseDeQuestions = data;
-          document.getElementById('loading').style.display = 'none';
-          document.getElementById('quiz-content').style.display = 'block';
-          demarrerSérie();
-        })
-        .catch(err => {
-          document.getElementById('loading').innerText = "⚠️ Erreur : Impossible de charger questions.json";
-        });
-    });
+ window.addEventListener('DOMContentLoaded', () => {
+  // Réinitialisation des sélecteurs par défaut au rafraîchissement
+  document.getElementById('niveau').selectedIndex = 0;
+  document.getElementById('theme').selectedIndex = 0;
+  document.getElementById('taille-serie').selectedIndex = 1; // Option 10 questions par défaut
 
-    function demarrerSérie() {
+  fetch('questions.json')
+    .then(res => res.json())
+    .then(data => {
+      baseDeQuestions = data;
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('quiz-content').style.display = 'block';
+      
+      // Réinitialiser la série dès le départ
+      demarrerSérie();
+    })
+    .catch(err => {
+      console.error(err);
+      document.getElementById('loading').innerText = "⚠️ Erreur : Impossible de charger questions.json";
+    });
+});
+
+ function demarrerSérie() {
   const niv = document.getElementById('niveau').value;
   const th = document.getElementById('theme').value;
   const limite = parseInt(document.getElementById('taille-serie').value);
 
-  // Filtrage :
-  // Si "Tous" est sélectionné, on prend TOUTES les questions du niveau choisi (tous thèmes confondus)
-  // Sinon, on filtre par niveau ET par thème spécifique
   let filtrees = baseDeQuestions.filter(q => {
     const matchNiveau = (q.niveau === niv);
     const matchTheme = (th === "Tous" || q.theme === th);
@@ -299,15 +304,15 @@
     return;
   }
 
-  // Mélange aléatoire (tirage au sort) et découpe selon la limite choisie
+  // --- Mélange aléatoire (tirage au sort)  ---
   serieQuestions = filtrees.sort(() => 0.5 - Math.random()).slice(0, limite);
-  
+
   indexActuel = 0;
   score = 0;
 
   document.getElementById('results-box').style.display = 'none';
   document.getElementById('quiz-content').style.display = 'block';
-  
+
   afficherQuestion();
 }
 
