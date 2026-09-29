@@ -221,6 +221,14 @@
       color: #475569;
     }
 
+    /* Styles spécifiques pour les fiches intégrées en Doc */
+    .fiche-doc h3 { color: var(--primary); margin-top: 0; }
+    .niveau-badge { background: #e1f5fe; color: #01579b; padding: 3px 8px; border-radius: 4px; font-size: 0.85em; display: inline-block; margin-bottom: 8px; }
+    .questions-associees { margin-top: 15px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 0.9em; }
+    .questions-associees ul { margin: 5px 0; padding-left: 20px; }
+    .questions-associees a { color: var(--primary); text-decoration: none; font-weight: 500; cursor: pointer; }
+    .questions-associees a:hover { text-decoration: underline; }
+
     @media (max-width: 600px) {
       .hero-banner {
         padding: 30px 15px;
@@ -242,7 +250,7 @@
     </ul>
   </nav>
 
-  <!-- BANDEAU HERO (photos) -->
+  <!-- BANDEAU HERO -->
   <div class="hero-banner">
     <div class="hero-content">
       <h1>Préparation Théorique LIFRAS</h1>
@@ -253,7 +261,6 @@
   <main>
     <!-- PAGE HOME / QUIZ -->
     <div id="page-home" class="page-content active">
-      <!-- AVERTISSEMENT / DISCLAIMER -->
       <div class="card intro-disclaimer">
         <h3>⚠️ Avertissement & Modalités</h3>
         <p>
@@ -328,50 +335,28 @@
     <!-- PAGE DOC -->
     <div id="page-doc" class="page-content">
       <style>
-        .doc-section {
-          margin-bottom: 25px;
-        }
+        .doc-section { margin-bottom: 25px; }
         .doc-section h2 {
           color: var(--primary);
           border-bottom: 2px solid var(--border);
           padding-bottom: 8px;
           margin-top: 0;
         }
-        .doc-table {
-          width: 100%;
-          border-collapse: collapse;
-          margin: 15px 0;
-        }
-        .doc-table th, .doc-table td {
-          border: 1px solid var(--border);
-          padding: 10px 12px;
-          text-align: left;
-        }
-        .doc-table th {
-          background-color: #f1f5f9;
-          color: var(--nav-bg);
-          font-weight: bold;
-        }
-        .doc-theme-group {
-          margin-bottom: 15px;
-        }
-        .doc-theme-title {
-          font-weight: bold;
-          color: var(--nav-bg);
-          margin-bottom: 5px;
-        }
-        .doc-list {
-          margin: 5px 0 15px 20px;
-          padding: 0;
-        }
-        .doc-list li {
-          margin-bottom: 4px;
-        }
+        .doc-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .doc-table th, .doc-table td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; }
+        .doc-table th { background-color: #f1f5f9; color: var(--nav-bg); font-weight: bold; }
+        .doc-theme-group { margin-bottom: 15px; }
+        .doc-theme-title { font-weight: bold; color: var(--nav-bg); margin-bottom: 5px; }
+        .doc-list { margin: 5px 0 15px 20px; padding: 0; }
+        .doc-list li { margin-bottom: 4px; }
       </style>
+
+      <!-- Conteneur dynamique pour injecter les fiches de cours et leurs liens vers les questions -->
+      <div id="fiches-cours-container"></div>
 
       <!-- Récapitulatif Général -->
       <div class="card doc-section">
-        <h2>📋 Récapitulatif de la Banque de Questions (200 Questions)</h2>
+        <h2>📋 Récapitulatif de la Banque de Questions</h2>
         <div style="overflow-x: auto;">
           <table class="doc-table">
             <thead>
@@ -411,169 +396,6 @@
           </table>
         </div>
       </div>
-
-      <!-- Brevet 1* -->
-      <div class="card doc-section">
-        <h2>🥽 Niveau N1 (Plongeur 1★) — Questions 1 à 50</h2>
-        
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Physique & Notions de Base (Q1 à Q10)</div>
-          <ul class="doc-list">
-            <li>Notions de pression (atmosphérique, hydrostatique, absolue), loi de Boyle-Mariotte, flottabilité/densité de l'eau, conductivité thermique, réfraction et absorption sélective des couleurs.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Anatomie & Barotraumatismes (Q11 à Q20)</div>
-          <ul class="doc-list">
-            <li>Prévention des barotraumatismes (oreilles, trompe d'Eustache, manœuvre de Valsalva, rhume), risque de surpression pulmonaire à la remontée et gestion du plaquage de masque.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Matériel & Équipement (Q21 à Q30)</div>
-          <ul class="doc-list">
-            <li>Rôle du détendeur (1er et 2nd étages), manomètre HP, pression de service des blocs, gilet stabilisateur, octopus jaune et vérifications d'avant-plongée.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Procédures de Sécurité & Communication (Q31 à Q40)</div>
-          <ul class="doc-list">
-            <li>Signes conventionnels sous l'eau (OK, panne d'air, remontée), procédure de perte de palanquée, vitesse de remontée, palier de sécurité à 5 m, vidage de masque et travail en binôme.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Environnement, Organisation & Santé (Q41 à Q50)</div>
-          <ul class="doc-list">
-            <li>Hygiène de vie, respect du milieu naturel (gestion de la "touille"), prérogatives du N1 (20 m encadré, EAR/EAO), hydratation, rôle du chef de palanquée et signaux de rappel.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Brevet 2* -->
-      <div class="card doc-section">
-        <h2>🥽 Niveau N2 (Plongeur 2★) — Questions 51 à 100</h2>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Physique & Calculs de Pression / Gaz (Q51 à Q60)</div>
-          <ul class="doc-list">
-            <li>Calculs de pressions absolues et partielles (P<sub>O2</sub>, P<sub>N2</sub>), autonomie/volumes d'air disponibles, consommation en profondeur, lois de Henry, Gay-Lussac et variations de volume du gilet.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Accidents de Plongée & Physiopathologie (Q61 à Q70)</div>
-          <ul class="doc-list">
-            <li>Accident De Décompression (ADD), facteurs favorisants, symptômes (puces/moutons, atteintes neurologiques), narcose à l'azote (P<sub>N2</sub>), hypercapnie/essoufflement et hypothermie.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Tables & Ordinateurs (MaDeco LIFRAS) (Q71 à Q80)</div>
-          <ul class="doc-list">
-            <li>Notions de NDL, TTS, gestion des profils (interdiction des profils inverses), procédures en cas de panne d'ordinateur, intervalles de surface, efforts après plongée et délais de vol en avion.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Matériel, Nitrox & Orientation (Q81 à Q90)</div>
-          <ul class="doc-list">
-            <li>Mélanges Nitrox (Nx32, Nx36), Profondeur Maximale d'Utilisation (MOD), compatibilité O2 des équipements, orientation au compas (retour 180°), parachute de palier avec dévidoir/spool et outils de coupe.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Prévention, Secourisme & Prérogatives N2 (Q91 à Q100)</div>
-          <ul class="doc-list">
-            <li>Autonomie à 20 m (30 m sous conditions), secourisme dédié (oxygénothérapie à 15 L/min, hydratation, BAVU), tractage de surface, appel des secours (112/DAN) et interdiction de l'aspirine.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Brevet 3* -->
-      <div class="card doc-section">
-        <h2>🥽 Niveau N3 (Plongeur 3★) — Questions 101 à 150</h2>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Physique & Calculs Avancés (Q101 à Q110)</div>
-          <ul class="doc-list">
-            <li>Planification de consommation multi-niveaux, calculs de P<sub>O2</sub>/P<sub>N2</sub> à 40 m, Profondeur Équivalente Azote (END), loi de Dalton, densité de l'air, variations de la poussée d'Archimède (écrasement du néoprène) et solubilité.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Physiopathologie & Pathologies Complexes (Q111 à Q120)</div>
-          <ul class="doc-list">
-            <li>Toxicité de l'oxygène (effet Paul Bert / crise convulsive vs Lorrain Smith), Foramen Ovale Perméable (FOP), Barotraumatisme de l'Oreille Interne vs ADD vestibulaire, Taravana, Œdème Aigu du Poumon (OAP) d'immersion et ostéonécrose.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Gestion de Palanquée & Organisation à 40 m (Q121 à Q130)</div>
-          <ul class="doc-list">
-            <li>Prérogatives à 40 m (autonomie), briefings complets, gestion des courants/plongées dérivantes, prévention des paniques, spécificités des plongées de nuit en carrière et fiches d'évacuation.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Matériel Spécifique & Techniques Avancées (Q131 à Q140)</div>
-          <ul class="doc-list">
-            <li>Détendeurs compensés, gestion du givrage (2 sorties indépendantes en eau froide), blocs de décompression au Nitrox 50, vêtements étanches (gestion des inflateurs et rétention d'air) et parachutes à soupape.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Secourisme Subaquatique, CPR & BAVU (Q141 à Q150)</div>
-          <ul class="doc-list">
-            <li>Remontée assistée d'un syncope depuis 30 m, libération des voies aériennes, utilisation du BAVU et du Défibrillateur (DAE) en milieu aquatique, héliportage, embolie cérébrale et rapport d'accident.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Brevet 4* -->
-      <div class="card doc-section">
-        <h2>🥽 Niveau N4 (Assistant Moniteur / 4★) — Questions 151 à 200</h2>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Réglementation, Textes Fédéraux & Responsabilités (Q151 à Q160)</div>
-          <ul class="doc-list">
-            <li>Prérogatives du 4★/Assistant Moniteur, responsabilités civile et pénale, obligation de moyens, cadre du Manuel de l'Instructeur LIFRAS (MIL), matériel de secours obligatoire sur site, gestion du refus de consignes et équivalences CMAS.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Pédagogie & Méthodologie d'Enseignement Pratique (Q161 à Q180)</div>
-          <ul class="doc-list">
-            <li>Déroulement d'un briefing pédagogique, démonstration subaquatique (gestes ralentis et décomposés), correction du sur-lestage/ventilation, apprentissage progressif du parachute, évaluation formative vs sommative et posture d'exemplarité du cadre.</li>
-            <li><strong>Gestion de l'anxiété & Stress :</strong> Détection des signes précurseurs d'angoisse en surface (hyperventilation, gestes désordonnés, regard fixe) et apaisement sous l'eau.</li>
-            <li><strong>Pédagogie de l'échec :</strong> Analyse des erreurs d'exécution (ex. placement des mains au vidage de masque), retours bienveillants et décomposition progressive.</li>
-            <li><strong>Sécurité des exercices à risque :</strong> Positionnement de l'encadrant lors des remontées syncope (contact visuel direct, intervention immédiate).</li>
-            <li><strong>Conduite de débriefing :</strong> Structure d'un retour constructif (expression de l'élève, points positifs, correction prioritaire).</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Organisation, Direction de Plongée & Sécurité de Site (Q181 à Q190)</div>
-          <ul class="doc-list">
-            <li><strong>Rôle du Directeur de Plongée (DP) :</strong> Analyse du site (météo, marée, courant), composition des palanquées selon compétences/prérogatives, fixation des paramètres maxi.</li>
-            <li><strong>Fiche de sécurité :</strong> Registre des immersions (heures, pressions initiale/finale, temps, paliers).</li>
-            <li><strong>Logistique de secours :</strong> Vérification de l'oxygène (pression mini, masques HC, BAVU) et moyens de communication (GSM/VHF).</li>
-            <li><strong>Incidents de surface :</strong> Prise en charge d'un plongeur en détresse, coordination des secours terrestres et héliportés.</li>
-          </ul>
-        </div>
-
-        <div class="doc-theme-group">
-          <div class="doc-theme-title">Physiologie Appliquée & Cas Cliniques Complexes (Q191 à Q200)</div>
-          <ul class="doc-list">
-            <li><strong>Analyse de profils d'accidents :</strong> Diagnostic différentiel entre Surpression Pulmonaire (immédiat en surface, crachats moussants, emphysème) et ADD (délai d'apparition, troubles neurologiques).</li>
-            <li><strong>Facteurs de risque cumulés :</strong> Froid, fatigue, effort physique subaquatique et déshydratation sur la saturation en azote.</li>
-            <li><strong>Prise en charge médicale avancée :</strong> Protocoles d'oxygénothérapie continue et hydratation orale/IV en attente du SMUR.</li>
-            <li><strong>Ethique & Exemplarité :</strong> Respect du milieu, respect des règles et posture d'accompagnement au club.</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </main>
 
@@ -583,17 +405,61 @@
     let indexActuel = 0;
     let score = 0;
 
+    // Fiches de cours structurées avec les questions associées (IDs ou index textuels)
+    const fichesDocumentation = [
+      {
+        id: "physique-lois",
+        theme: "Physique appliquée",
+        titre: "Les 3 Lois Fondamentales des Gaz & Loi de Boyle-Mariotte",
+        niveau: "N1 / N2",
+        resume: "Boyle-Mariotte, Dalton et Henry : les piliers théoriques de la plongée et leurs applications.",
+        questionsLiees: [1, 51, 101], // Exemples d'indices ou de numéros de questions correspondants
+        contenu: `
+          <h4>1. Loi de Boyle-Mariotte (P x V = Constante)</h4>
+          <p>À température constante, le volume d'une masse de gaz donné est inversement proportionnel à la pression qu'il subit. En descente, le volume diminue ; en remontée, le volume augmente.</p>
+          <ul>
+            <li><b>Surface (0m) :</b> 1 bar — 100% du volume</li>
+            <li><b>10 mètres :</b> 2 bars — 50% du volume (réduit de moitié)</li>
+            <li><b>30 mètres :</b> 4 bars — 25% du volume (réduit au quart)</li>
+            <li><b>Application :</b> Barotraumatismes (oreilles) et risque majeur de <b>surpression pulmonaire</b> si la respiration est bloquée à la remontée. Règle d'or : ne jamais bloquer sa respiration.</li>
+          </ul>
+          <h4>2. Loi de Dalton (Pressions Partielles)</h4>
+          <p>La pression totale d'un mélange gazeux est égale à la somme des pressions partielles de chacun de ses composants (Pp = P_totale x %Gaz). Utile pour la gestion de l'hyperoxie et de la narcose.</p>
+          <h4>3. Loi de Henry (Dissolution des Gaz)</h4>
+          <p>À température constante, la quantité de gaz dissous dans un liquide est proportionnelle à la pression partielle de ce gaz au-dessus de ce liquide (Gestion de la saturation et des ADD).</p>
+        `
+      },
+      {
+        id: "physio-oreille",
+        theme: "Physiologie & Anatomie",
+        titre: "L'Oreille et la Plongée",
+        niveau: "N1 / N2",
+        resume: "Anatomie de l'oreille moyenne, techniques d'équilibrage des pressions et prévention des barotraumatismes.",
+        questionsLiees: [11, 12, 61],
+        contenu: `
+          <h4>L'Oreille Moyenne et le Tympan</h4>
+          <p>L'oreille moyenne est une cavité aérienne séparée de l'extérieur par le tympan. Lors de la descente, la pression hydrostatique pousse le tympan vers l'intérieur.</p>
+          <h4>Techniques d'équilibrage</h4>
+          <ul>
+            <li><b>Valsalva :</b> Souffler doucement par le nez pincé (uniquement à la descente).</li>
+            <li><b>Frenzel :</b> Pousser la langue vers le palais avec la glotte fermée.</li>
+            <li><b>BTV (Béance Tubaire Volontaire) :</b> Contraction des muscles du voile du palais.</li>
+          </ul>
+          <p><b>Règle d'or :</b> Équilibrer tôt et souvent. Ne jamais forcer ! En cas de douleur, remonter légèrement et réessayer.</p>
+        `
+      }
+    ];
+
     window.addEventListener('DOMContentLoaded', () => {
       navigate('home');
+      initialiserFichesDoc();
 
       const selectNiveau = document.getElementById('niveau');
       selectNiveau.selectedIndex = 0;
       document.getElementById('theme').selectedIndex = 0;
       document.getElementById('taille-serie').selectedIndex = 1;
 
-      // Écouteur pour ajuster le champ Thème selon le Niveau
       selectNiveau.addEventListener('change', gererChangementNiveau);
-
       document.getElementById('quiz-box').style.display = 'none';
 
       fetch('questions.json')
@@ -608,6 +474,79 @@
           document.getElementById('loading').innerText = "⚠️ Erreur : Impossible de charger questions.json";
         });
     });
+
+    // Génération automatique des fiches dans l'onglet Documentation
+    function initialiserFichesDoc() {
+      const container = document.getElementById('fiches-cours-container');
+      container.innerHTML = '';
+
+      fichesDocumentation.forEach(fiche => {
+        const cardDiv = document.createElement('div');
+        cardDiv.className = 'card doc-section fiche-doc';
+
+        let liensHtml = '';
+        if (fiche.questionsLiees && fiche.questionsLiees.length > 0) {
+          const liste = fiche.questionsLiees.map(qNum => {
+            return `<li><a onclick="ouvrirQuestionDansQuiz(${qNum})">Question associée n°${qNum} (Rechercher)</a></li>`;
+          }).join('');
+
+          liensHtml = `
+            <div class="questions-associees">
+              <strong>🧭 Tester ses connaissances :</strong>
+              <ul>${liste}</ul>
+            </div>
+          `;
+        }
+
+        cardDiv.innerHTML = `
+          <span class="niveau-badge">${fiche.niveau}</span>
+          <span style="float:right; color:#64748b; font-size:0.9rem;">${fiche.theme}</span>
+          <h3>${fiche.titre}</h3>
+          <p><em>${fiche.resume}</em></p>
+          <hr style="border:0; border-top:1px solid var(--border); margin: 15px 0;">
+          <div>${fiche.contenu}</div>
+          ${liensHtml}
+        `;
+
+        container.appendChild(cardDiv);
+      });
+    }
+
+    // Fonction pour basculer vers le quiz et cibler/lancer une question spécifique
+    function ouvrirQuestionDansQuiz(numeroQuestion) {
+      navigate('home'); // Revient sur l'onglet du Quiz
+
+      // Recherche dans la base de questions chargée
+      const indexTrouve = baseDeQuestions.findIndex((q, idx) => (idx + 1) === numeroQuestion || q.id === numeroQuestion);
+      
+      if (indexTrouve !== -1) {
+        const qCible = baseDeQuestions[indexTrouve];
+        
+        // Ajuster automatiquement le selecteur de niveau si besoin pour correspondre à la question
+        const selectNiveau = document.getElementById('niveau');
+        if (qCible.niveau) {
+          selectNiveau.value = qCible.niveau;
+          gererChangementNiveau();
+        }
+
+        // Forcer la série de questions à contenir cette question précise en premier
+        serieQuestions = [qCible];
+        // Ajouter d'autres questions du même niveau pour compléter une petite série si l'utilisateur veut continuer
+        const autres = baseDeQuestions.filter((q, idx) => q.niveau === qCible.niveau && idx !== indexTrouve).sort(() => 0.5 - Math.random()).slice(0, 4);
+        serieQuestions = serieQuestions.concat(autres);
+
+        indexActuel = 0;
+        score = 0;
+
+        document.getElementById('quiz-box').style.display = 'block';
+        document.getElementById('results-box').style.display = 'none';
+        document.getElementById('quiz-content').style.display = 'block';
+
+        afficherQuestion();
+      } else {
+        alert("La question demandée n'a pas pu être isolée dans la base actuelle.");
+      }
+    }
 
     function gererChangementNiveau() {
       const niv = document.getElementById('niveau').value;
@@ -718,7 +657,7 @@
       let feedback = "";
       if (ratio === 1) feedback = "🏆 Excellent ! Sans faute !";
       else if (ratio >= 0.7) feedback = "👍 Très bien, la théorie est bien assimilée !";
-      else if (ratio >= 0.5) feedback = "⚠️ Encore un petit effort de révision.";
+      else if (ratio >= 0.5) feedback = "⚠️️ Encore un petit effort de révision.";
       else feedback = "📖 Reprenez les fiches de cours et réessayez !";
 
       document.getElementById('final-feedback').innerText = feedback;
