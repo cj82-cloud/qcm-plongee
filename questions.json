@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "niveau": "N1",
+    "theme": "Physique appliquée",
+    "question": "En descendant à 20 mètres de profondeur, quelle est la pression absolue subie par le plongeur ?",
+    "options": [
+      "2 bars (2 bars d'eau)",
+      "3 bars (1 bar d'air + 2 bars d'eau)",
+      "4 bars (1 bar d'air + 3 bars d'eau)",
+      "1 bar (uniquement la pression atmosphérique)"
+    ],
+    "reponse": 1,
+    "explication": "Tous les 10 mètres d'eau douce/de mer représentent environ 1 bar de pression hydrostatique. À 20 mètres, il y a 2 bars d'eau auxquels s'ajoute 1 bar de pression atmosphérique à la surface, soit 3 bars absolus."
+  },
+  {
+    "id": 2,
+    "niveau": "N1",
+    "theme": "Physiologie & Accidents",
+    "question": "Pour prévenir un barotraumatisme de l'oreille moyenne (tympan) lors de la descente, quelle manœuvre faut-il effectuer ?",
+    "options": [
+      "Souffler fort par le nez en le pinçant (Valsalva) une fois arrivé au fond",
+      "Équilibrer les oreilles dès le début de la descente et fréquemment sans attendre la douleur",
+      "Inspirer bloqué en appuyant sur le masque",
+      "Faire la manœuvre de Valsalva durant toute la remontée"
+    ],
+    "reponse": 1,
+    "explication": "L'équilibrage de l'oreille moyenne doit se faire dès les premiers mètres et régulièrement. La manœuvre de Valsalva ne doit être pratiquée qu'à la descente, doucement, et JAMAIS à la remontée ou en présence de douleur intense."
+  },
+  {
+    "id": 3,
+    "niveau": "N1",
+    "theme": "Accidents & Sécurité",
+    "question": "Quelle est la règle d'or absolue pour éviter une surpression pulmonaire à la remontée ?",
+    "options": [
+      "Bloquer sa respiration pour garder de l'air dans les poumons",
+      "Palmer le plus vite possible vers la surface",
+      "Expirer de manière continue et ne jamais bloquer sa respiration",
+      "Remonter en gonflant son gilet stabilisateur au maximum"
+    ],
+    "reponse": 2,
+    "explication": "Selon la loi de Boyle-Mariotte, l'air contenu dans les poumons se dilate lors de la remontée. Si le plongeur bloque sa respiration, l'air en expansion peut déchirer les alvéoles pulmonaires. Il faut donc expirer en continu."
+  },
+  {
+    "id": 4,
+    "niveau": "N2",
+    "theme": "Physique appliquée",
+    "question": "Un ballon souple contient un volume de 6 litres d'air à la surface. Quel sera son volume si on le descend à 30 mètres de profondeur ?",
+    "options": [
+      "1.5 litre",
+      "2 litres",
+      "3 litres",
+      "0.5 litre"
+    ],
+    "reponse": 0,
+    "explication": "À 30 m, la pression absolue est de 4 bars (1 bar surface + 3 bars d'eau). Selon la loi de Boyle-Mariotte (P1 x V1 = P2 x V2), le volume est divisé par 4 : 6 L / 4 = 1.5 litre."
+  },
+  {
+    "id": 5,
+    "niveau": "N2",
+    "theme": "Physiologie & Accidents",
+    "question": "Quelle est la cause principale de la narcose à l'azote (ou ivresse des profondeurs) ?",
+    "options": [
+      "L'augmentation de la pression partielle d'azote dans le sang avec la profondeur",
+      "La baisse de la température de l'eau en profondeur",
+      "Une accumulation de dioxyde de carbone (CO2) liée à un essoufflement",
+      "Un manque d'oxygène dans la bouteille de plongée"
+    ],
+    "reponse": 0,
+    "explication": "La narcose est due à l'effet toxique de l'azote sur le système nerveux central lorsque sa pression partielle devient élevée sous l'effet de la profondeur (généralement perceptible à partir de 30 mètres)."
+  },
+  {
+    "id": 6,
+    "niveau": "N2",
+    "theme": "Matériel & Sécurité",
+    "question": "Dans quel cas la réserve/signal d'urgence d'un manomètre de bouteille de plongée est-elle généralement fixée à 50 bars ?",
+    "options": [
+      "Pour indiquer qu'il reste exactement 10 minutes de plongée",
+      "Comme marge de sécurité minimale pour effectuer sa remontée et ses paliers en toute sécurité",
+      "Pour signaler que la bouteille doit être envoyée en révision",
+      "Parce qu'il est impossible de respirer sous 50 bars dans le détendeur"
+    ],
+    "reponse": 1,
+    "explication": "Les 50 bars constituent la zone de sécurité (réserve). Cela garantit une quantité d'air suffisante pour remonter à une vitesse contrôlée, effectuer les paliers de décompression et assister un coéquipier en cas de besoin."
+  },
+  {
+    "id": 7,
+    "niveau": "N3",
+    "theme": "Physique appliquée",
+    "question": "En plongée à l'air (21% O2, 79% N2) à 40 mètres de profondeur, quelle est la pression partielle de l'oxygène (PpO2) ?",
+    "options": [
+      "0.84 bar",
+      "1.05 bar",
+      "1.40 bar",
+      "1.60 bar"
+    ],
+    "reponse": 1,
+    "explication": "À 40 m, la pression absolue est de 5 bars. Selon la loi de Dalton, PpO2 = P_totale x %O2, soit 5 bars x 0.21 = 1.05 bar."
+  },
+  {
+    "id": 8,
+    "niveau": "N3",
+    "theme": "Physiologie & Accidents",
+    "question": "Quelle est la pression partielle maximale d'oxygène (PpO2) généralement recommandée en plongée au Nitrox/Air pour éviter la toxicité aiguë de l'oxygène (effet Lorrain Smith / crise convulsive) ?",
+    "options": [
+      "1.2 bar",
+      "1.4 bar (1.6 bar au maximum absolu pour les paliers)",
+      "2.0 bars",
+      "0.8 bar"
+    ],
+    "reponse": 1,
+    "explication": "La limite généralement admise pour éviter la crise d'hyperoxie (effet Paul Bert / convulsion sous l'eau) en palier ou en immersion est fixée à 1.4 bar pour le suivi du profil de plongée (1.6 bar étant la limite maximale stricte)."
+  },
+  {
+    "id": 9,
+    "niveau": "N3",
+    "theme": "Accidents & Sécurité",
+    "question": "En cas de suspicion d'Accident de Décompression (ADD) dès le retour au bateau, quelle est la prise en charge immédiate obligatoire ?",
+    "options": [
+      "Faire réimmerger immédiatement le plongeur à 3 mètres pour décompresser",
+      "Mise sous oxygène pur (O2) à haut débit, hydratation (si conscient), alerte des secours (DAN / Secours en mer) et fiche d'évacuation",
+      "Faire faire des exercices physiques au plongeur pour réactiver la circulation",
+      "Donner un verre d'alcool pour dilater les vaisseaux sanguins"
+    ],
+    "reponse": 1,
+    "explication": "La réimmersion est proscrite. La conduite à tenir immédiate est l'administration d'O2 pur à 15L/min (masque à haute concentration), l'hydratation de la victime si elle est consciente et l'appel immédiat des secours médicalisés."
+  },
+  {
+    "id": 10,
+    "niveau": "N2",
+    "theme": "Tables & Décompression",
+    "question": "Lors d'une remontée normale, quelle est la vitesse de remontée préconisée par les tables ou ordinateurs de plongée classiques avant les paliers ?",
+    "options": [
+      "1 à 2 mètres par minute",
+      "10 à 15 mètres par minute",
+      "25 à 30 mètres par minute",
+      "Aussi vite que les petites bulles de l'expirateur"
+    ],
+    "reponse": 1,
+    "explication": "Les modèles de décompression modernes et les tables préconisent une vitesse de remontée comprise généralement entre 10 et 15 m/min (souvent 10 m/min au plus près de la surface) pour limiter le dégazage anarchique du microbullage de l'azote."
+  }
+]

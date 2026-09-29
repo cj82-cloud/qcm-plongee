@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Préparation Brevets Plongée LIFRAS - Entraînement Gratuit</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --nav-bg: #0f172a;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --border: #e2e8f0;
+      --success-bg: #f0fdf4;
+      --success-border: #16a34a;
+      --error-bg: #fef2f2;
+      --error-border: #dc2626;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* BARRE DE NAVIGATION MODERNE */
+    nav {
+      background-color: var(--nav-bg);
+      color: white;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-brand {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 18px 15px;
+      display: block;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: white;
+      border-bottom-color: #38bdf8;
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Menu mobile (Burger) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* CONTENEUR PRINCIPAL */
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      color: #0369a1;
+      margin-bottom: 5px;
+    }
+
+    /* GESTION DES PAGES DYNAMIQUES */
+    .page-content {
+      display: none;
+    }
+
+    .page-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* COMPOSANTS CARTES ET FILTRES */
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+
+/* Style des fiches de documentation */
+.fiche-card {
+  border-left: 5px solid var(--primary);
+  transition: all 0.2s ease;
+}
+
+.fiche-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fiche-tag {
+  display: inline-block;
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.fiche-body {
+  display: none;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--border);
+}
+
+.fiche-body.open {
+  display: block;
+}
+
+.btn-toggle-doc {
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: auto;
+  padding: 0;
+}
+
+
+    .filters {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+
+    .filter-group {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      font-size: 0.9rem;
+    }
+
+    select, button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    button.cta {
+      background: var(--primary);
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    button.cta:hover {
+      background: var(--primary-hover);
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .option-btn {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-size: 0.95rem;
+    }
+
+    .option-btn:hover {
+      background: #e2e8f0;
+      border-color: #94a3b8;
+    }
+
+    .explanation {
+      padding: 15px;
+      border-left: 5px solid;
+      border-radius: 6px;
+      margin-top: 20px;
+      display: none;
+    }
+
+    .explanation a {
+      color: #0284c7;
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /* ARTICLES DOCUMENTATION */
+    .doc-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .doc-card {
+      border-left: 4px solid var(--primary);
+    }
+
+    #loading {
+      text-align: center;
+      font-style: italic;
+      color: #64748b;
+    }
+
+    /* ADAPTATION MOBILE */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: var(--nav-bg);
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        padding: 15px 20px;
+        border-bottom: 1px solid #334155;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BARRE DE NAVIGATION -->
+  <nav>
+    <div class="nav-brand">🥽 Préparation Théorie LIFRAS</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#" class="nav-item active" onclick="navigate('home', event)">Home</a></li>
+      <li><a href="#" class="nav-item" onclick="navigate('doc', event)">Documentation</a></li>
+      <li><a href="https://www.lifras.be" target="_blank" rel="noopener">Site de la LIFRAS ↗</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- PAGE 1 : HOME (QUIZ) -->
+    <div id="page-home" class="page-content active">
+      <header>
+        <h1>Entraînement aux Brevets</h1>
+        <p>Révisez votre théorie gratuitement par niveau et par thème</p>
+      </header>
+
+      <div class="card filters">
+        <div class="filter-group">
+          <label for="niveau">Niveau de Brevet :</label>
+          <select id="niveau">
+            <option value="N1">Brevet 1* (Plongeur Élémentaire)</option>
+            <option value="N2">Brevet 2* (Plongeur Autonome)</option>
+            <option value="N3">Brevet 3* (Plongeur Encadrant)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="theme">Thème :</label>
+          <select id="theme">
+            <option value="Tous">Tous les thèmes</option>
+            <option value="Physique appliquée">Physique appliquée</option>
+            <option value="Physiologie & Anatomie">Physiologie & Anatomie</option>
+            <option value="Accidents & Sécurité">Accidents & Sécurité</option>
+            <option value="Tables & Décompression">Tables & Décompression</option>
+            <option value="Réglementation & Matériel">Réglementation & Matériel</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <button class="cta" onclick="chargerQuestion()">Générer une question</button>
+        </div>
+      </div>
+
+      <div class="card" id="quiz-box">
+        <div id="loading">Chargement de la base de questions...</div>
+        <h3 id="q-title" style="display:none; margin-top:0;"></h3>
+        <div class="options-grid" id="q-options"></div>
+        <div class="explanation" id="q-explanation"></div>
+      </div>
+    </div>
+
+    <!-- PAGE 2 : DOCUMENTATION -->
+<div id="page-doc" class="page-content">
+  <header>
+    <h1>Fiches de Révision Théorique</h1>
+    <p>Consultez les fiches de synthèse par thème pour préparer vos brevets</p>
+  </header>
+
+  <!-- FILTRE DE RECHERCHE DANS LA DOC -->
+  <div class="card" style="margin-bottom: 20px;">
+    <label for="filter-doc-theme">Filtrer les fiches par thème :</label>
+    <select id="filter-doc-theme" onchange="filtrerFiches()">
+      <option value="Tous">Tous les thèmes</option>
+      <option value="Physique appliquée">Physique appliquée</option>
+      <option value="Physiologie & Anatomie">Physiologie & Anatomie</option>
+      <option value="Accidents & Sécurité">Accidents & Sécurité</option>
+      <option value="Tables & Décompression">Tables & Décompression</option>
+    </select>
+  </div>
+
+  <!-- CONTENEUR DES FICHES -->
+  <div id="loading-doc">Chargement des fiches...</div>
+  <div class="doc-grid" id="fiches-container"></div>
+</div>  </main>
+
+  <script>
+    let baseDeQuestions = [];
+
+    // GESTION DU NAVIGATION DYNAMIQUE
+    function navigate(pageId, event) {
+      if (event) event.preventDefault();
+
+      // Masquer toutes les pages
+      document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+
+      // Retirer l'état 'active' de tous les liens
+      document.querySelectorAll('.nav-item').forEach(link => link.classList.remove('active'));
+
+      // Afficher la page ciblée
+      const targetPage = document.getElementById(`page-${pageId}`);
+      if (targetPage) {
+        targetPage.classList.add('active');
+      }
+
+      // Mettre en surbrillance le lien sélectionné
+      if (event && event.target) {
+        event.target.classList.add('active');
+      }
+
+      // Fermer le menu burger sur mobile après un clic
+      document.getElementById('nav-links').classList.remove('open');
+    }
+
+    function toggleMenu() {
+      document.getElementById('nav-links').classList.toggle('open');
+    }
+
+    // CHARGEMENT AUTOMATIQUE DES QUESTIONS (JSON)
+    window.addEventListener('DOMContentLoaded', () => {
+      fetch('questions.json')
+        .then(response => {
+          if (!response.ok) throw new Error("Erreur de chargement JSON");
+          return response.json();
+        })
+        .then(data => {
+          baseDeQuestions = data;
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('q-title').style.display = 'block';
+          document.getElementById('q-title').innerText = "Sélectionnez votre niveau et cliquez sur 'Générer'.";
+        })
+        .catch(error => {
+          console.error(error);
+          document.getElementById('loading').innerText = "⚠️ Fichier questions.json introuvable sur GitHub.";
+        });
+    });
+
+    // MOTEUR DU QUIZ
+    function chargerQuestion() {
+      if (baseDeQuestions.length === 0) return;
+
+      const niv = document.getElementById('niveau').value;
+      const th = document.getElementById('theme').value;
+      
+      const questionsFiltrees = baseDeQuestions.filter(q => 
+        q.niveau === niv && (th === "Tous" || q.theme === th)
+      );
+
+      const expBox = document.getElementById('q-explanation');
+      expBox.style.display = 'none';
+
+      if (questionsFiltrees.length === 0) {
+        document.getElementById('q-title').innerText = "Aucune question pour ce filtre.";
+        document.getElementById('q-options').innerHTML = "";
+        return;
+      }
+
+      const q = questionsFiltrees[Math.floor(Math.random() * questionsFiltrees.length)];
+      document.getElementById('q-title').innerText = q.question;
+      
+      let htmlOptions = "";
+      q.options.forEach((opt, idx) => {
+        const expEscaped = q.explication.replace(/'/g, "&#39;");
+        htmlOptions += `<button class="option-btn" onclick="verifier(${idx}, ${q.reponse}, '${expEscaped}')">${opt}</button>`;
+      });
+      
+      document.getElementById('q-options').innerHTML = htmlOptions;
+    }
+
+    function verifier(choix, correct, explication) {
+      const expBox = document.getElementById('q-explanation');
+      
+      if (choix === correct) {
+        expBox.innerHTML = "<strong>✅ Correct !</strong><br>" + explication;
+        expBox.style.backgroundColor = "var(--success-bg)";
+        expBox.style.borderColor = "var(--success-border)";
+      } else {
+        expBox.innerHTML = "<strong>❌ Incorrect.</strong><br>" + explication;
+        expBox.style.backgroundColor = "var(--error-bg)";
+        expBox.style.borderColor = "var(--error-border)";
+      }
+      
+      expBox.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
