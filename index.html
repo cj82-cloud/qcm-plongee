@@ -471,7 +471,6 @@
       selectNiveau.addEventListener('change', gererChangementNiveau);
       document.getElementById('quiz-box').style.display = 'none';
 
-      // Chargement en parallèle des questions et des fiches de documentation via fetch
       Promise.all([
         fetch('questions.json').then(res => res.json()),
         fetch('fiches.json').then(res => res.json())
@@ -491,7 +490,6 @@
       });
     });
 
-    // Génération automatique de la table des matières et des fiches de cours
     function initialiserDocumentation() {
       const containerFiches = document.getElementById('fiches-cours-container');
       const containerToc = document.getElementById('toc-list-container');
@@ -556,12 +554,10 @@
       containerFiches.innerHTML = fichesHtml;
     }
 
-    // Initialisation du tableau de la Banque de Questions
     function initialiserBanqueQuestions() {
       filtrerTableauQuestions();
     }
 
-    // Fonction Filtrer questions du tableau
     function filtrerTableauQuestions() {
       const niveauFiltre = document.getElementById('filtre-niveau-table').value;
       const texteRecherche = document.getElementById('recherche-texte').value.toLowerCase();
@@ -586,25 +582,18 @@
         const tr = document.createElement('tr');
         const indexGlobal = baseDeQuestions.indexOf(q) + 1;
 
-        let indexReponse = 0;
-          if (q.reponse_index !== undefined) {
-            indexReponse = Number(q.reponse_index);
-          } else if (q.reponse !== undefined) {
-            indexReponse = Number(q.reponse);
-        }
+        let indexReponse = obtenirIndexBonneReponse(q);
         let texteBonneReponse = "Non spécifiée";
         if (Array.isArray(q.options)) {
           if (typeof indexReponse === 'number' && q.options[indexReponse] !== undefined) {
             texteBonneReponse = q.options[indexReponse];
-          } else if (typeof indexReponse === 'string') {
-            texteBonneReponse = indexReponse;
           }
         }
 
         let optionsHtml = `<ul style="margin: 5px 0; padding-left: 15px;">`;
         if (Array.isArray(q.options)) {
           q.options.forEach((opt, oIdx) => {
-            if (oIdx === indexReponse || opt === texteBonneReponse) {
+            if (oIdx === indexReponse) {
               optionsHtml += `<li><span class="correct-answer-text">✔ ${opt}</span></li>`;
             } else {
               optionsHtml += `<li style="color: #64748b;">${opt}</li>`;
@@ -638,7 +627,21 @@
       });
     }
 
-    // Fonction pour basculer vers le quiz et cibler/lancer une question spécifique
+    // Utilitaire centralisé pour trouver l'index de la bonne réponse peu importe le nom de la clé dans le JSON
+    function obtenirIndexBonneReponse(q) {
+      if (q.reponse_index !== undefined) return Number(q.reponse_index);
+      if (q.reponse !== undefined) {
+        if (typeof q.reponse === 'number') return q.reponse;
+        // Si c'est stocké sous forme de texte, on cherche l'index correspondant dans options
+        if (Array.isArray(q.options)) {
+          const foundIdx = q.options.indexOf(q.reponse);
+          if (foundIdx !== -1) return foundIdx;
+        }
+        return Number(q.reponse);
+      }
+      return 0;
+    }
+
     function ouvrirQuestionDansQuiz(numeroQuestion) {
       navigate('home');
 
@@ -674,7 +677,7 @@
       const niv = document.getElementById('niveau').value;
       const themeContainer = document.getElementById('container-theme');
 
-      if (niv === 'Ma déco') {
+      if (niv === 'Ma décompression') {
         document.getElementById('theme').value = 'Tous';
         themeContainer.style.display = 'none';
       } else {
@@ -689,12 +692,13 @@
 
       let filtrees = baseDeQuestions.filter(q => {
         const matchNiveau = (q.niveau === niv);
-        const matchTheme = (niv === "Ma déco" || th === "Tous" || q.theme === th);
+        // Si le niveau est "Ma décompression", on ignore le filtre de thème
+        const matchTheme = (niv === "Ma décompression" || th === "Tous" || q.theme === th);
         return matchNiveau && matchTheme;
       });
 
       if (filtrees.length === 0) {
-        alert("Aucune question trouvée pour ce critère.");
+        alert("Aucune question trouvée pour ce critère. Vérifie que ton fichier JSON contient bien des questions pour ce niveau et ce thème exacts.");
         return;
       }
 
@@ -738,20 +742,23 @@
       
       tousLesBoutons.forEach(b => b.disabled = true);
 
+      const bonneReponseIndex = obtenirIndexBonneReponse(q);
       const expBox = document.getElementById('q-explanation');
 
-      if (choixIndex === q.reponse) {
+      if (choixIndex === bonneReponseIndex) {
         score++;
         btnClique.classList.add('correct');
         expBox.style.backgroundColor = 'var(--success-bg)';
         expBox.style.color = '#14532d';
-        expBox.innerHTML = "<strong>✅ Correct !</strong><br>" + q.explication;
+        expBox.innerHTML = "<strong>✅ Correct !</strong><br>" + (q.explication || '');
       } else {
         btnClique.classList.add('incorrect');
-        tousLesBoutons[q.reponse].classList.add('correct');
+        if (tousLesBoutons[bonneReponseIndex]) {
+          tousLesBoutons[bonneReponseIndex].classList.add('correct');
+        }
         expBox.style.backgroundColor = 'var(--error-bg)';
         expBox.style.color = '#7f1d1d';
-        expBox.innerHTML = "<strong>❌ Incorrect.</strong><br>" + q.explication;
+        expBox.innerHTML = "<strong>❌ Incorrect.</strong><br>" + (q.explication || '');
       }
 
       expBox.style.display = 'block';
