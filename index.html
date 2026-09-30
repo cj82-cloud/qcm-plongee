@@ -560,9 +560,8 @@
     function initialiserBanqueQuestions() {
       filtrerTableauQuestions();
     }
-
-// Filtrage et affichage dynamique du tableau de la banque de questions
-    function filtrerTableauQuestions() {
+//Fonction Filtrer questions du tableau
+function filtrerTableauQuestions() {
       const niveauFiltre = document.getElementById('filtre-niveau-table').value;
       const texteRecherche = document.getElementById('recherche-texte').value.toLowerCase();
       const tbody = document.getElementById('tbody-questions');
@@ -586,10 +585,13 @@
         const tr = document.createElement('tr');
         const indexGlobal = baseDeQuestions.indexOf(q) + 1;
 
-        // Détermination sécurisée de la bonne réponse (index, texte, ou autre)
-        let texteBonneReponse = "Non spécifiée";
-        let indexReponse = (typeof q.reponse !== 'undefined') ? q.reponse : q.answer;
+        // Recherche dynamique de la bonne réponse parmi toutes les propriétés de l'objet q
+        let indexReponse = q.reponse !== undefined ? q.reponse : 
+                           (q.correcte !== undefined ? q.correcte : 
+                           (q.answer !== undefined ? q.answer : 
+                           (q.bonneReponse !== undefined ? q.bonneReponse : 0)));
 
+        let texteBonneReponse = "Non spécifiée";
         if (Array.isArray(q.options)) {
           if (typeof indexReponse === 'number' && q.options[indexReponse] !== undefined) {
             texteBonneReponse = q.options[indexReponse];
@@ -598,7 +600,6 @@
           }
         }
 
-        // Formater les options avec mise en valeur de la bonne réponse
         let optionsHtml = `<ul style="margin: 5px 0; padding-left: 15px;">`;
         if (Array.isArray(q.options)) {
           q.options.forEach((opt, oIdx) => {
@@ -635,7 +636,6 @@
         tbody.appendChild(tr);
       });
     }
-
     // Fonction pour basculer vers le quiz et cibler/lancer une question spécifique
     function ouvrirQuestionDansQuiz(numeroQuestion) {
       navigate('home');
