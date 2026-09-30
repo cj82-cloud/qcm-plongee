@@ -26,6 +26,7 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      scroll-behavior: smooth; /* Permet un défilement fluide vers les ancres */
     }
 
     nav {
@@ -229,6 +230,27 @@
     .questions-associees a { color: var(--primary); text-decoration: none; font-weight: 500; cursor: pointer; }
     .questions-associees a:hover { text-decoration: underline; }
 
+    /* Styles pour la Table des Matières */
+    .toc-container ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .toc-container li {
+      margin-bottom: 6px;
+    }
+    .toc-container a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .toc-container a:hover {
+      text-decoration: underline;
+    }
+    .toc-theme {
+      font-weight: 600;
+      color: var(--nav-bg);
+    }
+
     @media (max-width: 600px) {
       .hero-banner {
         padding: 30px 15px;
@@ -345,13 +367,17 @@
         .doc-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
         .doc-table th, .doc-table td { border: 1px solid var(--border); padding: 10px 12px; text-align: left; }
         .doc-table th { background-color: #f1f5f9; color: var(--nav-bg); font-weight: bold; }
-        .doc-theme-group { margin-bottom: 15px; }
-        .doc-theme-title { font-weight: bold; color: var(--nav-bg); margin-bottom: 5px; }
-        .doc-list { margin: 5px 0 15px 20px; padding: 0; }
-        .doc-list li { margin-bottom: 4px; }
       </style>
 
-      <!-- Conteneur dynamique pour injecter les fiches de cours et leurs liens vers les questions -->
+      <!-- Table des Matières Dynamique -->
+      <div class="card doc-section toc-container">
+        <h2>📑 Table des Matières</h2>
+        <div id="toc-list-container">
+          <em>Chargement de la table des matières...</em>
+        </div>
+      </div>
+
+      <!-- Conteneur dynamique pour injecter les fiches de cours -->
       <div id="fiches-cours-container"></div>
 
       <!-- Récapitulatif Général -->
@@ -427,7 +453,7 @@
         fichesDocumentation = fichesData;
         
         document.getElementById('loading').style.display = 'none';
-        initialiserFichesDoc();
+        initialiserDocumentation();
       })
       .catch(err => {
         console.error(err);
@@ -436,41 +462,72 @@
       });
     });
 
-    // Génération automatique des fiches dans l'onglet Documentation
-    function initialiserFichesDoc() {
-      const container = document.getElementById('fiches-cours-container');
-      container.innerHTML = '';
+    // Génération automatique de la table des matières et des fiches de cours
+    function initialiserDocumentation() {
+      const containerFiches = document.getElementById('fiches-cours-container');
+      const containerToc = document.getElementById('toc-list-container');
+      
+      containerFiches.innerHTML = '';
+      containerToc.innerHTML = '';
 
+      if (fichesDocumentation.length === 0) {
+        containerToc.innerHTML = "<p>Aucune fiche disponible.</p>";
+        return;
+      }
+
+      // Regrouper les fiches par thème pour structurer la table des matières
+      const themesMap = {};
       fichesDocumentation.forEach(fiche => {
-        const cardDiv = document.createElement('div');
-        cardDiv.className = 'card doc-section fiche-doc';
+        if (!themesMap[fiche.theme]) {
+          themesMap[fiche.theme] = [];
+        }
+        themesMap[fiche.theme].push(fiche);
+      });
 
-        let liensHtml = '';
-        if (fiche.questionsLiees && fiche.questionsLiees.length > 0) {
-          const liste = fiche.questionsLiees.map(qNum => {
-            return `<li><a onclick="ouvrirQuestionDansQuiz(${qNum})">Question associée n°${qNum} (Rechercher)</a></li>`;
-          }).join('');
+      let tocHtml = '<ul>';
+      let fichesHtml = '';
 
-          liensHtml = `
-            <div class="questions-associees">
-              <strong>🧭 Tester ses connaissances :</strong>
-              <ul>${liste}</ul>
+      for (const [theme, fiches] of Object.entries(themesMap)) {
+        tocHtml += `<li><span class="toc-theme">${theme}</span><ul>`;
+        
+        fiches.forEach(fiche => {
+          // Lien ancre vers l'ID de la fiche
+          tocHtml += `<li><a href="#fiche-${fiche.id}">${fiche.titre}</a> <span style="font-size:0.8em; color:#64748b;">(${fiche.niveau})</span></li>`;
+
+          // Construction du bloc de la fiche avec un id unique pour l'ancre
+          let liensHtml = '';
+          if (fiche.questionsLiees && fiche.questionsLiees.length > 0) {
+            const liste = fiche.questionsLiees.map(qNum => {
+              return `<li><a onclick="ouvrirQuestionDansQuiz(${qNum})">Question associée n°${qNum} (Rechercher)</a></li>`;
+            }).join('');
+
+            liensHtml = `
+              <div class="questions-associees">
+                <strong>🧭 Tester ses connaissances :</strong>
+                <ul>${liste}</ul>
+              </div>
+            `;
+          }
+
+          fichesHtml += `
+            <div id="fiche-${fiche.id}" class="card doc-section fiche-doc">
+              <span class="niveau-badge">${fiche.niveau}</span>
+              <span style="float:right; color:#64748b; font-size:0.9rem;">${fiche.theme}</span>
+              <h3>${fiche.titre}</h3>
+              <p><em>${fiche.resume}</em></p>
+              <hr style="border:0; border-top:1px solid var(--border); margin: 15px 0;">
+              <div>${fiche.contenu}</div>
+              ${liensHtml}
             </div>
           `;
-        }
+        });
 
-        cardDiv.innerHTML = `
-          <span class="niveau-badge">${fiche.niveau}</span>
-          <span style="float:right; color:#64748b; font-size:0.9rem;">${fiche.theme}</span>
-          <h3>${fiche.titre}</h3>
-          <p><em>${fiche.resume}</em></p>
-          <hr style="border:0; border-top:1px solid var(--border); margin: 15px 0;">
-          <div>${fiche.contenu}</div>
-          ${liensHtml}
-        `;
+        tocHtml += `</ul></li>`;
+      }
+      tocHtml += '</ul>';
 
-        container.appendChild(cardDiv);
-      });
+      containerToc.innerHTML = tocHtml;
+      containerFiches.innerHTML = fichesHtml;
     }
 
     // Fonction pour basculer vers le quiz et cibler/lancer une question spécifique
