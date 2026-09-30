@@ -585,11 +585,9 @@ function filtrerTableauQuestions() {
         const tr = document.createElement('tr');
         const indexGlobal = baseDeQuestions.indexOf(q) + 1;
 
-        // Recherche dynamique de la bonne réponse parmi toutes les propriétés de l'objet q
-        let indexReponse = q.reponse !== undefined ? q.reponse : 
-                           (q.correcte !== undefined ? q.correcte : 
-                           (q.answer !== undefined ? q.answer : 
-                           (q.bonneReponse !== undefined ? q.bonneReponse : 0)));
+        // Utilisation de reponse_index comme présent dans le JSON
+        let indexReponse = q.reponse_index !== undefined ? q.reponse_index : 
+                           (q.reponse !== undefined ? q.reponse : 0);
 
         let texteBonneReponse = "Non spécifiée";
         if (Array.isArray(q.options)) {
@@ -636,6 +634,8 @@ function filtrerTableauQuestions() {
         tbody.appendChild(tr);
       });
     }
+
+    
     // Fonction pour basculer vers le quiz et cibler/lancer une question spécifique
     function ouvrirQuestionDansQuiz(numeroQuestion) {
       navigate('home');
