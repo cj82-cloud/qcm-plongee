@@ -2,25 +2,19 @@
   {
     "id": "physique-lois",
     "theme": "Physique appliquée",
-    "titre": "Les 3 Lois Fondamentales des Gaz",
-    "niveau": "N1 / N2 / N3",
-    "resume": "Boyle-Mariotte, Dalton et Henry : les trois piliers théoriques de la plongée.",
-    "contenu": "<h4>1. Loi de Boyle-Mariotte (Pression x Volume = Constante)</h4><p>À température constante, le volume d'un gaz varie inversement à la pression qu'il subit. En descente, le volume diminue ; en remontée, le volume augmente.</p><ul><li><b>Application :</b> Barotraumatismes (accidents d'oreilles, surpression pulmonaire).</li></ul><h4>2. Loi de Dalton (Pressions Partielles)</h4><p>La pression totale d'un mélange gazeux est égale à la somme des pressions partielles de chacun de ses composants (Pp = P_totale x %Gaz).</p><ul><li><b>Application :</b> Toxicité de l'oxygène (hyperoxie à PpO2 > 1.4 bar) et toxicité de l'azote (narcose).</li></ul><h4>3. Loi de Henry (Dissolution des Gaz)</h4><p>À température constante, la quantité de gaz dissous dans un liquide est proportionnelle à la pression partielle de ce gaz au-dessus du liquide.</p><ul><li><b>Application :</b> Désaturation et formation de bulles (Accidents de Décompression - ADD).</li>]"
-  },
-  {
-    "id": "boyle-mariotte-detail",
-    "theme": "Physique appliquée",
-    "titre": "Approfondissement : Loi de Boyle-Mariotte",
+    "titre": "Les 3 Lois Fondamentales des Gaz & Loi de Boyle-Mariotte",
     "niveau": "N1 / N2",
-    "resume": "Étude détaillée de la relation Pression/Volume et de ses conséquences physiologiques en plongée.",
-    "contenu": "<h4>Énoncé et Formule</h4><p>À température constante, le produit de la pression absolue par le volume d'une masse de gaz est constant : <b>P x V = Constante</b> (ou <i>P1 x V1 = P2 x V2</i>).</p><h4>Variation de la Pression et du Volume</h4><ul><li><b>Surface (0 m) :</b> Pression = 1 bar | Volume relatif = 100%</li><li><b>10 mètres :</b> Pression = 2 bars | Volume relatif = 50% (réduit de moitié)</li><li><b>30 mètres :</b> Pression = 4 bars | Volume relatif = 25% (réduit au quart)</li><li><b>50 mètres :</b> Pression = 6 bars | Volume relatif = 16,6% (réduit au sixième)</li></ul><h4>Risques et Règles d'Or</h4><ul><li><b>Surpression pulmonaire :</b> Si le plongeur retient sa respiration à la remontée, l'air se dilate et peut rompre les alvéoles.</li><li><b>Règle d'or :</b> Ne jamais bloquer sa respiration et expirer en continu en cas de remontée d'urgence.</li><li><b>Espaces aériens :</b> Nécessite l'équilibrage des volumes (oreilles, masque, gilet) à la descente comme à la remontée.</li></ul>"
+    "resume": "Boyle-Mariotte, Dalton et Henry : les piliers théoriques de la plongée et leurs applications.",
+    "questionsLiees": [1, 51, 101],
+    "contenu": "<h4>1. Loi de Boyle-Mariotte (P x V = Constante)</h4><p>À température constante, le volume d'une masse de gaz donné est inversement proportionnel à la pression qu'il subit. En descente, le volume diminue ; en remontée, le volume augmente.</p><ul><li><b>Surface (0m) :</b> 1 bar — 100% du volume</li><li><b>10 mètres :</b> 2 bars — 50% du volume (réduit de moitié)</li><li><b>30 mètres :</b> 4 bars — 25% du volume (réduit au quart)</li><li><b>Application :</b> Barotraumatismes (oreilles) et risque majeur de <b>surpression pulmonaire</b> si la respiration est bloquée à la remontée. Règle d'or : ne jamais bloquer sa respiration.</li></ul><h4>2. Loi de Dalton (Pressions Partielles)</h4><p>La pression totale d'un mélange gazeux est égale à la somme des pressions partielles de chacun de ses composants (Pp = P_totale x %Gaz). Utile pour la gestion de l'hyperoxie et de la narcose.</p><h4>3. Loi de Henry (Dissolution des Gaz)</h4><p>À température constante, la quantité de gaz dissous dans un liquide est proportionnelle à la pression partielle de ce gaz au-dessus de ce liquide (Gestion de la saturation et des ADD).</p>"
   },
   {
     "id": "physio-oreille",
     "theme": "Physiologie & Anatomie",
     "titre": "L'Oreille et la Plongée",
     "niveau": "N1 / N2",
-    "resume": "Anatomie de l'oreille, équilibrage des pressions et prévention des traumatismes.",
-    "contenu": "<h4>L'Oreille Moyenne et le Tympan</h4><p>L'oreille moyenne est une cavité aérienne séparée de l'extérieur par le tympan. Lors de la descente, la pression de l'eau pousse le tympan vers l'intérieur.</p><h4>Techniques d'équilibrage</h4><ul><li><b>Valsalva :</b> Souffler doucement par le nez pincé (uniquement à la descente).</li><li><b>Frenzel :</b> Pousser la langue vers le palais avec la glotte fermée.</li><li><b>BTV (Béance Tubaire Volontaire) :</b> Contraction des muscles du voile du palais.</li></ul><p><b>Règle d'or :</b> Équilibrer tôt et souvent. Ne jamais forcer ! En cas de douleur : remonter légèrement et réessayer doucement.</p>"
+    "resume": "Anatomie de l'oreille moyenne, techniques d'équilibrage des pressions et prévention des barotraumatismes.",
+    "questionsLiees": [11, 12, 61],
+    "contenu": "<h4>L'Oreille Moyenne et le Tympan</h4><p>L'oreille moyenne est une cavité aérienne séparée de l'extérieur par le tympan. Lors de la descente, la pression hydrostatique pousse le tympan vers l'intérieur.</p><h4>Techniques d'équilibrage</h4><ul><li><b>Valsalva :</b> Souffler doucement par le nez pincé (uniquement à la descente).</li><li><b>Frenzel :</b> Pousser la langue vers le palais avec la glotte fermée.</li><li><b>BTV (Béance Tubaire Volontaire) :</b> Contraction des muscles du voile du palais.</li></ul><p><b>Règle d'or :</b> Équilibrer tôt et souvent. Ne jamais forcer ! En cas de douleur, remonter légèrement et réessayer.</p>"
   }
 ]
