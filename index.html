@@ -364,56 +364,56 @@
       </div>
 
       <div id="fiches-cours-container"></div>
-
-     
+    </div>
 
     <!-- PAGE BANQUE DE QUESTIONS -->
     <div id="page-questions" class="page-content">
-      <div class="card">
-        <h2>📚 Visualisation de la Banque de Questions</h2>
-        <p>Consultez l'ensemble des questions, choix de réponses, bonnes réponses et explications enregistrées.</p>
-         <div class="card doc-section">
+      <div class="card doc-section">
         <h2>📋 Récapitulatif de la Banque de Questions</h2>
         <div style="overflow-x: auto;">
-          <table class="doc-table">
+          <table class="doc-table" style="width: 100%; border-collapse: collapse; margin: 15px 0;">
             <thead>
               <tr>
-                <th>Niveau</th>
-                <th>Tranche</th>
-                <th>Thématiques principales</th>
+                <th style="border: 1px solid var(--border); padding: 10px 12px; text-align: left; background-color: #f1f5f9; color: var(--nav-bg);">Niveau</th>
+                <th style="border: 1px solid var(--border); padding: 10px 12px; text-align: left; background-color: #f1f5f9; color: var(--nav-bg);">Tranche</th>
+                <th style="border: 1px solid var(--border); padding: 10px 12px; text-align: left; background-color: #f1f5f9; color: var(--nav-bg);">Thématiques principales</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>N1 (1★)</strong></td>
-                <td>Q1 à Q50</td>
-                <td>Notions de base, anatomie, matériel simple, sécurité & communication</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;"><strong>N1 (1★)</strong></td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Q1 à Q50</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Notions de base, anatomie, matériel simple, sécurité & communication</td>
               </tr>
               <tr>
-                <td><strong>N2 (2★)</strong></td>
-                <td>Q51 à Q100</td>
-                <td>Pressions/Gaz, ADD & physiopathologie, tables/ordinateurs, Nitrox, secourisme</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;"><strong>N2 (2★)</strong></td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Q51 à Q100</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Pressions/Gaz, ADD & physiopathologie, tables/ordinateurs, Nitrox, secourisme</td>
               </tr>
               <tr>
-                <td><strong>N3 (3★)</strong></td>
-                <td>Q101 à Q150</td>
-                <td>Calculs avancés, pathologies complexes, autonomie à 40m, matériel spécifique, CPR/BAVU</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;"><strong>N3 (3★)</strong></td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Q101 à Q150</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Calculs avancés, pathologies complexes, autonomie à 40m, matériel spécifique, CPR/BAVU</td>
               </tr>
               <tr>
-                <td><strong>N4 (4★)</strong></td>
-                <td>Q151 à Q200</td>
-                <td>Réglementation/Responsabilités, pédagogie, direction de plongée, analyse de cas</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;"><strong>N4 (4★)</strong></td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Q151 à Q200</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Réglementation/Responsabilités, pédagogie, direction de plongée, analyse de cas</td>
               </tr>
                <tr>
-                <td><strong>Ma décompression</strong></td>
-                <td>Q201 à Q250</td>
-                <td>Notions sur le matériel et la gestion de la décompression</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;"><strong>Ma décompression</strong></td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Q201 à Q250</td>
+                <td style="border: 1px solid var(--border); padding: 10px 12px;">Notions sur le matériel et la gestion de la décompression</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-    </div>
+
+      <div class="card">
+        <h2>📚 Visualisation de la Banque de Questions</h2>
+        <p>Consultez l'ensemble des questions, choix de réponses, bonnes réponses et explications enregistrées.</p>
+        
         <div class="filters" style="margin-top: 20px;">
           <div>
             <label for="filtre-niveau-table">Filtrer par niveau :</label>
@@ -560,8 +560,9 @@
     function initialiserBanqueQuestions() {
       filtrerTableauQuestions();
     }
-//Fonction Filtrer questions du tableau
-function filtrerTableauQuestions() {
+
+    // Fonction Filtrer questions du tableau
+    function filtrerTableauQuestions() {
       const niveauFiltre = document.getElementById('filtre-niveau-table').value;
       const texteRecherche = document.getElementById('recherche-texte').value.toLowerCase();
       const tbody = document.getElementById('tbody-questions');
@@ -585,7 +586,6 @@ function filtrerTableauQuestions() {
         const tr = document.createElement('tr');
         const indexGlobal = baseDeQuestions.indexOf(q) + 1;
 
-        // Utilisation sécurisée de reponse_index convertie en nombre
         let indexReponse = 0;
           if (q.reponse_index !== undefined) {
             indexReponse = Number(q.reponse_index);
@@ -638,7 +638,6 @@ function filtrerTableauQuestions() {
       });
     }
 
-    
     // Fonction pour basculer vers le quiz et cibler/lancer une question spécifique
     function ouvrirQuestionDansQuiz(numeroQuestion) {
       navigate('home');
