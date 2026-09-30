@@ -561,7 +561,7 @@
       filtrerTableauQuestions();
     }
 
-    // Filtrage et affichage dynamique du tableau de la banque de questions
+// Filtrage et affichage dynamique du tableau de la banque de questions
     function filtrerTableauQuestions() {
       const niveauFiltre = document.getElementById('filtre-niveau-table').value;
       const texteRecherche = document.getElementById('recherche-texte').value.toLowerCase();
@@ -569,11 +569,11 @@
       
       tbody.innerHTML = '';
 
-      const questionsFiltrees = baseDeQuestions.filter((q, idx) => {
+      const questionsFiltrees = baseDeQuestions.filter((q) => {
         const matchNiv = (niveauFiltre === 'Tous' || q.niveau === niveauFiltre);
         const matchTexte = q.question.toLowerCase().includes(texteRecherche) || 
                            (q.theme && q.theme.toLowerCase().includes(texteRecherche)) ||
-                           q.explication.toLowerCase().includes(texteRecherche);
+                           (q.explication && q.explication.toLowerCase().includes(texteRecherche));
         return matchNiv && matchTexte;
       });
 
@@ -582,21 +582,33 @@
         return;
       }
 
-      questionsFiltrees.forEach((q, originalIdx) => {
+      questionsFiltrees.forEach((q) => {
         const tr = document.createElement('tr');
-        
-        // Numéro de la question dans la base globale
         const indexGlobal = baseDeQuestions.indexOf(q) + 1;
+
+        // Détermination sécurisée de la bonne réponse (index, texte, ou autre)
+        let texteBonneReponse = "Non spécifiée";
+        let indexReponse = (typeof q.reponse !== 'undefined') ? q.reponse : q.answer;
+
+        if (Array.isArray(q.options)) {
+          if (typeof indexReponse === 'number' && q.options[indexReponse] !== undefined) {
+            texteBonneReponse = q.options[indexReponse];
+          } else if (typeof indexReponse === 'string') {
+            texteBonneReponse = indexReponse;
+          }
+        }
 
         // Formater les options avec mise en valeur de la bonne réponse
         let optionsHtml = `<ul style="margin: 5px 0; padding-left: 15px;">`;
-        q.options.forEach((opt, oIdx) => {
-          if (oIdx === q.reponse) {
-            optionsHtml += `<li><span class="correct-answer-text">✔ ${opt}</span></li>`;
-          } else {
-            optionsHtml += `<li style="color: #64748b;">${opt}</li>`;
-          }
-        });
+        if (Array.isArray(q.options)) {
+          q.options.forEach((opt, oIdx) => {
+            if (oIdx === indexReponse || opt === texteBonneReponse) {
+              optionsHtml += `<li><span class="correct-answer-text">✔ ${opt}</span></li>`;
+            } else {
+              optionsHtml += `<li style="color: #64748b;">${opt}</li>`;
+            }
+          });
+        }
         optionsHtml += `</ul>`;
 
         tr.innerHTML = `
@@ -610,9 +622,9 @@
             ${optionsHtml}
           </td>
           <td>
-            <div style="margin-bottom: 5px;"><strong>Réponse correcte :</strong> <span class="correct-answer-text">${q.options[q.reponse]}</span></div>
+            <div style="margin-bottom: 5px;"><strong>Réponse correcte :</strong> <span class="correct-answer-text">${texteBonneReponse}</span></div>
             <div style="font-size: 0.85rem; color: #475569; background: #f8fafc; padding: 6px; border-radius: 4px; border: 1px solid var(--border);">
-              <em>Explication :</em> ${q.explication}
+              <em>Explication :</em> ${q.explication || 'Aucune explication fournie.'}
             </div>
             <div style="margin-top: 8px;">
               <a href="#" onclick="ouvrirQuestionDansQuiz(${indexGlobal}); return false;" style="font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 500;">🎯 Tester cette question ➔</a>
