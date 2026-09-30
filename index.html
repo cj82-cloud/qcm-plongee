@@ -26,7 +26,7 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
-      scroll-behavior: smooth; /* Permet un défilement fluide vers les ancres */
+      scroll-behavior: smooth;
     }
 
     nav {
@@ -68,7 +68,7 @@
     }
 
     main {
-      max-width: 750px;
+      max-width: 900px;
       margin: 25px auto;
       padding: 0 15px;
     }
@@ -96,7 +96,7 @@
       margin-bottom: 5px;
     }
 
-    select, button {
+    select, input, button {
       width: 100%;
       padding: 10px;
       border-radius: 6px;
@@ -203,7 +203,6 @@
       text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
     }
 
-    /* Style pour la carte d'avertissement */
     .intro-disclaimer {
       border-left: 4px solid var(--primary);
       background-color: #f1f5f9;
@@ -222,7 +221,13 @@
       color: #475569;
     }
 
-    /* Styles spécifiques pour les fiches intégrées en Doc */
+    /* Styles pour la Table des Matières de la Doc */
+    .toc-container ul { margin: 0; padding-left: 20px; }
+    .toc-container li { margin-bottom: 6px; }
+    .toc-container a { color: var(--primary); text-decoration: none; font-weight: 500; }
+    .toc-container a:hover { text-decoration: underline; }
+    .toc-theme { font-weight: 600; color: var(--nav-bg); }
+
     .fiche-doc h3 { color: var(--primary); margin-top: 0; }
     .niveau-badge { background: #e1f5fe; color: #01579b; padding: 3px 8px; border-radius: 4px; font-size: 0.85em; display: inline-block; margin-bottom: 8px; }
     .questions-associees { margin-top: 15px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 0.9em; }
@@ -230,34 +235,15 @@
     .questions-associees a { color: var(--primary); text-decoration: none; font-weight: 500; cursor: pointer; }
     .questions-associees a:hover { text-decoration: underline; }
 
-    /* Styles pour la Table des Matières */
-    .toc-container ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-    .toc-container li {
-      margin-bottom: 6px;
-    }
-    .toc-container a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .toc-container a:hover {
-      text-decoration: underline;
-    }
-    .toc-theme {
-      font-weight: 600;
-      color: var(--nav-bg);
-    }
+    /* Styles pour le tableau de la Banque de Questions */
+    .questions-table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 0.9rem; }
+    .questions-table th, .questions-table td { border: 1px solid var(--border); padding: 10px; text-align: left; vertical-align: top; }
+    .questions-table th { background-color: #f1f5f9; color: var(--nav-bg); font-weight: bold; }
+    .correct-answer-text { color: #16a34a; font-weight: bold; }
 
     @media (max-width: 600px) {
-      .hero-banner {
-        padding: 30px 15px;
-      }
-      .hero-content h1 {
-        font-size: 1.5rem;
-      }
+      .hero-banner { padding: 30px 15px; }
+      .hero-content h1 { font-size: 1.5rem; }
     }
   </style>
 </head>
@@ -268,6 +254,7 @@
     <ul class="nav-links">
       <li><a href="#" id="link-home" class="active" onclick="navigate('home', event)">Home</a></li>
       <li><a href="#" id="link-doc" onclick="navigate('doc', event)">Documentation</a></li>
+      <li><a href="#" id="link-questions" onclick="navigate('questions', event)">Banque de questions</a></li>
       <li><a href="https://www.lifras.be" target="_blank">LIFRAS ↗</a></li>
     </ul>
   </nav>
@@ -369,7 +356,6 @@
         .doc-table th { background-color: #f1f5f9; color: var(--nav-bg); font-weight: bold; }
       </style>
 
-      <!-- Table des Matières Dynamique -->
       <div class="card doc-section toc-container">
         <h2>📑 Table des Matières</h2>
         <div id="toc-list-container">
@@ -377,10 +363,8 @@
         </div>
       </div>
 
-      <!-- Conteneur dynamique pour injecter les fiches de cours -->
       <div id="fiches-cours-container"></div>
 
-      <!-- Récapitulatif Général -->
       <div class="card doc-section">
         <h2>📋 Récapitulatif de la Banque de Questions</h2>
         <div style="overflow-x: auto;">
@@ -423,6 +407,50 @@
         </div>
       </div>
     </div>
+
+    <!-- PAGE BANQUE DE QUESTIONS -->
+    <div id="page-questions" class="page-content">
+      <div class="card">
+        <h2>📚 Visualisation de la Banque de Questions</h2>
+        <p>Consultez l'ensemble des questions, choix de réponses, bonnes réponses et explications enregistrées.</p>
+        
+        <div class="filters" style="margin-top: 20px;">
+          <div>
+            <label for="filtre-niveau-table">Filtrer par niveau :</label>
+            <select id="filtre-niveau-table" onchange="filtrerTableauQuestions()">
+              <option value="Tous">Tous les niveaux</option>
+              <option value="N1">Brevet 1* (N1)</option>
+              <option value="N2">Brevet 2* (N2)</option>
+              <option value="N3">Brevet 3* (N3)</option>
+              <option value="N4">Brevet 4* (N4)</option>
+              <option value="Ma décompression">Ma décompression</option>
+            </select>
+          </div>
+          <div>
+            <label for="recherche-texte">Recherche par mot-clé :</label>
+            <input type="text" id="recherche-texte" placeholder="Rechercher dans les questions..." onkeyup="filtrerTableauQuestions()">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="overflow-x: auto;">
+          <table class="questions-table">
+            <thead>
+              <tr>
+                <th style="width: 5%;">#</th>
+                <th style="width: 10%;">Niveau / Thème</th>
+                <th style="width: 45%;">Intitulé & Options</th>
+                <th style="width: 40%;">Bonne Réponse & Explication</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-questions">
+              <!-- Injecté dynamiquement -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   </main>
 
   <script>
@@ -454,6 +482,7 @@
         
         document.getElementById('loading').style.display = 'none';
         initialiserDocumentation();
+        initialiserBanqueQuestions();
       })
       .catch(err => {
         console.error(err);
@@ -475,7 +504,6 @@
         return;
       }
 
-      // Regrouper les fiches par thème pour structurer la table des matières
       const themesMap = {};
       fichesDocumentation.forEach(fiche => {
         if (!themesMap[fiche.theme]) {
@@ -491,10 +519,8 @@
         tocHtml += `<li><span class="toc-theme">${theme}</span><ul>`;
         
         fiches.forEach(fiche => {
-          // Lien ancre vers l'ID de la fiche
           tocHtml += `<li><a href="#fiche-${fiche.id}">${fiche.titre}</a> <span style="font-size:0.8em; color:#64748b;">(${fiche.niveau})</span></li>`;
 
-          // Construction du bloc de la fiche avec un id unique pour l'ancre
           let liensHtml = '';
           if (fiche.questionsLiees && fiche.questionsLiees.length > 0) {
             const liste = fiche.questionsLiees.map(qNum => {
@@ -530,26 +556,90 @@
       containerFiches.innerHTML = fichesHtml;
     }
 
+    // Initialisation du tableau de la Banque de Questions
+    function initialiserBanqueQuestions() {
+      filtrerTableauQuestions();
+    }
+
+    // Filtrage et affichage dynamique du tableau de la banque de questions
+    function filtrerTableauQuestions() {
+      const niveauFiltre = document.getElementById('filtre-niveau-table').value;
+      const texteRecherche = document.getElementById('recherche-texte').value.toLowerCase();
+      const tbody = document.getElementById('tbody-questions');
+      
+      tbody.innerHTML = '';
+
+      const questionsFiltrees = baseDeQuestions.filter((q, idx) => {
+        const matchNiv = (niveauFiltre === 'Tous' || q.niveau === niveauFiltre);
+        const matchTexte = q.question.toLowerCase().includes(texteRecherche) || 
+                           (q.theme && q.theme.toLowerCase().includes(texteRecherche)) ||
+                           q.explication.toLowerCase().includes(texteRecherche);
+        return matchNiv && matchTexte;
+      });
+
+      if (questionsFiltrees.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:#64748b;">Aucune question ne correspond à vos critères.</td></tr>`;
+        return;
+      }
+
+      questionsFiltrees.forEach((q, originalIdx) => {
+        const tr = document.createElement('tr');
+        
+        // Numéro de la question dans la base globale
+        const indexGlobal = baseDeQuestions.indexOf(q) + 1;
+
+        // Formater les options avec mise en valeur de la bonne réponse
+        let optionsHtml = `<ul style="margin: 5px 0; padding-left: 15px;">`;
+        q.options.forEach((opt, oIdx) => {
+          if (oIdx === q.reponse) {
+            optionsHtml += `<li><span class="correct-answer-text">✔ ${opt}</span></li>`;
+          } else {
+            optionsHtml += `<li style="color: #64748b;">${opt}</li>`;
+          }
+        });
+        optionsHtml += `</ul>`;
+
+        tr.innerHTML = `
+          <td><strong>#${indexGlobal}</strong></td>
+          <td>
+            <span class="niveau-badge">${q.niveau || 'N/A'}</span><br>
+            <small style="color:#64748b;">${q.theme || 'Général'}</small>
+          </td>
+          <td>
+            <strong>${q.question}</strong>
+            ${optionsHtml}
+          </td>
+          <td>
+            <div style="margin-bottom: 5px;"><strong>Réponse correcte :</strong> <span class="correct-answer-text">${q.options[q.reponse]}</span></div>
+            <div style="font-size: 0.85rem; color: #475569; background: #f8fafc; padding: 6px; border-radius: 4px; border: 1px solid var(--border);">
+              <em>Explication :</em> ${q.explication}
+            </div>
+            <div style="margin-top: 8px;">
+              <a href="#" onclick="ouvrirQuestionDansQuiz(${indexGlobal}); return false;" style="font-size: 0.85rem; color: var(--primary); text-decoration: none; font-weight: 500;">🎯 Tester cette question ➔</a>
+            </div>
+          </td>
+        `;
+
+        tbody.appendChild(tr);
+      });
+    }
+
     // Fonction pour basculer vers le quiz et cibler/lancer une question spécifique
     function ouvrirQuestionDansQuiz(numeroQuestion) {
-      navigate('home'); // Revient sur l'onglet du Quiz
+      navigate('home');
 
-      // Recherche dans la base de questions chargée
       const indexTrouve = baseDeQuestions.findIndex((q, idx) => (idx + 1) === numeroQuestion || q.id === numeroQuestion);
       
       if (indexTrouve !== -1) {
         const qCible = baseDeQuestions[indexTrouve];
         
-        // Ajuster automatiquement le selecteur de niveau si besoin pour correspondre à la question
         const selectNiveau = document.getElementById('niveau');
         if (qCible.niveau) {
           selectNiveau.value = qCible.niveau;
           gererChangementNiveau();
         }
 
-        // Forcer la série de questions à contenir cette question précise en premier
         serieQuestions = [qCible];
-        // Ajouter d'autres questions du même niveau pour compléter une petite série si l'utilisateur veut continuer
         const autres = baseDeQuestions.filter((q, idx) => q.niveau === qCible.niveau && idx !== indexTrouve).sort(() => 0.5 - Math.random()).slice(0, 4);
         serieQuestions = serieQuestions.concat(autres);
 
