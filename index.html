@@ -585,10 +585,13 @@ function filtrerTableauQuestions() {
         const tr = document.createElement('tr');
         const indexGlobal = baseDeQuestions.indexOf(q) + 1;
 
-        // Utilisation de reponse_index comme présent dans le JSON
-        let indexReponse = q.reponse_index !== undefined ? q.reponse_index : 
-                           (q.reponse !== undefined ? q.reponse : 0);
-
+        // Utilisation sécurisée de reponse_index convertie en nombre
+        let indexReponse = 0;
+          if (q.reponse_index !== undefined) {
+            indexReponse = Number(q.reponse_index);
+          } else if (q.reponse !== undefined) {
+            indexReponse = Number(q.reponse);
+        }
         let texteBonneReponse = "Non spécifiée";
         if (Array.isArray(q.options)) {
           if (typeof indexReponse === 'number' && q.options[indexReponse] !== undefined) {
