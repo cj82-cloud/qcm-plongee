@@ -515,6 +515,9 @@ footer a:hover {
                 <td style="border: 1px solid var(--border); padding: 10px 12px;">Q201 à Q250</td>
                 <td style="border: 1px solid var(--border); padding: 10px 12px;">Notions sur le matériel et la gestion de la décompression</td>
               </tr>
+              <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalEditeur">
+                ➕ Ajouter / Éditer des questions
+              </button>
             </tbody>
           </table>
         </div>
@@ -563,6 +566,94 @@ footer a:hover {
     </div>
   </main>
 
+  <!-- FENÊTRE MODALE ÉDITEUR -->
+<div class="modal fade" id="modalEditeur" tabindex="-1" aria-labelledby="modalEditeurLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEditeurLabel">Éditeur de questions (LIFRAS)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
+            </div>
+            <div class="modal-body">
+                
+                <!-- Formulaire -->
+                <form id="form-ajout-question">
+                    <div class="mb-3">
+                        <label for="edit-niveau" class="form-label">Niveau :</label>
+                        <select id="edit-niveau" class="form-select" required>
+                            <option value="N1">N1 (1★)</option>
+                            <option value="N2">N2 (2★)</option>
+                            <option value="N3">N3 (3★)</option>
+                            <option value="N4">N4 (4★)</option>
+                            <option value="Ma décompression">Ma décompression</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit-theme" class="form-label">Thème :</label>
+                        <input type="text" id="edit-theme" class="form-control" placeholder="ex: Matériel, Sécurité, Tables..." required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit-question" class="form-label">Intitulé de la question :</label>
+                        <textarea id="edit-question" class="form-control" rows="2" required></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Options de réponse :</label>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">0</span>
+                            <input type="text" id="edit-opt-0" class="form-control" placeholder="Première réponse (Index 0)" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">1</span>
+                            <input type="text" id="edit-opt-1" class="form-control" placeholder="Deuxième réponse (Index 1)" required>
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">2</span>
+                            <input type="text" id="edit-opt-2" class="form-control" placeholder="Troisième réponse (Index 2)">
+                        </div>
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">3</span>
+                            <input type="text" id="edit-opt-3" class="form-control" placeholder="Quatrième réponse (Index 3)">
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit-reponse" class="form-label">Index de la bonne réponse (0, 1, 2 ou 3) :</label>
+                        <input type="number" id="edit-reponse" class="form-control" min="0" max="3" value="0" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="edit-explication" class="form-label">Explication (optionnelle) :</label>
+                        <textarea id="edit-explication" class="form-control" rows="2"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">➕ Valider cette question</button>
+                </form>
+
+                <hr class="my-4">
+
+                <!-- Zone de prévisualisation des ajouts de la session -->
+                <div>
+                    <h6>Nouvelles questions créées dans cette session (<span id="compteur-nouvelles">0</span>)</h6>
+                    <div id="apercu-json" class="bg-dark text-white p-3 rounded mb-3" style="max-height: 150px; overflow-y: auto; font-family: monospace; font-size: 0.8rem;">
+                        // En attente de création...
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="btn-export-nouvelles" class="btn btn-outline-success" disabled>💾 Télécharger uniquement les nouvelles</button>
+                <button id="btn-export-completes" class="btn btn-warning" disabled>📦 Télécharger le fichier complet fusionné</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+  
   <script>
     let baseDeQuestions = [];
     let fichesDocumentation = [];
