@@ -484,14 +484,16 @@
     </div>
   </main>
 
-  <!-- MODALE D'AJOUT DE QUESTION -->
+<!-- MODALE D'AJOUT DE QUESTION -->
   <div id="modal-ajout" class="modal-overlay">
     <div class="modal-content">
       <div class="modal-header">
-        <h3>Ajouter une nouvelle question</h3>
+        <h3>Ajouter une question (Export JSON)</h3>
         <button class="close-btn" onclick="fermerModalAjout()">&times;</button>
       </div>
-      <form id="form-ajout-question" onsubmit="sauvegarderNouvelleQuestion(event)">
+      
+      <!-- Formulaire de saisie -->
+      <form id="form-ajout-question" onsubmit="genererJsonQuestion(event)">
         <label for="add-niveau">Niveau :</label>
         <select id="add-niveau" required>
           <option value="N1">N1</option>
@@ -515,17 +517,24 @@
 
         <label for="add-reponse-index">Index de la bonne réponse :</label>
         <select id="add-reponse-index" required>
-          <option value="0">Option 1</option>
-          <option value="1">Option 2</option>
-          <option value="2">Option 3</option>
-          <option value="3">Option 4</option>
+          <option value="0">Option 1 (index 0)</option>
+          <option value="1">Option 2 (index 1)</option>
+          <option value="2">Option 3 (index 2)</option>
+          <option value="3">Option 4 (index 3)</option>
         </select>
 
         <label for="add-explication">Explication :</label>
         <textarea id="add-explication" rows="2" placeholder="Explication pédagogique..." required></textarea>
 
-        <button type="submit" class="cta" style="margin-top: 15px;">Enregistrer la question</button>
+        <button type="submit" class="cta" style="margin-top: 15px;">Générer le code JSON</button>
       </form>
+
+      <!-- Zone de résultat / Copie -->
+      <div id="resultat-generation" style="display: none; margin-top: 15px;">
+        <label>Code JSON à insérer dans votre fichier :</label>
+        <textarea id="json-output" rows="6" readonly style="font-family: monospace; font-size: 0.85rem; background: #f1f5f9;"></textarea>
+        <button class="cta" style="background: #16a34a; margin-top: 10px;" onclick="copierJson()">📋 Copier dans le presse-papier</button>
+      </div>
     </div>
   </div>
 
@@ -871,44 +880,47 @@
 
     // Gestion de la modale d'ajout
     function ouvrirModalAjout() {
-      document.getElementById('modal-ajout').style.display = 'flex';
-    }
+    document.getElementById('form-ajout-question').style.display = 'block';
+    document.getElementById('resultat-generation').style.display = 'none';
+    document.getElementById('form-ajout-question').reset();
+    document.getElementById('modal-ajout').style.display = 'flex';
+  }
 
-    function fermerModalAjout() {
-      document.getElementById('modal-ajout').style.display = 'none';
-    }
+  function fermerModalAjout() {
+    document.getElementById('modal-ajout').style.display = 'none';
+  }
 
-    function sauvegarderNouvelleQuestion(event) {
-      event.preventDefault();
+  function genererJsonQuestion(event) {
+    event.preventDefault();
 
-      const nouvelleQ = {
-        id: baseDeQuestions.length + 1,
-        niveau: document.getElementById('add-niveau').value,
-        theme: document.getElementById('add-theme').value,
-        question: document.getElementById('add-question').value,
-        options: [
-          document.getElementById('add-opt-0').value,
-          document.getElementById('add-opt-1').value,
-          document.getElementById('add-opt-2').value,
-          document.getElementById('add-opt-3').value
-        ],
-        reponse_index: parseInt(document.getElementById('add-reponse-index').value),
-        explication: document.getElementById('add-explication').value
-      };
+    const nouvelleQ = {
+      niveau: document.getElementById('add-niveau').value,
+      theme: document.getElementById('add-theme').value,
+      question: document.getElementById('add-question').value,
+      options: [
+        document.getElementById('add-opt-0').value,
+        document.getElementById('add-opt-1').value,
+        document.getElementById('add-opt-2').value,
+        document.getElementById('add-opt-3').value
+      ],
+      reponse_index: parseInt(document.getElementById('add-reponse-index').value),
+      explication: document.getElementById('add-explication').value
+    };
 
-      baseDeQuestions.push(nouvelleQ);
+    // Formatage propre avec une virgule à la fin pour insertion facile dans un tableau JSON
+    const jsonString = JSON.stringify(nouvelleQ, null, 2) + ",";
 
-      // Sauvegarde dans le localStorage
-      const questionsLocales = JSON.parse(localStorage.getItem('questions_lifras_custom')) || [];
-      questionsLocales.push(nouvelleQ);
-      localStorage.setItem('questions_lifras_custom', JSON.stringify(questionsLocales));
+    document.getElementById('form-ajout-question').style.display = 'none';
+    document.getElementById('json-output').value = jsonString;
+    document.getElementById('resultat-generation').style.display = 'block';
+  }
 
-      fermerModalAjout();
-      document.getElementById('form-ajout-question').reset();
-      filtrerTableauQuestions();
-      alert("Question ajoutée avec succès et sauvegardée localement !");
-    }
-  </script>
+  function copierJson() {
+    const textarea = document.getElementById('json-output');
+    textarea.select();
+    document.execCommand('copy');
+    alert("Code JSON copié ! Il vous suffit de l'ajouter dans votre fichier questions.json.");
+  }
 </body>
 </html>
 
