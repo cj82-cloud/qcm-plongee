@@ -538,7 +538,7 @@
     </div>
   </div>
 
-  <script>
+<script>
     let baseDeQuestions = [];
     let fichesDocumentation = [];
     let serieQuestions = [];
@@ -561,7 +561,6 @@
         fetch('fiches.json').then(res => res.json())
       ])
       .then(([questionsData, fichesData]) => {
-        // Charger les questions stockées localement en plus de celles du JSON
         const questionsLocales = JSON.parse(localStorage.getItem('questions_lifras_custom')) || [];
         baseDeQuestions = questionsData.concat(questionsLocales);
         fichesDocumentation = fichesData;
@@ -880,48 +879,54 @@
 
     // Gestion de la modale d'ajout
     function ouvrirModalAjout() {
-    document.getElementById('form-ajout-question').style.display = 'block';
-    document.getElementById('resultat-generation').style.display = 'none';
-    document.getElementById('form-ajout-question').reset();
-    document.getElementById('modal-ajout').style.display = 'flex';
-  }
+      document.getElementById('form-ajout-question').style.display = 'block';
+      document.getElementById('resultat-generation').style.display = 'none';
+      document.getElementById('form-ajout-question').reset();
+      document.getElementById('modal-ajout').style.display = 'flex';
+    }
 
-  function fermerModalAjout() {
-    document.getElementById('modal-ajout').style.display = 'none';
-  }
+    function fermerModalAjout() {
+      document.getElementById('modal-ajout').style.display = 'none';
+    }
 
-  function genererJsonQuestion(event) {
-    event.preventDefault();
+    function genererJsonQuestion(event) {
+      event.preventDefault();
 
-    const nouvelleQ = {
-      niveau: document.getElementById('add-niveau').value,
-      theme: document.getElementById('add-theme').value,
-      question: document.getElementById('add-question').value,
-      options: [
-        document.getElementById('add-opt-0').value,
-        document.getElementById('add-opt-1').value,
-        document.getElementById('add-opt-2').value,
-        document.getElementById('add-opt-3').value
-      ],
-      reponse_index: parseInt(document.getElementById('add-reponse-index').value),
-      explication: document.getElementById('add-explication').value
-    };
+      // Incrémentation automatique sécurisée de l'ID
+      const prochainId = baseDeQuestions.length > 0 
+        ? Math.max(...baseDeQuestions.map(q => q.id || 0)) + 1 
+        : 1;
 
-    // Formatage propre avec une virgule à la fin pour insertion facile dans un tableau JSON
-    const jsonString = JSON.stringify(nouvelleQ, null, 2) + ",";
+      const nouvelleQ = {
+        id: prochainId,
+        niveau: document.getElementById('add-niveau').value,
+        theme: document.getElementById('add-theme').value,
+        question: document.getElementById('add-question').value,
+        options: [
+          document.getElementById('add-opt-0').value,
+          document.getElementById('add-opt-1').value,
+          document.getElementById('add-opt-2').value,
+          document.getElementById('add-opt-3').value
+        ],
+        reponse_index: parseInt(document.getElementById('add-reponse-index').value),
+        explication: document.getElementById('add-explication').value
+      };
 
-    document.getElementById('form-ajout-question').style.display = 'none';
-    document.getElementById('json-output').value = jsonString;
-    document.getElementById('resultat-generation').style.display = 'block';
-  }
+      // Formatage propre avec une virgule à la fin pour insertion facile dans le JSON
+      const jsonString = JSON.stringify(nouvelleQ, null, 2) + ",";
 
-  function copierJson() {
-    const textarea = document.getElementById('json-output');
-    textarea.select();
-    document.execCommand('copy');
-    alert("Code JSON copié ! Il vous suffit de l'ajouter dans votre fichier questions.json.");
-  }
+      document.getElementById('form-ajout-question').style.display = 'none';
+      document.getElementById('json-output').value = jsonString;
+      document.getElementById('resultat-generation').style.display = 'block';
+    }
+
+    function copierJson() {
+      const textarea = document.getElementById('json-output');
+      textarea.select();
+      document.execCommand('copy');
+      alert("Code JSON copié avec l'ID automatique ! Il vous suffit de l'ajouter dans votre fichier questions.json.");
+    }
+</script>
 </body>
+  
 </html>
-
-```
